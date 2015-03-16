@@ -1,0 +1,16 @@
+Date: 2015-03-14 20:35
+Title: Cartes statiques
+
+Les cartes statiques montrent l'emplacement des unités à un moment précis de la campagne de Belgique. 
+
+Les couleurs indiquent la nationalité, les symboles représentent le type des troupes.
+
+| Nationalité | Etat-major  | Artillerie  | Cavalerie  | Infanterie  |
+| -------------- |:-------------:|:-------------:|:-------------:|:-------------:|
+| Français |![FEB](https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150312194341FEB.png)|![FAB](https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150312194321FAB.png)|![FCB](https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150312194331FCB.png)|![FIB](https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150312194352FIB.png)|
+| Anglais |![BEB](https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150312194203BEB.png)|![BAB](https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150312194139BAB.png)|![BCB](https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150312194151BCB.png)|![BIB](https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150312194214BIB.png)|
+| Prussiens |![PEB](https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150312194508PEB.png)|![PAB](https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150312194447PAB.png)|![PCB](https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150312194458PCB.png)|![PIB](https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150312194522PIB.png)|
+|Hollando-Belges |![DEB](https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150312194248DEB.png)|![DAB](https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150312194225DAB.png)|![DCB](https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150312194237DCB.png)|![DIB](https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150312194310DIB.png)|
+|Hanovre |![HEB](https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150312194425HEB.png)|![HAB](https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150312194407HAB.png)|![HCB](https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150312194416HCB.png)|![HIB](https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150312194435HIB.png)
+|Brunswick |![REB](https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150312194555REB.png)|![RAB](https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150312194534RAB.png)|![RCB](https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150312194545RCB.png)|![RIB](https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150312194605RIB.png)|
+
