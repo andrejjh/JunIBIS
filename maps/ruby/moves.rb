@@ -15,8 +15,13 @@ class Move
     @arrival <=> other.arrival
   end
 end
-
-class Unit
+class Detachment
+  attr_reader :part, :moves
+  def initialize(id,part)
+    @id=id
+    @part=part
+    @moves= Array.new()
+  end
   def to_time(s)
     re =%r{^(\d+)/(\d+)/(\d+)\s(\d+):(\d+):(\d+)}
     if md=re.match(s)
@@ -27,15 +32,9 @@ class Unit
     end
 
   end
-  def initialize(id)
-    @id=id
-    @moves= Array.new()
-  end
+
   def move(place, longitude, latitude, arrival, departure)
     @moves << Move.new(place, longitude.to_f, latitude.to_f, to_time(arrival), to_time(departure))
-  end
-  def showMoves
-    pp @moves
   end
   def itinerary(froms, tos, increment)
     results = Array.new
@@ -75,10 +74,36 @@ class Unit
           m=@moves.at(idx)
         end
       end
-      results << [@id,dt.strftime('18%y/%m/%d %H:%M:%S'), y.to_s, x.to_s ] unless where=='???'
+      results << [@id, @part, dt.strftime('18%y/%m/%d %H:%M:%S'), y.to_s, x.to_s ] unless where=='???'
       dt=dt+ increment
       end
     return results
+  end
+end
+
+class Unit
+  def initialize(id)
+    @id=id
+    @detachments= Hash.new()
+  end
+  def move(part,place, longitude, latitude, arrival, departure)
+    if (part=="") then part="0" end
+    if !@detachments.include?(part)
+        @detachments[part]= Detachment.new(@id,part)
+    end
+    d=@detachments[part]
+    d.move(place, longitude.to_f, latitude.to_f, arrival, departure)
+  end
+    
+  def itinerary(froms, tos, increment)
+    results = Array.new
+    @detachments.each_value do |d|
+      results = results + d.itinerary(froms, tos, increment)
+    end
+    return results
+  end  
+  def showMoves()
+    pp @detachments
   end
 end
 
@@ -98,19 +123,19 @@ db.execute( 'select unitID from battleUnits where battleID=? order by unitID', b
   unitIDs << row[0]
 end
 unitIDs.each do |unitID|
-  pp unitID
-  unit= Unit.new(unitID)
-  # Find unit positions
-  db.execute( 'select l.id, l.longitude, l.latitude, p.Arrival, p.Departure from positions p left join locations l on l.id=p.locID where unitID=? order by p.arrival', unitID ) do |row|
-#    pp row
-  unit.move(row[0], row[1], row[2], row[3], row[4])
-#  unit.showMoves
+    pp unitID
+    unit= Unit.new(unitID)
+    # Find unit positions
+    db.execute( 'select p.part, l.id, l.longitude, l.latitude, p.Arrival, p.Departure from positions p left join locations l on l.id=p.locID where unitID=? order by p.arrival', unitID ) do |row|
+#   pp row
+    unit.move(row[0], row[1], row[2], row[3], row[4],row[5])
   end
+#  unit.showMoves
   # Generate unit itinerary
 #  moves= unit.itinerary('1815/06/14 20:00:00', '1815/06/16 04:00:00')
   moves= unit.itinerary(battleBegin, battleEnd, 1800)
   moves.each do |m|
-#    pp m
-   db.execute("INSERT INTO moves (unitID, datetime, latitude, longitude) VALUES (?, ?, ?, ?)", m)
+#   pp m
+   db.execute("INSERT INTO moves (unitID, part, datetime, latitude, longitude) VALUES (?, ?, ?, ?, ?)", m)
   end
 end
