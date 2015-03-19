@@ -60,18 +60,25 @@ class Detachment
         where = '???'
       else
         if (dt < m.arrival)
+          # did not yet arrive to m
           where= pm.nil? ? '???' : 'en route between ' + pm.place + ' and ' + m.place
           x= pm.nil? ? 0 : ((dt-pm.departure) * m.longitude + (m.arrival-dt) * pm.longitude) / (m.arrival-pm.departure)
           y= pm.nil? ? 0 : ((dt-pm.departure) * m.latitude + (m.arrival-dt) * pm.latitude) / (m.arrival-pm.departure)
-        else
+        elsif (dt > m.departure)
+          # already depart from m
+          while (!m.nil?) && (dt > m.departure)
+            pm=m
+            idx+=1
+            m=@moves.at(idx)
+          end
+          where= m.nil? ? '???' : 'en route between ' + pm.place + ' and ' + m.place
+          x= m.nil? ? 0 : ((dt-pm.departure) * m.longitude + (m.arrival-dt) * pm.longitude) / (m.arrival-pm.departure)
+          y= m.nil? ? 0 : ((dt-pm.departure) * m.latitude + (m.arrival-dt) * pm.latitude) / (m.arrival-pm.departure)
+        else 
+          # currently at position m         
           where= 'at ' + m.place
           x= m.longitude
           y= m.latitude
-        end
-        if (!m.nil?) &&  (dt >= m.departure)
-          pm=m
-          idx+=1
-          m=@moves.at(idx)
         end
       end
       results << [@id, @part, dt.strftime('18%y/%m/%d %H:%M:%S'), y.to_s, x.to_s ] unless where=='???'
@@ -80,7 +87,15 @@ class Detachment
     return results
   end
 end
-
+class Battle
+  attr_reader :id, :start, :stop
+  def initialize(id,start,stop,type)
+    @id=id
+    @start=start
+    @stop=stop
+    @type=type
+  end
+end
 class Unit
   def initialize(id)
     @id=id
@@ -107,19 +122,16 @@ class Unit
   end
 end
 
-battleID='15CoB'
 unitIDs = Array.new()
-battleBegin=''
-battleEnd=''
+battle = nil
 # Open a database
 db = SQLite3::Database.new "../1815.sqlite"
 # Find units for which itineraries should be generated
-db.execute( 'select begin,end, type from battles where ID=?',battleID) do |row|
-  battleBegin=row[0]
-  battleEnd=row[1]
-  battleType=row[2]
+db.execute( 'select id, begin,end, type from battles where ID=?',ARGV[0]) do |row|
+  battle=Battle.new(row[0], row[1], row[2], row[3])
+  pp battle
 end
-db.execute( 'select unitID from battleUnits where battleID=? order by unitID', battleID) do |row|
+db.execute( 'select unitID from battleUnits where battleID=? order by unitID', battle.id) do |row|
   unitIDs << row[0]
 end
 unitIDs.each do |unitID|
@@ -133,9 +145,9 @@ unitIDs.each do |unitID|
 #  unit.showMoves
   # Generate unit itinerary
 #  moves= unit.itinerary('1815/06/14 20:00:00', '1815/06/16 04:00:00')
-  moves= unit.itinerary(battleBegin, battleEnd, 1800)
+  moves= unit.itinerary(battle.start, battle.stop, 1800)
   moves.each do |m|
-#   pp m
+#  pp m
    db.execute("INSERT INTO moves (unitID, part, datetime, latitude, longitude) VALUES (?, ?, ?, ?, ?)", m)
   end
 end

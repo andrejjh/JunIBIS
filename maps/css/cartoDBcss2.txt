@@ -1,0 +1,214 @@
+/** category visualization */
+
+#table_15junibis {
+   marker-fill-opacity: 0.9;
+   marker-line-color: #FFF;
+   marker-line-width: 1.5;
+   marker-line-opacity: 1;
+   marker-placement: point;
+   marker-type: ellipse;
+   marker-width: 40;
+   marker-allow-overlap: true;
+}
+
+#table_15junibis[type="BCL"] {
+   marker-width: 48;
+   marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150312194151BCB.png);
+}
+#table_15junibis[type="BIL"] {
+   marker-width: 48;
+   marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150312194214BIB.png);
+}
+#table_15junibis[type="FCL"] {
+   marker-width: 48;
+   marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150312194331FCB.png);
+}
+#table_15junibis[type="FIL"] {
+   marker-width: 48;
+   marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150312194352FIB.png);
+}
+#table_15junibis[type="PCL"] {
+   marker-width: 48;
+   marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150312194458PCB.png);
+}
+#table_15junibis[type="PIL"] {
+   marker-width: 48;
+   marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150312194522PIB.png);
+}
+#table_15junibis[type="NCL"] {
+   marker-width: 48;
+   marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150312194237DCB.png);
+}
+#table_15junibis[type="NIL"] {
+   marker-width: 48;
+   marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150312194310DIB.png);
+}
+#table_15junibis[type="HCL"] {
+   marker-width: 48;
+   marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150312194416HCB.png);
+}
+#table_15junibis[type="HIL"] {
+   marker-width: 48;
+   marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150312194435HIB.png);
+}
+#table_15junibis[type="RCL"] {
+   marker-width: 48;
+   marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150312194545RCB.png);
+}
+#table_15junibis[type="RIL"] {
+   marker-width: 48;
+   marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150312194605RIB.png);
+}
+#table_15junibis[type="BAM"] {
+   marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150312194139BAB.png);
+}
+#table_15junibis[type="BCM"] {
+   marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150312194151BCB.png);
+}
+#table_15junibis[type="BIM"] {
+   marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150312194214BIB.png);
+}
+#table_15junibis[type="FAM"] {
+   marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150312194321FAB.png);
+}
+#table_15junibis[type="FCM"] {
+   marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150312194331FCB.png);
+}
+#table_15junibis[type="FIM"] {
+   marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150312194352FIB.png);
+}
+#table_15junibis[type="PAM"] {
+   marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150312194447PAB.png);
+}
+#table_15junibis[type="PCM"] {
+   marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150312194458PCB.png);
+}
+#table_15junibis[type="PIM"] {
+   marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150312194522PIB.png);
+}
+#table_15junibis[type="NAM"] {
+   marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150312194225DAB.png);
+}
+#table_15junibis[type="NCM"] {
+   marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150312194237DCB.png);
+}
+#table_15junibis[type="NIM"] {
+   marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150312194310DIB.png);
+}
+#table_15junibis[type="HAM"] {
+   marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150312194407HAB.png);
+}
+#table_15junibis[type="HCM"] {
+   marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150312194416HCB.png);
+}
+#table_15junibis[type="HIM"] {
+   marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150312194435HIB.png);
+}
+#table_15junibis[type="RAM"] {
+   marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150312194534RAB.png);
+}
+#table_15junibis[type="RCM"] {
+   marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150312194545RCB.png);
+}
+#table_15junibis[type="RIM"] {
+   marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150312194605RIB.png);
+}
+#table_15junibis[type="BAS"] {
+   marker-width: 32;
+   marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150312194139BAB.png);
+}
+#table_15junibis[type="BCS"] {
+   marker-width: 32;
+   marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150312194151BCB.png);
+}
+#table_15junibis[type="BES"] {
+   marker-width: 32;
+   marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150312194203BEB.png);
+}
+#table_15junibis[type="BIS"] {
+   marker-width: 32;
+   marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150312194214BIB.png);
+}
+#table_15junibis[type="FAS"] {
+   marker-width: 32;
+   marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150312194321FAB.png);
+}
+#table_15junibis[type="FCS"] {
+   marker-width: 32;
+   marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150312194331FCB.png);
+}
+#table_15junibis[type="FES"] {
+   marker-width: 32;
+   marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150312194341FEB.png);
+}
+#table_15junibis[type="FIS"] {
+   marker-width: 32;
+   marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150312194352FIB.png);
+}
+#table_15junibis[type="PAS"] {
+   marker-width: 32;
+   marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150312194447PAB.png);
+}
+#table_15junibis[type="PCS"] {
+   marker-width: 32;
+   marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150312194458PCB.png);
+}
+#table_15junibis[type="PES"] {
+   marker-width: 32;
+   marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150312194508PEB.png);
+}
+#table_15junibis[type="PIS"] {
+   marker-width: 32;
+   marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150312194522PIB.png);
+}
+#table_15junibis[type="NAS"] {
+   marker-width: 32;
+   marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150312194225DAB.png);
+}
+#table_15junibis[type="NCS"] {
+   marker-width: 32;
+   marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150312194237DCB.png);
+}
+#table_15junibis[type="NES"] {
+   marker-width: 32;
+   marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150312194248DEB.png);
+}
+#table_15junibis[type="NIS"] {
+   marker-width: 32;
+   marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150312194310DIB.png);
+}
+#table_15junibis[type="HAS"] {
+   marker-width: 32;
+   marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150312194407HAB.png);
+}
+#table_15junibis[type="HCS"] {
+   marker-width: 32;
+   marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150312194416HCB.png);
+}
+#table_15junibis[type="HES"] {
+   marker-width: 32;
+   marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150312194425HEB.png);
+}
+#table_15junibis[type="HIS"] {
+   marker-width: 32;
+   marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150312194435HIB.png);
+}
+#table_15junibis[type="RAS"] {
+   marker-width: 32;
+   marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150312194534RAB.png);
+}
+#table_15junibis[type="RCS"] {
+   marker-width: 32;
+   marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150312194545RCB.png);
+}
+#table_15junibis[type="RES"] {
+   marker-width: 32;
+   marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150312194555REB.png);
+}
+#table_15junibis[type="RIS"] {
+   marker-width: 32;
+   marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150312194605RIB.png);
+}
+#table_15junibis {
+   marker-fill: #DDDDDD;
+}

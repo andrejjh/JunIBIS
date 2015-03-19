@@ -1,0 +1,88 @@
+/** category visualization */
+
+#cartomoves15 {
+   marker-fill-opacity: 0.9;
+   marker-line-color: #FFF;
+   marker-line-width: 1.5;
+   marker-line-opacity: 1;
+   marker-placement: point;
+   marker-type: ellipse;
+   marker-width: 40;
+   marker-allow-overlap: true;
+}
+
+#cartomoves15[type="BAB"] {
+   marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150312194139BAB.png);
+}
+#cartomoves15[type="BCB"] {
+   marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150312194151BCB.png);
+}
+#cartomoves15[type="BEB"] {
+   marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150312194203BEB.png);
+}
+#cartomoves15[type="BIB"] {
+   marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150312194214BIB.png);
+}
+#cartomoves15[type="FAB"] {
+   marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150312194321FAB.png);
+}
+#cartomoves15[type="FCB"] {
+   marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150312194331FCB.png);
+}
+#cartomoves15[type="FEB"] {
+   marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150312194341FEB.png);
+}
+#cartomoves15[type="FIB"] {
+   marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150312194352FIB.png);
+}
+#cartomoves15[type="PAB"] {
+   marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150312194447PAB.png);
+}
+#cartomoves15[type="PCB"] {
+   marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150312194458PCB.png);
+}
+#cartomoves15[type="PEB"] {
+   marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150312194508PEB.png);
+}
+#cartomoves15[type="PIB"] {
+   marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150312194522PIB.png);
+}
+#cartomoves15[type="NAB"] {
+   marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150312194225DAB.png);
+}
+#cartomoves15[type="NCB"] {
+   marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150312194237DCB.png);
+}
+#cartomoves15[type="NEB"] {
+   marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150312194248DEB.png);
+}
+#cartomoves15[type="NIB"] {
+   marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150312194310DIB.png);
+}
+#cartomoves15[type="HAB"] {
+   marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150312194407HAB.png);
+}
+#cartomoves15[type="HCB"] {
+   marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150312194416HCB.png);
+}
+#cartomoves15[type="HEB"] {
+   marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150312194425HEB.png);
+}
+#cartomoves15[type="HIB"] {
+   marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150312194435HIB.png);
+}
+#cartomoves15[type="RAB"] {
+   marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150312194534RAB.png);
+}
+#cartomoves15[type="RCB"] {
+   marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150312194545RCB.png);
+}
+#cartomoves15[type="REB"] {
+   marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150312194555REB.png);
+}
+#cartomoves15[type="RIB"] {
+   marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150312194605RIB.png);
+}
+#cartomoves15 {
+   marker-fill: #DDDDDD;
+}
