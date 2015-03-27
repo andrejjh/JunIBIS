@@ -3,27 +3,25 @@ require "pp"
 require "sqlite3"
 
 class People
-  def initialize(firstname, lastname,rank, title)
+  def initialize(oid, firstname, lastname)
+    @oid=oid
     @firstname=firstname
     @lastname=lastname
-    @rank=rank
-    @title=title
-    @id=Digest::SHA1.hexdigest(name)
+    fullname=firstname+' '+lastname
+    @id=Digest::SHA1.hexdigest(fullname)
   end
   def save(db)
-    db.execute("INSERT INTO people (id, firstname, lastname, rank, title) VALUES (?, ?, ?, ?, ?)", @id, @firstname, @lastname,@rank, @title)
+#    pp self
+    db.execute("UPDATE people set id=? where oid=?", @id, @oid)
   end
 end
 
 
 # Open a database
 # create table people (id blob, firstname text, lastname, rank text, title text);
-db = SQLite3::Database.new "../1815.sqlite"
-# Find units chiefs
-db.execute('select distinct firstname, lastname, grade, title from ospreypeople') do |row|
-  if row[0].length>0
-    p=People.new(row[0],row[1],row[2], row[3])
-#  pp p
+db = SQLite3::Database.new "../Osprey.sqlite"
+# Find all people
+db.execute('select oid, firstname, lastname from people') do |row|
+    p=People.new(row[0],row[1], row[2])
     p.save(db)  
-  end
 end
