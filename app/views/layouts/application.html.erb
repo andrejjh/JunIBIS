@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>JunIBIS</title>
+    <meta name="description" content="">
+    <meta name="author" content="Andre Heughebaert">
+    <link rel="icon" href="/favicon.ico">
+    <link href="/assets/application-0de31f4cc0abc353a4c24b9b65078470.css" rel="stylesheet">
+
+</head>
+<!-- NAVBAR
+================================================== -->
+  <body>
+   <div class="container">
+      <div class="header clearfix">
+        <nav>
+          <ul class="nav nav-pills pull-right">
+              <li role="presentation"<%if !@home.nil? %> class="active"<%end%>><%= link_to 'Home', root_path %></li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Armies <span class="caret"></span></a>
+                <ul class="dropdown-menu" role="menu">
+                  <% @armies.each do |army| %>
+          					<li><%= link_to army.name, army %></li>
+          				<% end %>
+                </ul>
+              </li>
+               <li role="presentation"<%if !@about.nil? %> class="active"<%end%>><%= link_to 'About', about_path %></li>
+              <li role="presentation"<%if !@contact.nil? %> class="active"<%end%>><%= link_to 'Contact', contact_path %></li>
+          </ul>
+        </nav>
+        <h3 class="text-muted">JunIBIS</h3>
+      </div>
+
+ <%= yield%>
+
+      <!-- FOOTER -->
+      <footer>
+        <p class="pull-right"><%= link_to 'CC-BY-3.0', 'https://creativecommons.org/licenses/by/3.0/fr/'%> André Heughebaert 2015</p>
+      </footer>
+   </div> <!-- /container -->
+
+    <script src="/assets/application-08f11178a48f0f1e04df87f20eb83e8f.js"></script>
+
+  </body>
+
+</html>

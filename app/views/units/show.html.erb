@@ -1,0 +1,49 @@
+<h3><%= @unit.name %></h3>
+
+<div class="row">
+    <div class="col-md-10">
+<dl class="dl-horizontal">
+<dt>Code:</dt><dd><%= @unit.code %></dd>
+<dt>Nation:</dt><dd><%= @unit.nation.name_fr %></dd>
+<% if !@unit.uplinks.empty? %>
+<% @unit.uplinks.each do |up| %>
+  <dt><%= up.role.name_fr %>:</dt><dd><%= link_to up.person.fullname, up.person %></dd>
+<%end%>
+<%end%>
+<%if !@unit.absence.nil? %><dt>Status:</dt><dd><%= @unit.absence.name_fr %></dd><%end%>
+<%if !@unit.parent.nil? %><dt>Parent:</dt><dd><%= link_to @unit.parent.name, @unit.parent %></dd><%end%>
+</dl>
+</div>
+<div class="col-md-2">
+  <%= image_tag @unit.iconpath %>
+</div>
+</div>
+<% if !@unit.children.empty? %>
+<table class="table table-striped"><tr>
+  <th>Code</th>
+  <th>Name</th>
+  <th>Staff<br><%= number_with_delimiter(@unit.ems) %></th>
+  <th>Officers<br><%= number_with_delimiter(@unit.officers) %></th>
+  <th>Rank&amp;File<br><%= number_with_delimiter(@unit.men) %></th>
+  <th>Total<br><%= number_with_delimiter(@unit.total) %></th>
+  <th>Bataillons<br><%if !@unit.bataillons.nil? && @unit.bataillons !=0 %><%=@unit.bataillons%><%end%></th>
+  <th>Squadrons<br><%if !@unit.squadrons.nil? && @unit.squadrons !=0 %><%=@unit.squadrons%><%end%></th>
+  <th>Batteries<br><%if !@unit.batteries.nil? && @unit.batteries !=0 %><%=@unit.batteries%><%end%></th>
+</tr>
+<% @unit.children.each do |u| %>
+  <tr>
+    <td><%= u.code %></td>
+    <td><%= link_to u.name, u %><%if !u.absence.nil? %>(§)<%end%></td>
+    <td><%= number_with_delimiter(u.ems) %></td>
+    <td><%= number_with_delimiter(u.officers) %></td>
+    <td><%= number_with_delimiter(u.men) %></td>
+    <td><%= number_with_delimiter(u.total) %></td>
+    <td><%if !u.bataillons.nil? && u.bataillons !=0 %><%= u.bataillons%><%end%></td>
+    <td><%if !u.squadrons.nil? && u.squadrons !=0 %><%= u.squadrons%><%end%></td>
+    <td><%if !u.batteries.nil? && u.batteries !=0 %><%= u.batteries%><%end%></td>
+  </tr>
+<% end %>
+</table>
+<% end %>
+
+<p>Source:<%= link_to @unit.source.code, @unit.source %></p>

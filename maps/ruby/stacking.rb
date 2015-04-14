@@ -27,7 +27,7 @@ db.execute('select distinct datetime from moves order by datetime') do |dt|
 #        msg= unit[1] + ' moved to (' + @latitude.to_s + ', ' +@longitude.to_s + ')'
 #        pp msg
         db.execute('update moves set flat=?, flong=? where oid=?',@latitude, @longitude,unit[0])
-        @lat10000 =@lat10000 + @offset
+        @lat10000 =@lat10000 - @offset
         @lon10000 =@lon10000 + @offset
       end
     end
