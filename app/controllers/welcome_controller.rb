@@ -10,6 +10,5 @@ end
 def index
 	@home=true
 	@armies= Unit.armies.order('code').all
-	@maps= Map.all
 end
 end

@@ -6,6 +6,9 @@ Rails.application.routes.draw do
   root 'welcome#index'
   get 'about' => 'welcome#about'
   get 'contact' => 'welcome#contact'
+  get 'map1' => 'maps#map1'
+  get 'map2' => 'maps#map2'
+  get 'map3' => 'maps#map3'
 
   resources :people do
     member do

@@ -1,24 +1,37 @@
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
   <!-- Indicators -->
   <ol class="carousel-indicators">
-    <% @maps.each do |map| %>
-    <li data-target="#myCarousel" data-slide-to="<%=map.id%>"<%if map.id==1 %> class="active"<%end%>></li>
-    <% end %>
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel" data-slide-to="1"></li>
+    <li data-target="#myCarousel" data-slide-to="2"></li>
   </ol>
 
   <!-- Wrapper for slides -->
   <div class="carousel-inner" role="listbox">
-    <% @maps.each do |map| %>
-      <div class="item <% if map.id==1 %>active<%end%>">
-      <iframe width='100%' height='520' frameborder='0' src=<%=map.iframe%>></iframe>
-      <div class="container">
-        <div class="carousel-caption">
-          <h1 class="bg-info"><%=map.name%></h1>
-          <p><%= link_to 'see map', map.url , class: "btn btn-lg btn-primary"%></p>
+      <div class="item active">
+        <%= link_to image_tag("maps/Static.png"), map1_path, :target => "_blank"%>
+        <div class="container">
+          <div class="carousel-caption">
+            <h1>Static maps</h1>
+          </div>
         </div>
       </div>
-    </div>
-    <%end%>
+      <div class="item">
+        <%= link_to image_tag("maps/Dynamic.png"), map2_path, :target => "_blank" %>
+        <div class="container">
+          <div class="carousel-caption">
+            <h1>Dynamic map</h1>
+          </div>
+        </div>
+      </div>
+      <div class="item">
+        <%= link_to image_tag("maps/Places.png"), map3_path,  :target => "_blank" %>
+        <div class="container">
+          <div class="carousel-caption">
+            <h1>Places map</h1>
+          </div>
+        </div>
+      </div>
 
   </div>
 
@@ -33,11 +46,4 @@
   </a>
 </div>
 
-      <div class="row marketing">
-				<% @armies.each do |army| %>
-				<div class="col-md-4">
-					<h3><%= link_to army.name, army %></h3>
-				</div>
-				<% end %>
-      </div>
-	<hr>
+<hr>

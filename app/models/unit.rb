@@ -7,12 +7,10 @@ class Unit < ActiveRecord::Base
 
 	has_many :children, :class_name => "Unit", :foreign_key => "parent_id"
 	belongs_to :parent, :class_name => "Unit"
+  belongs_to :icon, :class_name => "Icon"
 
 	has_many :uplinks
 	has_many :people, :through => :uplinks
 
 	scope :armies, -> {where('parent_id IS null')}
-def iconpath
-	return "icons/" + icon.chop + ".png"
-end
 end
