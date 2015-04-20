@@ -189,12 +189,11 @@ $options.click(function(e) {
 	cartodb.createLayer(map, {
     type: 'cartodb',
 		user_name: "andrejjh", // Required
-    https: true,
 		sublayers: [{
 			sql: "SELECT * FROM cobMoves13 where datetime='1815/06/15 04:00:00' order by army desc", 	// Required if table_name is not given
 			cartocss: CARTO_BASE
 		}]
-	}).addTo(map)
+	}, { https: true}).addTo(map)
 	.done(function(layer) {
      console.log("done");
 		var subLayer= layer.getSubLayer(0);
