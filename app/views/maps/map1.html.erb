@@ -187,8 +187,9 @@ $options.click(function(e) {
 
 	// add cartodb layer with one sublayer
 	cartodb.createLayer(map, {
-		type: 'cartodb',
+    type: 'cartodb',
 		user_name: "andrejjh", // Required
+    https: true,
 		sublayers: [{
 			sql: "SELECT * FROM cobMoves13 where datetime='1815/06/15 04:00:00' order by army desc", 	// Required if table_name is not given
 			cartocss: CARTO_BASE
