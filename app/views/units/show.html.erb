@@ -5,20 +5,17 @@
 <dl class="dl-horizontal">
 <dt>Code:</dt><dd><%= @unit.code %></dd>
 <dt>Nation:</dt><dd><%= @unit.nation.name_fr %></dd>
-<% if !@unit.uplinks.empty? %>
 <% @unit.uplinks.each do |up| %>
   <dt><%= up.role.name_fr %>:</dt><dd><%= link_to up.person.fullname, up.person %></dd>
-<%end%>
 <%end%>
 <%if !@unit.absence.nil? %><dt>Status:</dt><dd><%= @unit.absence.name_fr %></dd><%end%>
 <%if !@unit.parent.nil? %><dt>Parent:</dt><dd><%= link_to @unit.parent.name, @unit.parent %></dd><%end%>
 </dl>
 </div>
 <div class="col-md-2">
-  <%= image_tag @unit.icon.path %>
+  <%= image_tag @unit.icon.path ,width: "50"%>
 </div>
 </div>
-<% if !@unit.children.empty? %>
 <table class="table table-striped"><tr>
   <th>Code</th>
   <th>Name</th>
@@ -44,6 +41,11 @@
   </tr>
 <% end %>
 </table>
-<% end %>
-
+<%if !@unit.uelinks.empty? %>
+<p>Events:
+<% @unit.uelinks.each do |ue| %>
+&nbsp;<%= link_to ue.event.code, ue.event %>(<%= link_to ue.source.code, ue.source %>),
+<%end%>
+</p>
+<%end%>
 <p>Source:<%= link_to @unit.source.code, @unit.source %></p>

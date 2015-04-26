@@ -1,0 +1,14 @@
+<h3>Events</h3>
+<table class="table table-striped"><tr>
+  <th>Name</th>
+	<th>Begin</th>
+	<th>End</th>
+</tr>
+<% @events.each do |e| %>
+  <tr>
+    <td><%= link_to e.code, e %></td>
+		<td><%= e.begindate%></td>
+		<td><%= e.enddate%></td>
+</tr>
+<%end%>
+</table>

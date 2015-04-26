@@ -1,0 +1,9 @@
+<h3><%= @event.code %></h3>
+<div class="row">
+		<dl class="dl-horizontal">
+			<dt>Code:</dt><dd><%= @event.code %></dd>
+			<dt>Begin</dt><dd><%= @event.begindate %></dd>
+			<dt>End</dt><dd><%= @event.enddate %></dd>
+			<dt>#Units:</dt><dd><%= @event.uelinks.count() %></dd>
+		</dl>
+</div>

@@ -7,10 +7,13 @@ class Unit < ActiveRecord::Base
 
 	has_many :children, :class_name => "Unit", :foreign_key => "parent_id"
 	belongs_to :parent, :class_name => "Unit"
-  belongs_to :icon, :class_name => "Icon"
+  belongs_to :icon, :class_name => "Icon", :foreign_key => "icon"
 
 	has_many :uplinks
 	has_many :people, :through => :uplinks
+
+	has_many :uelinks
+	has_many :events, :through => :uelinks
 
 	scope :armies, -> {where('parent_id IS null')}
 end

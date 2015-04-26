@@ -1,20 +1,20 @@
-class SourcesController < ApplicationController
-# GET /Source/1
-	# GET /Source/1.xml
+class EventsController < ApplicationController
+# GET /Event/1
+	# GET /Event/1.xml
 	def show
 		@armies= Unit.armies.order('code').all
-		@source = Source.find(params[:id])
+		@event = Event.find(params[:id])
 		respond_to do |format|
 			format.html # show.html.erb
-			format.xml  { render :xml => @source }
+			format.xml  { render :xml => @event }
 		end
 	end
 	def index
 		@armies= Unit.armies.order('code').all
-		@sources = Source.order('id').all
+		@events = Event.order('id').all
 		respond_to do |format|
 			format.html # index.html.erb
-			format.xml  { render :xml => @sources }
+			format.xml  { render :xml => @events }
 		end
 	end
 

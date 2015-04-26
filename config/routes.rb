@@ -18,9 +18,15 @@ Rails.application.routes.draw do
   resources :units do
     member do
       get 'show'
+      get 'resolve'
     end
   end
   resources :sources do
+    member do
+      get 'show'
+    end
+  end
+  resources :events do
     member do
       get 'show'
     end

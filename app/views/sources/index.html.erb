@@ -1,11 +1,11 @@
 <h3>Sources</h3>
 <table class="table table-striped"><tr>
   <th>Cover</th>
-	<th>References</th>
+	<th>Reference</th>
 </tr>
 <% @sources.each do |s| %>
   <tr>
-    <td><%= link_to image_tag("refs/" + s.image ,width: "120"), s %></td>
+    <td><%= link_to image_tag("refs/" + s.image ,width: "60"), s %></td>
 		<td><%= s.reference%></td>
 </tr>
 <%end%>

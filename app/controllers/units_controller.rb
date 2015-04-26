@@ -11,4 +11,9 @@ class UnitsController < ApplicationController
     end
   end
 
+  def resolve
+    @armies= Unit.armies.order('code').all
+    @unit = Unit.find_by code: (params[:id])
+    render :action => 'show'
+  end
 end
