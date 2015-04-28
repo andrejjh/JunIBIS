@@ -26,14 +26,14 @@
       function main() {
         var CARTO_BASE = [
           'Map {',
-          '-torque-frame-count: 64;',
-          '-torque-animation-duration: 32;',
+          '-torque-frame-count: 128;',
+          '-torque-animation-duration: 64;',
           '-torque-time-attribute: "datetime";',
           '-torque-aggregation-function: "CDB_Math_Mode(icon)";',
           '-torque-resolution: 2;',
           '-torque-data-aggregation: linear;',
           '}',
-          '#cobMoves13 {',
+          '#cobMoves14 {',
           '  comp-op: source-over;',
           '  marker-fill-opacity: 0.9;',
           '  marker-line-color: #FFF;',
@@ -43,55 +43,56 @@
           '  marker-width: 12;',
           '  marker-fill: #000000;',
           '}',
-          '#cobMoves13',
+          '#cobMoves14',
 					'[zoom > 10] { marker-width: 16; }',
           '[zoom > 15] { marker-width: 20; }'
           ].join('\n');
 
 var CARTO_F = [
-'#cobMoves13 [value=11] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121854FArt.png);}',
-'#cobMoves13 [value=12] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121910FCav.png);}',
-'#cobMoves13 [value=13] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121917FE-M.png);}',
-// '#cobMoves13 [value=14] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121847FGen.png);}',
-'#cobMoves13 [value=15] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121903FInf.png);}',
-'#cobMoves13 [value=16] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121409GArt.png);}',
-'#cobMoves13 [value=17] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121350GCav.png);}',
-'#cobMoves13 [value=18] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121301GE-M.png);}',
-'#cobMoves13 [value=19] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121400GGen.png);}',
-'#cobMoves13 [value=20] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121335GInf.png);}'
+'#cobMoves14 [value=11] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121854FArt.png);}',
+'#cobMoves14 [value=12] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121910FCav.png);}',
+'#cobMoves14 [value=13] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121917FE-M.png);}',
+// '#cobMoves14 [value=14] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121847FGen.png);}',
+'#cobMoves14 [value=15] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121903FInf.png);}',
+'#cobMoves14 [value=16] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121409GArt.png);}',
+'#cobMoves14 [value=17] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121350GCav.png);}',
+'#cobMoves14 [value=18] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121301GE-M.png);}',
+'#cobMoves14 [value=19] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121400GGen.png);}',
+'#cobMoves14 [value=20] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121335GInf.png);}'
 ].join('\n');
 var CARTO_P = [
-'#cobMoves13 [value=26] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121811PArt.png);}',
-'#cobMoves13 [value=27] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121830PCav.png);}',
-'#cobMoves13 [value=28] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121838PE-M.png);}',
-'#cobMoves13 [value=29] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121803PGen.png);}',
-'#cobMoves13 [value=30] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121821PInf.png);}'
+'#cobMoves14 [value=26] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121811PArt.png);}',
+'#cobMoves14 [value=27] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121830PCav.png);}',
+'#cobMoves14 [value=28] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121838PE-M.png);}',
+'#cobMoves14 [value=29] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121803PGen.png);}',
+'#cobMoves14 [value=30] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121821PInf.png);}'
 ].join('\n');
 var CARTO_BH = [
-'#cobMoves13 [value=1] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121624BArt.png);}',
-'#cobMoves13 [value=2] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121638BCav.png);}',
-'#cobMoves13 [value=3] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121705BE-M.png);}',
-'#cobMoves13 [value=4] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121613BGen.png);}',
-'#cobMoves13 [value=5] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121652BInf.png);}',
-'#cobMoves13 [value=21] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121548HArt.png);}',
-'#cobMoves13 [value=22] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121534HCav.png);}',
-'#cobMoves13 [value=23] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121515HE-M.png);}',
-// #cobMoves13 '[value=24] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121601HGen.png);}',
-'#cobMoves13 [value=25] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121525HInf.png);}'
+'#cobMoves14 [value=1] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121624BArt.png);}',
+'#cobMoves14 [value=2] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121638BCav.png);}',
+'#cobMoves14 [value=3] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121705BE-M.png);}',
+'#cobMoves14 [value=4] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121613BGen.png);}',
+'#cobMoves14 [value=5] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121652BInf.png);}',
+'#cobMoves14 [value=21] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121548HArt.png);}',
+'#cobMoves14 [value=22] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121534HCav.png);}',
+'#cobMoves14 [value=23] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121515HE-M.png);}',
+// #cobMoves14 '[value=24] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121601HGen.png);}',
+'#cobMoves14 [value=25] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121525HInf.png);}'
 ].join('\n');
 var CARTO_NR = [
-'#cobMoves13 [value=6] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121746DArt.png);}',
-'#cobMoves13 [value=7] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121727DCav.png);}',
-'#cobMoves13 [value=8] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121717DE-M.png);}',
-'#cobMoves13 [value=9] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121754DGen.png);}',
-'#cobMoves13 [value=10] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121735DInf.png);}',
-'#cobMoves13 [value=31] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121438RArt.png);}',
-'#cobMoves13 [value=32] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121456RCav.png);}',
-'#cobMoves13 [value=33] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121504RE-M.png);}',
-// #cobMoves13 '[value=34] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121427RGen.png);}',
-'#cobMoves13 [value=35] {  marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121448RInf.png);}'
+'#cobMoves14 [value=6] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121746DArt.png);}',
+'#cobMoves14 [value=7] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121727DCav.png);}',
+'#cobMoves14 [value=8] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121717DE-M.png);}',
+'#cobMoves14 [value=9] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121754DGen.png);}',
+'#cobMoves14 [value=10] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121735DInf.png);}',
+'#cobMoves14 [value=31] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121438RArt.png);}',
+'#cobMoves14 [value=32] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121456RCav.png);}',
+'#cobMoves14 [value=33] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121504RE-M.png);}',
+// #cobMoves14 '[value=34] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121427RGen.png);}',
+'#cobMoves14 [value=35] {  marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121448RInf.png);}'
             ].join('\n');
 
+        var layer1, layer2, layer3, layer4;
         var map = new L.Map('map', {
           zoomControl: true,
           fullScreen: true,
@@ -109,98 +110,82 @@ var CARTO_NR = [
         });
       baseLayer.addTo(map);
 
-      var layer1= cartodb.createLayer(map,{
+      cartodb.createLayer(map,{
         type: 'torque',
         order: 1, // Optional
          options: {
-           query: "Select * from cobMoves13 where army=2", 	// Required if table_name is not given
-//           table_name: "cobMoves13", 	// Required if query is not given
+           query: "Select * from cobMoves14 where army=2", 	// Required if table_name is not given
+//           table_name: "cobMoves14", 	// Required if query is not given
            user_name: "andrejjh", // Required
            cartocss: CARTO_BASE + "\n" + CARTO_P // Required
          }
-      }, { https: true}).addTo(map)
-      .done(function(layer) {
-        console.log("Layer1 done.");
+      }, { https: true}).done(function(layer) {
+        layer1=layer;
+        layer1.addTo(map);
+
         layer.on('pause', function() {
-        // do something
-          console.log("Layer1 paused.");
+         // do something
+         layer2.pause();
+         layer3.pause();
+         layer4.pause();
+
+         });
+         layer.on('play', function() {
+         // do something
+         layer2.play();
+         layer3.play();
+         layer4.play();
+         });
         });
-        layer.on('play', function() {
-        // do something
-          console.log("Layer1 played.");
-        });
-      });
 
 
-      var layer2= cartodb.createLayer(map,{
+      cartodb.createLayer(map,{
         type: 'torque',
         order: 2, // Optional
          options: {
-           query: "Select * from cobMoves13 where army in(3,4)", 	// Required if table_name is not given
-//           table_name: "cobMoves13", 	// Required if query is not given
+           query: "Select * from cobMoves14 where army in(3,4)", 	// Required if table_name is not given
+//           table_name: "cobMoves14", 	// Required if query is not given
            user_name: "andrejjh", // Required
            cartocss: CARTO_BASE + "\n" + CARTO_BH // Required
          }
       }, { https: true}).addTo(map)
       .done(function(layer) {
-        console.log("Layer2 done.");
-        layer.on('pause', function() {
-        // do something
-          console.log("Layer2 paused.");
-        });
-        layer.on('play', function() {
-        // do something
-          console.log("Layer2 played.");
-        });
+        layer2=layer;
+        layer2.addTo(map);
       });
 
-      var layer3= cartodb.createLayer(map,{
+      cartodb.createLayer(map,{
         type: 'torque',
         order: 3, // Optional
          options: {
-           query: "Select * from cobMoves13 where army in (5,6)", 	// Required if table_name is not given
-//           table_name: "cobMoves13", 	// Required if query is not given
+           query: "Select * from cobMoves14 where army in (5,6)", 	// Required if table_name is not given
+//           table_name: "cobMoves14", 	// Required if query is not given
            user_name: "andrejjh", // Required
            cartocss: CARTO_BASE + "\n" + CARTO_NR // Required
          }
-      }, { https: true}).addTo(map)
-      .done(function(layer) {
-        console.log("Layer3 done.");
-        layer.on('pause', function() {
-        // do something
-          console.log("Layer3 paused.");
-        });
-        layer.on('play', function() {
-        // do something
-          console.log("Layer3 played.");
-        });
+      }, { https: true}).done(function(layer) {
+        layer3=layer;
+        layer3.addTo(map);
       });
 
-      var layer4= cartodb.createLayer(map,{
+      cartodb.createLayer(map,{
         type: 'torque',
         order: 4, // Optional
          options: {
-           query: "Select * from cobMoves13 where army=1", 	// Required if table_name is not given
-//           table_name: "cobMoves13", 	// Required if query is not given
+           query: "Select * from cobMoves14 where army=1", 	// Required if table_name is not given
+//           table_name: "cobMoves14", 	// Required if query is not given
            user_name: "andrejjh", // Required
            cartocss: CARTO_BASE + "\n" + CARTO_F // Required
          }
-      }, { https: true}).addTo(map)
-      .done(function(layer) {
-        console.log("Layer4 done.");
-        layer.on('pause', function() {
-        // do something
-          console.log("Layer4 paused.");
-        });
-        layer.on('play', function() {
-        // do something
-          console.log("Layer4 played.");
-        });
+      }, { https: true}).done(function(layer) {
+        layer4=layer;
+        layer4.addTo(map);
       });
 
 
 
      }
+
      // see http://academy.cartodb.com/courses/03-cartodbjs-ground-up/lesson-4.html
       // you could use $(window).load(main);
       window.onload = main;
