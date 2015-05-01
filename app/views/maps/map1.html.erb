@@ -89,7 +89,6 @@
 				<li data="18:00:00" data-type="hour">18 h</li>
 				<li data="19:00:00" data-type="hour">19 h</li>
 				<li data="20:00:00" data-type="hour">20 h</li>
-				<li data="21:00:00" data-type="hour">21 h</li>
 		</ul>
 </div>
 
@@ -168,7 +167,7 @@ $options.click(function(e) {
 			hour=selected
 			$li.addClass('hour_selected');
 		}
-		layer.setSQL("SELECT * FROM cobMoves14 where datetime='" + day + " " + hour + "'order by army desc");
+		layer.setSQL("SELECT * FROM cobMoves15 where datetime='" + day + " " + hour + "'order by army desc");
 });
 }
 		var map = new L.Map('map', {
@@ -190,7 +189,7 @@ $options.click(function(e) {
     type: 'cartodb',
 		user_name: "andrejjh", // Required
 		sublayers: [{
-			sql: "SELECT * FROM cobMoves14 where datetime='1815/06/15 04:00:00' order by army desc", 	// Required if table_name is not given
+			sql: "SELECT * FROM cobMoves15 where datetime='1815/06/15 04:00:00' order by army desc", 	// Required if table_name is not given
 			cartocss: CARTO_BASE
 		}]
 	}, { https: true}).addTo(map)
