@@ -34,11 +34,12 @@ function main() {
 
    L.tileLayer('http://tile.stamen.com/toner/{z}/{x}/{y}.png', {
 //     attribution: 'Stamen'
-attribution: 'JunIBIS'
+  attribution: 'JunIBIS'
    }).addTo(map);
 
    cartodb.createLayer(map,
-   'https://andrejjh.cartodb.com/api/v2/viz/cc16d214-f681-11e4-9e1e-0e9d821ea90d/viz.json')
+   'https://andrejjh.cartodb.com/api/v2/viz/cc16d214-f681-11e4-9e1e-0e9d821ea90d/viz.json',
+   { https: true})
    .addTo(map)
     .on('done', function(layer) {
 
