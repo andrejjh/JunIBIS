@@ -32,10 +32,10 @@ function main() {
      zoom: 10
    });
 
-   L.tileLayer('http://tile.stamen.com/toner/{z}/{x}/{y}.png', {
-//     attribution: 'Stamen'
-  attribution: 'JunIBIS'
-   }).addTo(map);
+   var baseLayer= new L.tileLayer.wms('http://webgisdgo4.spw.wallonie.be/ArcGIS/services/DGO4/FERRARIS/MapServer/WMSServer/', {
+ 		layers: '1',
+ 		attribution: 'JunIBIS'
+ }).addTo(map);
 
    cartodb.createLayer(map,
    'https://andrejjh.cartodb.com/api/v2/viz/cc16d214-f681-11e4-9e1e-0e9d821ea90d/viz.json',
