@@ -16,12 +16,17 @@
         #day {
             position: absolute;
             top: 10px;
-            right: 100px;
+            right: 120px;
+        }
+        #ampm {
+            position: absolute;
+            top: 176px;
+            right: 120px;
         }
         #hour {
             position: absolute;
-            top: 0px;
-            left: 80px;
+            top: 10px;
+            right: 40px;
         }
 
         .layer_selector {
@@ -56,6 +61,7 @@
             cursor: pointer;
         }
         .layer_selector li.day_selected,
+        .layer_selector li.ampm_selected,
         .layer_selector li.hour_selected {
             background-color: #A6CEE3;
         }
@@ -67,30 +73,32 @@
 <div id="map"></div>
 <div id="day" class="layer_selector">
 		<ul>
-				<li data=" 1815/06/15 " data-type="day" class="day_selected">15 Juin</li>
-				<li data=" 1815/06/16 " data-type="day">16 Juin</li>
-				<li data=" 1815/06/17 " data-type="day">17 Juin</li>
+				<li data="1815/06/15 " data-type="day" class="day_selected">15 Juin</li>
+				<li data="1815/06/16 " data-type="day">16 Juin</li>
+				<li data="1815/06/17 " data-type="day">17 Juin</li>
+</div>
+<div id="ampm" class="layer_selector">
+		<ul>
+				<li data="" data-type="ampm" class="ampm_selected">Matin</li>
+				<li data="PM" data-type="ampm">Après-midi</li>
+</div>
 <div id="hour" class="layer_selector">
 		<ul>
-				<li data="04:00:00" data-type="hour" class="hour_selected">4 h</li>
-				<li data="05:00:00" data-type="hour">5 h</li>
-				<li data="06:00:00" data-type="hour">6 h</li>
-				<li data="07:00:00" data-type="hour">7 h</li>
-				<li data="08:00:00" data-type="hour">8 h</li>
-				<li data="09:00:00" data-type="hour">9 h</li>
-				<li data="10:00:00" data-type="hour">10 h</li>
-				<li data="11:00:00" data-type="hour">11 h</li>
-				<li data="12:00:00" data-type="hour">12 h</li>
-				<li data="13:00:00" data-type="hour">13 h</li>
-				<li data="14:00:00" data-type="hour">14 h</li>
-				<li data="15:00:00" data-type="hour">15 h</li>
-				<li data="16:00:00" data-type="hour">16 h</li>
-				<li data="17:00:00" data-type="hour">17 h</li>
-				<li data="18:00:00" data-type="hour">18 h</li>
-				<li data="19:00:00" data-type="hour">19 h</li>
-				<li data="20:00:00" data-type="hour">20 h</li>
+      <li data="00:00 " data-type="hour">0 h</li>
+      <li data="01:00 " data-type="hour">1 h</li>
+      <li data="02:00 " data-type="hour">2 h</li>
+      <li data="03:00 " data-type="hour">3 h</li>
+				<li data="04:00 " data-type="hour" class="hour_selected">4 h</li>
+				<li data="05:00 " data-type="hour">5 h</li>
+				<li data="06:00 " data-type="hour">6 h</li>
+				<li data="07:00 " data-type="hour">7 h</li>
+				<li data="08:00 " data-type="hour">8 h</li>
+				<li data="09:00 " data-type="hour">9 h</li>
+				<li data="10:00 " data-type="hour">10 h</li>
+				<li data="11:00 " data-type="hour">11 h</li>
 		</ul>
 </div>
+
 
 <!-- include cartodb.js library -->
 <!-- script src="http://libs.cartocdn.com/cartodb.js/v3/3.12/cartodb.js"></script -->
@@ -151,8 +159,10 @@ function main() {
 
 // Create layer selector
 function createSelector(layer) {
-var day="1815/06/15"
-var hour="04:00:00"
+var day="1815/06/15 "
+var hour="04:00 "
+var ampm=""
+
 var $options = $(".layer_selector").find("li");
 $options.click(function(e) {
 		var $li = $(e.target);
@@ -162,12 +172,16 @@ $options.click(function(e) {
 				$options.removeClass('day_selected');
 				day=selected;
 				$li.addClass('day_selected');
-		} else {
+		} else if (type ==="ampm") {
+        $options.removeClass('ampm_selected');
+        ampm=selected;
+        $li.addClass('ampm_selected');
+    } else {
 			$options.removeClass('hour_selected');
 			hour=selected
 			$li.addClass('hour_selected');
 		}
-		layer.setSQL("SELECT * FROM cobMoves15 where datetime='" + day + " " + hour + "'order by army desc");
+		layer.setSQL("SELECT * FROM cobMoves16 where datetime='" + day + hour + ampm +"' order by army desc");
 });
 }
 		var map = new L.Map('map', {
@@ -189,7 +203,7 @@ $options.click(function(e) {
     type: 'cartodb',
 		user_name: "andrejjh", // Required
 		sublayers: [{
-			sql: "SELECT * FROM cobMoves15 where datetime='1815/06/15 04:00:00' order by army desc", 	// Required if table_name is not given
+			sql: "SELECT * FROM cobMoves16 where datetime='1815/06/15 04:00:00' order by army desc", 	// Required if table_name is not given
 			cartocss: CARTO_BASE
 		}]
 	}, { https: true}).addTo(map)

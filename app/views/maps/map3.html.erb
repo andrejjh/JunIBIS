@@ -1,13 +1,61 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>JunIBIS|CartoDB.js- Places map</title>
+    <title>JunIBIS|CartoDB.js- Place map</title>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
     <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
     <link rel="shortcut icon" href="http://cartodb.com/assets/favicon.ico" />
-    <!-- link rel="stylesheet" href="http://libs.cartocdn.com/cartodb.js/v3/3.12/themes/css/cartodb.css" / -->
+    <style>
+      html, body, #map {
+        height: 100%;
+        padding: 0;
+        margin: 0;
+      }
+    </style>
+    <!--link rel="stylesheet" href="http://libs.cartocdn.com/cartodb.js/v3/3.12/themes/css/cartodb.css" /-->
+    <link rel="stylesheet" href="https://cartodb-libs.global.ssl.fastly.net/cartodb.js/v3/3.12/themes/css/cartodb.css" />
 	  </head>
 		<body>
-			<iframe width='100%' height='520' frameborder='0' src='https://andrejjh.cartodb.com/viz/3deffed6-dea6-11e4-a594-0e853d047bba/embed_map' allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>
-	</body>
-</html>
+
+    <div id="map"></div>
+
+    <!-- include cartodb.js library -->
+    <!-- script src="http://libs.cartocdn.com/cartodb.js/v3/3.12/cartodb.js"></script -->
+    <script src="https://cartodb-libs.global.ssl.fastly.net/cartodb.js/v3/3.12/cartodb.js"></script>
+    <script>
+function main() {
+   var map = new L.Map('map', {
+     zoomControl: true,
+     fullScreen: true,
+     layerSelector: true,
+     center: [50.4 , 4.5],
+     zoom: 10
+   });
+
+   L.tileLayer('http://tile.stamen.com/toner/{z}/{x}/{y}.png', {
+//     attribution: 'Stamen'
+attribution: 'JunIBIS'
+   }).addTo(map);
+
+   cartodb.createLayer(map,
+   'https://andrejjh.cartodb.com/api/v2/viz/cc16d214-f681-11e4-9e1e-0e9d821ea90d/viz.json')
+   .addTo(map)
+    .on('done', function(layer) {
+
+     layer.setInteraction(true);
+
+     layer.on('featureOver', function(e, latlng, pos, data) {
+       cartodb.log.log(e, latlng, pos, data);
+     });
+
+     layer.on('error', function(err) {
+       cartodb.log.log('error: ' + err);
+     });
+   }).on('error', function() {
+     cartodb.log.log("some error occurred");
+   });
+ }
+
+ // you could use $(window).load(main);
+ window.onload = main;
+</script>
