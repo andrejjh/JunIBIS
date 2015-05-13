@@ -21,3 +21,42 @@
 
 en:
   hello: "Hello world"
+
+  menu:
+    home: "Home"
+    armies: "Armies"
+    about: "About"
+    contact: "Contact"
+
+  maps:
+    static: "Static maps"
+    dynamic: "Dynamic map"
+    places: "Places map"
+
+  about:
+    concept: "Concept"
+    content: "Content"
+    maps: "Ferraris layer"
+
+  person:
+    firstName: "FirstName"
+    lastName: "LastName"
+  unit:
+    code: "Code"
+    name: "Name"
+    staff: "Staff"
+    officers: "Officers"
+    rank: "Rank & File"
+    total: "Total"
+    bataillons: "Bataillons"
+    squadrons: "Squadrons"
+    batteries: "Batteries"
+  source:
+        source: "Source"
+        reference: "Reference"
+        units: "#Units"
+        people: "#People"
+        uplinks: "#Unit-Person links"
+        uelinks: "#Unit-Event links"
+
+  events: "Events"

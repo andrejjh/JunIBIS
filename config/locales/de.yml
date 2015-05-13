@@ -1,0 +1,30 @@
+de:
+  hello: "de:Hello world"
+
+  menu:
+    home: "de:Home"
+    armies: "de:Armies"
+    about: "de:About"
+    contact: "de:Contact"
+  person:
+    firstName: "de:FirstName"
+    lastName: "de:LastName"
+  unit:
+    code: "de:Code"
+    name: "de:Name"
+    staff: "de:Staff"
+    officers: "de:Officers"
+    rank: "de:Rank & File"
+    total: "de:Total"
+    bataillons: "de:Bataillons"
+    squadrons: "de:Squadrons"
+    batteries: "de:Batteries"
+  source:
+        source: "de:Source"
+        reference: "de:Reference"
+        units: "de:#Units"
+        people: "de:#People"
+        uplinks: "de:#Unit-Person links"
+        uelinks: "de:#Unit-Event links"
+
+  events: "de:Events"

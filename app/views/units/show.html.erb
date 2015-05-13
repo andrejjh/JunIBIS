@@ -4,11 +4,11 @@
     <div class="col-md-10">
 <dl class="dl-horizontal">
 <dt>Code:</dt><dd><%= @unit.code %></dd>
-<dt>Nation:</dt><dd><%= @unit.nation.name_fr %></dd>
+<dt>Nation:</dt><dd><%= @unit.nation.name %></dd>
 <% @unit.uplinks.each do |up| %>
-  <dt><%= up.role.name_fr %>:</dt><dd><%= link_to up.person.fullname, up.person %></dd>
+  <dt><%= up.role.name %>:</dt><dd><%= link_to up.person.fullname, up.person %></dd>
 <%end%>
-<%if !@unit.absence.nil? %><dt>Status:</dt><dd><%= @unit.absence.name_fr %></dd><%end%>
+<%if !@unit.absence.nil? %><dt>Status:</dt><dd><%= @unit.absence.name %></dd><%end%>
 <%if !@unit.parent.nil? %><dt>Parent:</dt><dd><%= link_to @unit.parent.name, @unit.parent %></dd><%end%>
 </dl>
 </div>
@@ -17,15 +17,15 @@
 </div>
 </div>
 <table class="table table-striped"><tr>
-  <th>Code</th>
-  <th>Name</th>
-  <th>Staff<br><%= number_with_delimiter(@unit.ems) %></th>
-  <th>Officers<br><%= number_with_delimiter(@unit.officers) %></th>
-  <th>Rank&amp;File<br><%= number_with_delimiter(@unit.men) %></th>
-  <th>Total<br><%= number_with_delimiter(@unit.total) %></th>
-  <th>Bataillons<br><%if !@unit.bataillons.nil? && @unit.bataillons !=0 %><%=@unit.bataillons%><%end%></th>
-  <th>Squadrons<br><%if !@unit.squadrons.nil? && @unit.squadrons !=0 %><%=@unit.squadrons%><%end%></th>
-  <th>Batteries<br><%if !@unit.batteries.nil? && @unit.batteries !=0 %><%=@unit.batteries%><%end%></th>
+  <th><%= t('unit.code')%></th>
+  <th><%= t('unit.name')%></th>
+  <th><%= t('unit.staff')%><br><%= number_with_delimiter(@unit.ems) %></th>
+  <th><%= t('unit.officers')%><br><%= number_with_delimiter(@unit.officers) %></th>
+  <th><%= t('unit.rank')%><br><%= number_with_delimiter(@unit.men) %></th>
+  <th><%= t('unit.total')%><br><%= number_with_delimiter(@unit.total) %></th>
+  <th><%= t('unit.bataillons')%><br><%if !@unit.bataillons.nil? && @unit.bataillons !=0 %><%=@unit.bataillons%><%end%></th>
+  <th><%= t('unit.squadrons')%><br><%if !@unit.squadrons.nil? && @unit.squadrons !=0 %><%=@unit.squadrons%><%end%></th>
+  <th><%= t('unit.batteries')%><br><%if !@unit.batteries.nil? && @unit.batteries !=0 %><%=@unit.batteries%><%end%></th>
 </tr>
 <% @unit.children.each do |u| %>
   <tr>
@@ -42,10 +42,10 @@
 <% end %>
 </table>
 <%if !@unit.uelinks.empty? %>
-<p>Events:
+<p><%= t('events')%>:
 <% @unit.uelinks.each do |ue| %>
 &nbsp;<%= link_to ue.event.code, ue.event %>(<%= link_to ue.source.code, ue.source %>),
 <%end%>
 </p>
 <%end%>
-<p>Source:<%= link_to @unit.source.code, @unit.source %></p>
+<p><%= t('source.source')%>:<%= link_to @unit.source.code, @unit.source %></p>

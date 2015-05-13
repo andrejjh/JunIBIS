@@ -5,11 +5,11 @@
 	</div>
 	<div class="col-md-10">
 		<dl class="dl-horizontal">
-			<dt>Reference:</dt><dd><%= @source.reference %></dd>
-			<dt>#Units:</dt><dd><%= @source.units.count() %></dd>
-			<dt>#People:</dt><dd><%= @source.people.count() %></dd>
-			<dt>#Unit-Person links:</dt><dd><%= @source.uplinks.count() %></dd>
-			<dt>#Unit_Event links:</dt><dd><%= @source.uelinks.count() %></dd>
+			<dt><%= t('source.reference')%>:</dt><dd><%= @source.reference %></dd>
+			<dt><%= t('source.units')%>:</dt><dd><%= @source.units.count() %></dd>
+			<dt><%= t('source.people')%>:</dt><dd><%= @source.people.count() %></dd>
+			<dt><%= t('source.uplinks')%>:</dt><dd><%= @source.uplinks.count() %></dd>
+			<dt><%= t('source.uelinks')%>:</dt><dd><%= @source.uelinks.count() %></dd>
 		</dl>
 	</div>
 </div>

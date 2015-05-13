@@ -102,10 +102,9 @@ var CARTO_NR = [
 
 //        var baseLayer= new L.tileLayer.wms('http://webgisdgo4.spw.wallonie.be/ArcGIS/services/DGO4/FERRARIS/MapServer/WMSServer/', {
 //          layers: '1',
-      var baseLayer = new L.tileLayer('http://tile.stamen.com/toner/{z}/{x}/{y}.png', {
+      var baseLayer = new L.tileLayer('http://tile.stamen.com/toner-lite/{z}/{x}/{y}.png', {
         layers: '1',
-//        attribution: 'Stamen'
-          attribution: 'JunIBIS'
+          attribution: 'JunIBIS, Stamen'
         });
       baseLayer.addTo(map);
 

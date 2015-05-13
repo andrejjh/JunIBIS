@@ -187,7 +187,7 @@ $options.click(function(e) {
 		var map = new L.Map('map', {
 			zoomControl: true,
 			fullScreen: true,
-			layerSelector: true,
+//			layerSelector: true,
 			center: [50.3 , 4.6],
 			zoom: 10
 		});
@@ -195,7 +195,7 @@ $options.click(function(e) {
 
 	var baseLayer= new L.tileLayer.wms('http://webgisdgo4.spw.wallonie.be/ArcGIS/services/DGO4/FERRARIS/MapServer/WMSServer/', {
 		layers: '1',
-		attribution: 'JunIBIS'
+    attribution: 'JunIBIS, Ferraris'
 }).addTo(map);
 
 	// add cartodb layer with one sublayer
@@ -204,13 +204,34 @@ $options.click(function(e) {
 		user_name: "andrejjh", // Required
 		sublayers: [{
 			sql: "SELECT * FROM cobMoves16 where datetime='1815/06/15 04:00:00' order by army desc", 	// Required if table_name is not given
-			cartocss: CARTO_BASE
+			cartocss: CARTO_BASE,
+      interactivity: 'unitid' // optional
 		}]
 	}, { https: true}).addTo(map)
 	.done(function(layer) {
      console.log("done");
 		var subLayer= layer.getSubLayer(0);
 		createSelector(subLayer);
+
+    subLayer.setInteraction(true);
+
+
+    subLayer.on('featureClick', function(e, latlng, pos, data, subLayerIndex) {
+//      console.log("click ", data.unitid.split("-",1));
+//      var uID=data.unitid.split("-",1)
+      window.location.assign("../units/"+ data.unitid.split("-",1)+"/resolve")
+
+    });
+    subLayer.on('featureOver', function(e, latlng, pos, data, subLayerIndex) {
+//      console.log("over ", data.unitid);
+      $('#map').css('cursor', 'pointer');
+
+    });
+    subLayer.on('featureOut', function(e, latlng, pos, data, subLayerIndex) {
+//      console.log("out ", data.unitid);
+      $('#map').css('cursor', 'auto');
+    });
+
 	})
 .error(function(err) {
 		console.log("error: " + err);

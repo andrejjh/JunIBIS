@@ -1,0 +1,43 @@
+fr:
+  hello: "Bonjour"
+
+  menu:
+    home: "Accueil"
+    armies: "Armées"
+    about: "A propos"
+    contact: "Contact"
+
+  maps:
+    static: "Cartes statiques"
+    dynamic: "Carte dynamique"
+    places: "Carte des lieux"
+
+  about:
+    concept: "Conception"
+    content: "Géo-référencement"
+    maps: "Carte de Ferraris"
+
+  person:
+    firstName: "Prénom"
+    lastName: "Nom"
+
+  unit:
+    code: "Code"
+    name: "Nom"
+    staff: "Etat-Major"
+    officers: "Officiers"
+    rank: "Soldats"
+    total: "Total"
+    bataillons: "Bataillons"
+    squadrons: "Escadrons"
+    batteries: "Batteries"
+
+  source:
+        source: "Source"
+        reference: "Réference"
+        units: "#Unités"
+        people: "#Personnages"
+        uplinks: "#Liens Unité-Personnage"
+        uelinks: "#Liens Unité-Evénement"
+
+  events: "Evénements"

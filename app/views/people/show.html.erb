@@ -1,10 +1,10 @@
 <h3><%= @person.fullname %></h3>
 <dl class="dl-horizontal">
-<dt>LastName:</dt><dd><%= @person.lastname %>
-<dt>FirstName:</dt><dd><%= @person.firstname %>
-<%if !@person.rank.nil? %><dt>Rank:</dt><dd><%= @person.rank.name_fr %></dd><%end%>
-<%if !@person.title.nil? %><dt>Title:</dt><dd><%= @person.title.name_fr %></dd><%end%>
-<%if !@person.nation.nil? %><dt>Nation:</dt><dd><%= @person.nation.name_fr %></dd><%end%>
+<dt><%= t('person.lastName')%>:</dt><dd><%= @person.lastname %>
+<dt><%= t('person.firstName')%>:</dt><dd><%= @person.firstname %>
+<%if !@person.rank.nil? %><dt>Rank:</dt><dd><%= @person.rank.name %></dd><%end%>
+<%if !@person.title.nil? %><dt>Title:</dt><dd><%= @person.title.name %></dd><%end%>
+<%if !@person.nation.nil? %><dt>Nation:</dt><dd><%= @person.nation.name %></dd><%end%>
 <% if !@person.units.empty? %>
 <% @person.uplinks.each do |up| %>
 	<dt><%= up.role.name_fr %>:</dt><dd><%= link_to up.unit.name, up.unit %></dd>
@@ -12,4 +12,4 @@
 <%end%>
 </dl>
 
-<p>Source:<%= link_to @person.source.code, @person.source %></p>
+<p><%= t('source.source')%>:<%= link_to @person.source.code, @person.source %></p>
