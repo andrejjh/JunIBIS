@@ -4,6 +4,7 @@ de:
   menu:
     home: "de:Home"
     armies: "de:Armies"
+    sources: "de:Sources"
     about: "de:About"
     contact: "de:Contact"
   person:
@@ -21,10 +22,15 @@ de:
     batteries: "de:Batteries"
   source:
         source: "de:Source"
+        image: "de:Image"
         reference: "de:Reference"
         units: "de:#Units"
         people: "de:#People"
         uplinks: "de:#Unit-Person links"
         uelinks: "de:#Unit-Event links"
 
-  events: "de:Events"
+  event:
+      event: "de:Event"
+      name: "de:Name"
+      begin: "de:Begin"
+      end: "de:End"

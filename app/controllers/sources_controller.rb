@@ -1,8 +1,12 @@
 class SourcesController < ApplicationController
+	before_action :set_menu
+
+  def set_menu
+    @menu=3
+  end
 # GET /Source/1
 	# GET /Source/1.xml
 	def show
-		@armies= Unit.armies.order('code').all
 		@source = Source.find(params[:id])
 		respond_to do |format|
 			format.html # show.html.erb
@@ -10,7 +14,6 @@ class SourcesController < ApplicationController
 		end
 	end
 	def index
-		@armies= Unit.armies.order('code').all
 		@sources = Source.order('id').all
 		respond_to do |format|
 			format.html # index.html.erb

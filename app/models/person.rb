@@ -8,8 +8,8 @@ class Person < ActiveRecord::Base
 	has_many :units, :through => :uplinks
 	def fullname
 		fullname= ''
-		fullname+= rank.name_fr + ' ' unless rank.nil?
-		fullname+= title.name_fr + ' ' unless title.nil?
+		fullname+= rank.name + ' ' unless rank.nil?
+		fullname+= title.name + ' ' unless title.nil?
 		fullname+= firstname + ' ' + lastname
 	end
 end

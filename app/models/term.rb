@@ -4,13 +4,14 @@ class Term < ActiveRecord::Base
 def name
 	case I18n.locale
 	when :de
-		return name_de
+		n= name_de.nil? ?  name_en + "_de" : name_de
 	when :fr
-		return name_fr
+		n= name_fr.nil? ? name_en + "_fr" : name_fr
 	when :nl
-		return name_nl
+		n= name_nl.nil? ? name_en + "_nl" : name_nl
 	else
-		return name_en
+		n= name_en
 	end
+	return n
 end
 end

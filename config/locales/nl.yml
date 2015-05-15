@@ -4,6 +4,7 @@ nl:
   menu:
     home: "nl:Home"
     armies: "nl:Armies"
+    sources: "nl:Sources"
     about: "nl:About"
     contact: "nl:Contact"
   person:
@@ -21,10 +22,15 @@ nl:
     batteries: "nl:Batteries"
   source:
         source: "nl:Source"
+        image: "nl:Image"
         reference: "nl:Reference"
         units: "nl:#Units"
         people: "nl:#People"
         uplinks: "nl:#Unit-Person links"
         uelinks: "nl:#Unit-Event links"
 
-  events: "nl:Events"
+  event:
+      event: "nl:Event"
+      name: "nl:Name"
+      begin: "nl:Begin"
+      end: "nl:End"

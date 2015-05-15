@@ -44,7 +44,7 @@
 <%if !@unit.uelinks.empty? %>
 <p><%= t('events')%>:
 <% @unit.uelinks.each do |ue| %>
-&nbsp;<%= link_to ue.event.code, ue.event %>(<%= link_to ue.source.code, ue.source %>),
+&nbsp;<%= ue.event.code %>(<%= link_to ue.source.code, ue.source %>),
 <%end%>
 </p>
 <%end%>

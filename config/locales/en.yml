@@ -25,6 +25,7 @@ en:
   menu:
     home: "Home"
     armies: "Armies"
+    sources: "Sources"
     about: "About"
     contact: "Contact"
 
@@ -51,12 +52,18 @@ en:
     bataillons: "Bataillons"
     squadrons: "Squadrons"
     batteries: "Batteries"
+
   source:
         source: "Source"
+        image: "Image"
         reference: "Reference"
         units: "#Units"
         people: "#People"
         uplinks: "#Unit-Person links"
         uelinks: "#Unit-Event links"
 
-  events: "Events"
+  event:
+      event: "Event"
+      name: "Name"
+      begin: "Begin"
+      end: "End"

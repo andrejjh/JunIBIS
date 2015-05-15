@@ -1,0 +1,10 @@
+<h3><%= t('menu.armies')%></h3>
+<table class="table table-striped">
+<% @armies.each do |a| %>
+  <tr>
+		<td><%= image_tag a.icon.path ,width: "50"%></td>
+		<td><%= link_to a.name, a %></td>
+		<td><%= a.code %></td>
+</tr>
+<%end%>
+</table>

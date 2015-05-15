@@ -1,18 +1,14 @@
 class WelcomeController < ApplicationController
 def about
-	@armies= Unit.armies.order('code').all
-	@about=true
+	@menu=4
 end
 def contact
-	@armies= Unit.armies.order('code').all
-	@contact=true
+	@menu=5
 end
 def index
-	@home=true
-	@armies= Unit.armies.order('code').all
+	@menu=1
 end
 def change_locale
-	@armies= Unit.armies.order('code').all
 	l = params[:locale].to_s.strip.to_sym
 	l = I18n.default_locale unless I18n.available_locales.include?(l)
 	cookies.permanent[:educator_locale]= l

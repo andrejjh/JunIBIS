@@ -4,6 +4,7 @@ fr:
   menu:
     home: "Accueil"
     armies: "Armées"
+    sources: "Sources"
     about: "A propos"
     contact: "Contact"
 
@@ -34,10 +35,15 @@ fr:
 
   source:
         source: "Source"
+        image: "Image"
         reference: "Réference"
         units: "#Unités"
         people: "#Personnages"
-        uplinks: "#Liens Unité-Personnage"
-        uelinks: "#Liens Unité-Evénement"
+        uplinks: "#Liens U-P"
+        uelinks: "#Liens U-E"
 
-  events: "Evénements"
+event:
+        event: "Event"
+        name: "Name"
+        begin: "Begin"
+        end: "End"

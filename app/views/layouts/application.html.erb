@@ -17,43 +17,38 @@
 ================================================== -->
   <body>
    <div class="container">
-      <div class="header clearfix">
-        <nav>
-          <ul class="nav nav-pills pull-right">
-              <li role="presentation"<%if !@home.nil? %> class="active"<%end%>><%= link_to t('menu.home'), root_path %></li>
-              <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><%= t('menu.armies') %><span class="caret"></span> </a>
-                <ul class="dropdown-menu" role="menu">
-                  <% @armies.each do |army| %>
-          					<li><%= link_to army.name, army %></li>
-          				<% end %>
-                </ul>
-              </li>
-               <li role="presentation"<%if !@about.nil? %> class="active"<%end%>><%= link_to t('menu.about'), about_path %></li>
-              <li role="presentation"<%if !@contact.nil? %> class="active"<%end%>><%= link_to t('menu.contact'), contact_path %></li>
-          </ul>
-        </nav>
-        <h2 class="text-muted">JunIBIS.be (&beta;)</h2>
-        <%if I18n.locale==:de%>
-        <%= link_to "DE", change_locale_path(:de), class: "btn btn-default btn-xs active", role: "button"%>
-        <%else%>
-        <%= link_to "DE", change_locale_path(:de), class: "btn btn-default btn-xs", role: "button"%>
-        <%end%>
-        <%if I18n.locale==:en%>
-        <%= link_to "EN", change_locale_path(:en), class: "btn btn-default btn-xs active", role: "button"%>
-        <%else%>
-        <%= link_to "EN", change_locale_path(:en), class: "btn btn-default btn-xs", role: "button"%>
-        <%end%>
-        <%if I18n.locale==:fr%>
-        <%= link_to "FR", change_locale_path(:fr), class: "btn btn-default btn-xs active", role: "button"%>
-        <%else%>
-        <%= link_to "FR", change_locale_path(:fr), class: "btn btn-default btn-xs", role: "button"%>
-        <%end%>
-        <%if I18n.locale==:nl%>
-        <%= link_to "NL", change_locale_path(:nl), class: "btn btn-default btn-xs active", role: "button"%>
-        <%else%>
-        <%= link_to "NL", change_locale_path(:nl), class: "btn btn-default btn-xs", role: "button"%>
-        <%end%>
+         <div class="header clearfix">
+      <nav>
+        <ul class="nav nav-pills pull-right">
+            <li role="presentation"<%if @menu==1 %> class="active"<%end%>><%= link_to t('menu.home'), root_path %></li>
+            <li role="presentation"<%if @menu==2 %> class="active"<%end%>><%= link_to t('menu.armies'), units_path %></li>
+            <li role="presentation"<%if @menu==3 %> class="active"<%end%>><%= link_to t('menu.sources'), sources_path %></li>
+            <li role="presentation"<%if @menu==4 %> class="active"<%end%>><%= link_to t('menu.about'), about_path %></li>
+            <li role="presentation"<%if @menu==5 %> class="active"<%end%>><%= link_to t('menu.contact'), contact_path %></li>
+        </ul>
+      </nav>
+          <h2 class="text-muted">JunIBIS.be (&beta;)</h2>
+          <%if I18n.locale==:de%>
+          <%= link_to "DE", change_locale_path(:de), class: "btn btn-default btn-xs active", role: "button"%>
+          <%else%>
+          <%= link_to "DE", change_locale_path(:de), class: "btn btn-default btn-xs", role: "button"%>
+          <%end%>
+          <%if I18n.locale==:en%>
+          <%= link_to "EN", change_locale_path(:en), class: "btn btn-default btn-xs active", role: "button"%>
+          <%else%>
+          <%= link_to "EN", change_locale_path(:en), class: "btn btn-default btn-xs", role: "button"%>
+          <%end%>
+          <%if I18n.locale==:fr%>
+          <%= link_to "FR", change_locale_path(:fr), class: "btn btn-default btn-xs active", role: "button"%>
+          <%else%>
+          <%= link_to "FR", change_locale_path(:fr), class: "btn btn-default btn-xs", role: "button"%>
+          <%end%>
+          <%if I18n.locale==:nl%>
+          <%= link_to "NL", change_locale_path(:nl), class: "btn btn-default btn-xs active", role: "button"%>
+          <%else%>
+          <%= link_to "NL", change_locale_path(:nl), class: "btn btn-default btn-xs", role: "button"%>
+          <%end%>
+        </div> <!-- /header -->
     </div> <!-- /container -->
     <hr>
  <%= yield%>
