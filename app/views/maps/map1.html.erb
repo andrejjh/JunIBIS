@@ -73,22 +73,22 @@
 <div id="map"></div>
 <div id="day" class="layer_selector">
 		<ul>
-				<li data="1815/06/15 " data-type="day" class="day_selected">15 Juin</li>
-				<li data="1815/06/16 " data-type="day">16 Juin</li>
-				<li data="1815/06/17 " data-type="day">17 Juin</li>
+				<li data="1815/06/15 " data-type="day" class="day_selected">15 June</li>
+				<li data="1815/06/16 " data-type="day">16 June</li>
+				<li data="1815/06/17 " data-type="day">17 June</li>
 </div>
 <div id="ampm" class="layer_selector">
 		<ul>
-				<li data="" data-type="ampm" class="ampm_selected">Matin</li>
-				<li data="PM" data-type="ampm">Après-midi</li>
+				<li data="" data-type="ampm" class="ampm_selected">AM</li>
+				<li data="PM" data-type="ampm">PM</li>
 </div>
 <div id="hour" class="layer_selector">
 		<ul>
-      <li data="00:00 " data-type="hour">0 h</li>
+      <li data="00:00 " data-type="hour" class="hour_selected">0 h</li>
       <li data="01:00 " data-type="hour">1 h</li>
       <li data="02:00 " data-type="hour">2 h</li>
       <li data="03:00 " data-type="hour">3 h</li>
-				<li data="04:00 " data-type="hour" class="hour_selected">4 h</li>
+				<li data="04:00 " data-type="hour">4 h</li>
 				<li data="05:00 " data-type="hour">5 h</li>
 				<li data="06:00 " data-type="hour">6 h</li>
 				<li data="07:00 " data-type="hour">7 h</li>
@@ -160,7 +160,7 @@ function main() {
 // Create layer selector
 function createSelector(layer) {
 var day="1815/06/15 "
-var hour="04:00 "
+var hour="00:00 "
 var ampm=""
 
 var $options = $(".layer_selector").find("li");
@@ -181,7 +181,7 @@ $options.click(function(e) {
 			hour=selected
 			$li.addClass('hour_selected');
 		}
-		layer.setSQL("SELECT * FROM cobMoves16 where datetime='" + day + hour + ampm +"' order by army desc");
+		layer.setSQL("SELECT * FROM cobMoves17 where datetime='" + day + hour + ampm +"' order by army desc");
 });
 }
 		var map = new L.Map('map', {
@@ -203,7 +203,7 @@ $options.click(function(e) {
     type: 'cartodb',
 		user_name: "andrejjh", // Required
 		sublayers: [{
-			sql: "SELECT * FROM cobMoves16 where datetime='1815/06/15 04:00:00' order by army desc", 	// Required if table_name is not given
+			sql: "SELECT * FROM cobMoves17 where datetime='1815/06/15 00:00:00' order by army desc", 	// Required if table_name is not given
 			cartocss: CARTO_BASE,
       interactivity: 'unitid' // optional
 		}]
