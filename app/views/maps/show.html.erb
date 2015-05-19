@@ -103,7 +103,7 @@
 </div>
 <div id="ampm" class="layer_selector">
 		<ul>
-				<li data="AM" data-type="ampm"<%if @map.datetime.length<=16 %> class="a_selected"<%end%>>AM</li>
+				<li data=" " data-type="ampm"<%if @map.datetime.length<=16 %> class="a_selected"<%end%>>AM</li>
 				<li data="PM" data-type="ampm"<%if @map.datetime.length>16 %> class="a_selected"<%end%>>PM</li>
 </div>
 <div id="hour" class="layer_selector">
@@ -183,10 +183,9 @@ function main() {
 
 // Create layer selector
 function createSelector(layer) {
-var datetime='<%= @map.datetime%>'.split(" ")
-var day=datetime[0]
-var hour=datetime[1]
-var ampm=datetime[2]
+var day='<%=@map.datetime%>'.slice(0,10)
+var hour='<%=@map.datetime%>'.slice(11,5)
+var ampm='<%=@map.datetime%>'.slice(17,2)
 
 var $options = $(".layer_selector").find("li");
 $options.click(function(e) {
@@ -246,7 +245,7 @@ $options.click(function(e) {
     subLayer.on('featureClick', function(e, latlng, pos, data, subLayerIndex) {
 //      console.log("click ", data.unitid.split("-",1));
 //      var uID=data.unitid.split("-",1)
-      window.location.assign("../units/"+ data.unitid.split("-",1)+"/resolve")
+      window.location.assign("../../units/"+ data.unitid.split("-",1)+"/resolve")
 
     });
     subLayer.on('featureOver', function(e, latlng, pos, data, subLayerIndex) {
