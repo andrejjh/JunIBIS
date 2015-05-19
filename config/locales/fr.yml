@@ -8,10 +8,6 @@ fr:
     about: "A propos"
     contact: "Contact"
 
-  maps:
-    static: "Cartes statiques"
-    dynamic: "Carte dynamique"
-    places: "Carte des lieux"
 
   about:
     concept: "Conception"
@@ -21,6 +17,9 @@ fr:
   person:
     firstName: "Prénom"
     lastName: "Nom"
+    rank: "Grade"
+    title: "Titre"
+    nation: "Nation"
 
   unit:
     code: "Code"
@@ -42,8 +41,16 @@ fr:
         uplinks: "#Liens U-P"
         uelinks: "#Liens U-E"
 
-event:
+  event:
         event: "Event"
         name: "Name"
         begin: "Begin"
         end: "End"
+
+  map:
+    static: "Cartes statiques"
+    dynamic: "Carte dynamique"
+    places: "Carte des lieux"
+    maps: "Cartes"
+    code: "Nom"
+    datetime: "Quand?"

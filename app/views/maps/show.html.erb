@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JunIBIS|CartoDB.js- Static map</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <link rel="shortcut icon" href="http://cartodb.com/assets/favicon.ico" />
+    <!--link rel="stylesheet" href="http://libs.cartocdn.com/cartodb.js/v3/3.12/themes/css/cartodb.css" /-->
+    <link rel="stylesheet" href="https://cartodb-libs.global.ssl.fastly.net/cartodb.js/v3/3.12/themes/css/cartodb.css" />
+    <style type="text/css">
+        html, body, #map {
+            height: 100%;
+            padding: 0;
+            margin: 0;
+        }
+        #name {
+          position: absolute;
+          bottom: 20px;
+          right: 20px;
+        }
+        #day {
+            position: absolute;
+            top: 10px;
+            right: 80px;
+        }
+        #ampm {
+            position: absolute;
+            top: 175px;
+            right: 80px;
+        }
+        #hour {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+        }
+
+        .map_name {
+            background: rgba(255,255,255,0.9);
+            border-radius: 5px;
+            padding: 0;
+            border: 1px solid #999;
+            border-bottom: 1px solid #999;
+            width: 120px;
+        }
+        .map_name p {
+          margin-left: auto;
+          margin-right: auto;
+          width: 80%;
+        }
+
+        .layer_selector {
+            background: rgba(255,255,255,0.9);
+            border-radius: 5px;
+            padding: 0;
+            border: 1px solid #999;
+            width: 60px;
+        }
+
+        .layer_selector > p {
+            padding: 15px 30px;
+            border-bottom: 1px solid #999;
+        }
+
+        .layer_selector ul {
+            padding: 0; margin: 0;
+            list-style-type: none;
+        }
+        .layer_selector li {
+            padding: 10px 10px;
+            font-family: Helvetica, Arial;
+            font-size: 10px;
+            color: #3974C4;
+            cursor: pointer;
+        }
+        .layer_selector li:not(:last-child) {
+            border-bottom: 1px solid #999;
+        }
+        .layer_selector li:hover {
+            background-color: #F0F0F0;
+            cursor: pointer;
+        }
+        .layer_selector li.d_selected,
+        .layer_selector li.a_selected,
+        .layer_selector li.h_selected
+         {
+            background-color: #3974C4;
+            color: #FFFFFF;
+        }
+        </style>
+
+	  </head>
+		<body>
+
+<div id="map"></div>
+<div id="name" class="map_name">
+<p><%= @map.code %></p>
+</div>
+<div id="day" class="layer_selector">
+		<ul>
+				<li data="1815/06/15" data-type="day"<%if @map.datetime.slice(8,2)=='15'%> class="d_selected"<%end%>>15 June</li>
+				<li data="1815/06/16" data-type="day"<%if @map.datetime.slice(8,2)=='16'%> class="d_selected"<%end%>>16 June</li>
+				<li data="1815/06/17" data-type="day"<%if @map.datetime.slice(8,2)=='17'%> class="d_selected"<%end%>>17 June</li>
+</div>
+<div id="ampm" class="layer_selector">
+		<ul>
+				<li data="AM" data-type="ampm"<%if @map.datetime.length<=16 %> class="a_selected"<%end%>>AM</li>
+				<li data="PM" data-type="ampm"<%if @map.datetime.length>16 %> class="a_selected"<%end%>>PM</li>
+</div>
+<div id="hour" class="layer_selector">
+		<ul>
+      <li data="00:00" data-type="hour"<%if @map.datetime.slice(11,2)=='00'%> class="h_selected"<%end%>>00:00</li>
+      <li data="01:00" data-type="hour"<%if @map.datetime.slice(11,2)=='01'%> class="h_selected"<%end%>>01:00</li>
+      <li data="02:00" data-type="hour"<%if @map.datetime.slice(11,2)=='02'%> class="h_selected"<%end%>>02:00</li>
+      <li data="03:00" data-type="hour"<%if @map.datetime.slice(11,2)=='03'%> class="h_selected"<%end%>>03:00</li>
+			<li data="04:00" data-type="hour"<%if @map.datetime.slice(11,2)=='04'%> class="h_selected"<%end%>>04:00</li>
+			<li data="05:00" data-type="hour"<%if @map.datetime.slice(11,2)=='05'%> class="h_selected"<%end%>>05:00</li>
+			<li data="06:00" data-type="hour"<%if @map.datetime.slice(11,2)=='06'%> class="h_selected"<%end%>>06:00</li>
+			<li data="07:00" data-type="hour"<%if @map.datetime.slice(11,2)=='07'%> class="h_selected"<%end%>>07:00</li>
+			<li data="08:00" data-type="hour"<%if @map.datetime.slice(11,2)=='08'%> class="h_selected"<%end%>>08:00</li>
+			<li data="09:00" data-type="hour"<%if @map.datetime.slice(11,2)=='09'%> class="h_selected"<%end%>>09:00</li>
+			<li data="10:00" data-type="hour"<%if @map.datetime.slice(11,2)=='10'%> class="h_selected"<%end%>>10:00</li>
+			<li data="11:00" data-type="hour"<%if @map.datetime.slice(11,2)=='11'%> class="h_selected"<%end%>>11:00</li>
+		</ul>
+</div>
+
+
+<!-- include cartodb.js library -->
+<!-- script src="http://libs.cartocdn.com/cartodb.js/v3/3.12/cartodb.js"></script -->
+<script src="https://cartodb-libs.global.ssl.fastly.net/cartodb.js/v3/3.12/cartodb.js"></script>
+<script>
+function main() {
+
+		var CARTO_BASE = [
+			'#layer {',
+			'  marker-fill-opacity: 0.9;',
+			'  marker-line-color: #FFF;',
+			'  marker-line-width: 1.5;',
+			'  marker-line-opacity: 1;',
+			'  marker-placement: point;',
+			'  marker-type: ellipse;',
+			'  marker-width: 50;',
+			'  marker-allow-overlap: true;',
+			'}',
+			'#layer::labels [zoom > 10] {text-name: [unitid];text-face-name: "DejaVu Sans Book";text-size: 10;text-label-position-tolerance: 10;text-fill: #000000;text-halo-fill: #FFF;text-halo-radius: 2;text-dy: 0;text-allow-overlap: true;text-placement: point;text-placement-type: simple;}',
+			'#layer ',
+			'[icon=1] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121624BArt.png);}',
+			'[icon=2] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121638BCav.png);}',
+			'[icon=3] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121705BE-M.png);}',
+			'[icon=4] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121613BGen.png);}',
+			'[icon=5] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121652BInf.png);}',
+			'[icon=6] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121746DArt.png);}',
+			'[icon=7] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121727DCav.png);}',
+			'[icon=8] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121717DE-M.png);}',
+			'[icon=9] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121754DGen.png);}',
+			'[icon=10] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121735DInf.png);}',
+			'[icon=11] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121854FArt.png);}',
+			'[icon=12] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121910FCav.png);}',
+			'[icon=13] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121917FE-M.png);}',
+			'[icon=14] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121847FGen.png);}',
+			'[icon=15] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121903FInf.png);}',
+			'[icon=16] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150430143225GArt.png);}',
+			'[icon=17] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150430143241GCav.png);}',
+			'[icon=18] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150430143254GE-M.png);}',
+			'[icon=19] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150430143306GGen.png);}',
+			'[icon=20] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150430143319GInf.png);}',
+			'[icon=21] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121548HArt.png);}',
+			'[icon=22] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121534HCav.png);}',
+			'[icon=23] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121515HE-M.png);}',
+			'[icon=24] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121601HGen.png);}',
+			'[icon=25] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121525HInf.png);}',
+			'[icon=26] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121811PArt.png);}',
+			'[icon=27] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121830PCav.png);}',
+			'[icon=28] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121838PE-M.png);}',
+			'[icon=29] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121803PGen.png);}',
+			'[icon=30] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121821PInf.png);}',
+			'[icon=31] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121438RArt.png);}',
+			'[icon=32] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121456RCav.png);}',
+			'[icon=33] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121504RE-M.png);}',
+			'[icon=34] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121427RGen.png);}',
+			'[icon=35] {  marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121448RInf.png);}'
+].join('\n');
+
+
+// Create layer selector
+function createSelector(layer) {
+var datetime='<%= @map.datetime%>'.split(" ")
+var day=datetime[0]
+var hour=datetime[1]
+var ampm=datetime[2]
+
+var $options = $(".layer_selector").find("li");
+$options.click(function(e) {
+		var $li = $(e.target);
+		var selected = $li.attr('data');
+		var type = $li.data('type');
+		if (type === "day") {
+				$options.removeClass('d_selected');
+				day=selected;
+				$li.addClass('d_selected');
+		} else if (type ==="ampm") {
+        $options.removeClass('a_selected');
+        ampm=selected;
+        $li.addClass('a_selected');
+    } else {
+			$options.removeClass('h_selected');
+			hour=selected
+			$li.addClass('h_selected');
+		}
+    var sql="SELECT * FROM cobMoves17 where datetime='" + day + " " + hour + " " +ampm +"' order by army desc";
+		layer.setSQL(sql);
+    console.log(sql)
+});
+}
+		var map = new L.Map('map', {
+			zoomControl: true,
+			fullScreen: true,
+//			layerSelector: true,
+			center: [<%= @map.latitude%> , <%= @map.longitude%>],
+			zoom: <%= @map.zoomfactor%>
+		});
+
+
+	var baseLayer= new L.tileLayer.wms('http://webgisdgo4.spw.wallonie.be/ArcGIS/services/DGO4/FERRARIS/MapServer/WMSServer/', {
+		layers: '1',
+    attribution: 'JunIBIS, Ferraris'
+}).addTo(map);
+
+	// add cartodb layer with one sublayer
+	cartodb.createLayer(map, {
+    type: 'cartodb',
+		user_name: "andrejjh", // Required
+		sublayers: [{
+			sql: "SELECT * FROM cobMoves17 where datetime='"+'<%= @map.datetime%>'+"' order by army desc", 	// Required if table_name is not given
+			cartocss: CARTO_BASE,
+      interactivity: 'unitid' // optional
+		}]
+	}, { https: true}).addTo(map)
+	.done(function(layer) {
+     console.log("done");
+		var subLayer= layer.getSubLayer(0);
+		createSelector(subLayer);
+
+    subLayer.setInteraction(true);
+
+
+    subLayer.on('featureClick', function(e, latlng, pos, data, subLayerIndex) {
+//      console.log("click ", data.unitid.split("-",1));
+//      var uID=data.unitid.split("-",1)
+      window.location.assign("../units/"+ data.unitid.split("-",1)+"/resolve")
+
+    });
+    subLayer.on('featureOver', function(e, latlng, pos, data, subLayerIndex) {
+//      console.log("over ", data.unitid);
+      $('#map').css('cursor', 'pointer');
+
+    });
+    subLayer.on('featureOut', function(e, latlng, pos, data, subLayerIndex) {
+//      console.log("out ", data.unitid);
+      $('#map').css('cursor', 'auto');
+    });
+
+	})
+.error(function(err) {
+		console.log("error: " + err);
+});
+
+}
+// you could use $(window).load(main);
+window.onload = main;
+
+</script>
+	</body>
+</html>

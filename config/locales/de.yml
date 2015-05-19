@@ -1,4 +1,5 @@
 de:
+
   hello: "de:Hello world"
 
   menu:
@@ -7,9 +8,19 @@ de:
     sources: "Quellen"
     about: "Über uns"
     contact: "Kontakt"
+
+  about:
+    concept: "Concept"
+    content: "Content"
+    maps: "Ferraris layer"
+
   person:
     firstName: "Vorname"
     lastName: "Nachname"
+    rank: "de:Rank"
+    title: "de:Title"
+    nation: "de:Nation"
+
   unit:
     code: "Code"
     name: "Name"
@@ -20,6 +31,7 @@ de:
     bataillons: "Bataillons"
     squadrons: "Eskadrons"
     batteries: "Batterieen"
+
   source:
         source: "de:Source"
         image: "de:Image"
@@ -34,3 +46,11 @@ de:
       name: "de:Name"
       begin: "de:Begin"
       end: "de:End"
+
+  map:
+      static: "Statische kaarten"
+      dynamic: "Dynamische kaart"
+      places: "Plaatsen kaart"
+      maps: "Maps"
+      code: "Name"
+      datetime: "When?"

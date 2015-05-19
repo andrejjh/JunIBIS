@@ -29,11 +29,6 @@ en:
     about: "About"
     contact: "Contact"
 
-  maps:
-    static: "Static maps"
-    dynamic: "Dynamic map"
-    places: "Places map"
-
   about:
     concept: "Concept"
     content: "Content"
@@ -42,6 +37,10 @@ en:
   person:
     firstName: "FirstName"
     lastName: "LastName"
+    rank: "Rank"
+    title: "Title"
+    nation: "Nation"
+
   unit:
     code: "Code"
     name: "Name"
@@ -67,3 +66,11 @@ en:
       name: "Name"
       begin: "Begin"
       end: "End"
+
+  map:
+      static: "Static maps"
+      dynamic: "Dynamic map"
+      places: "Places map"
+      maps: "Maps"
+      code: "Name"
+      datetime: "When?"

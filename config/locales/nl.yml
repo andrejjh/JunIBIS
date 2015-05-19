@@ -7,9 +7,20 @@ nl:
     sources: "Bronnen"
     about: "Over"
     contact: "Contact"
+
+
+  about:
+    concept: "Concept"
+    content: "Content"
+    maps: "Ferraris layer"
+
   person:
     firstName: "Voornaam"
     lastName: "Achternaam"
+    rank: "nl:Rank"
+    title: "nl:Title"
+    nation: "nl:Nation"
+
   unit:
     code: "Code"
     name: "Naam"
@@ -34,3 +45,11 @@ nl:
       name: "Naam"
       begin: "Beginnen"
       end: "Einde"
+
+  map:
+      static: "Statische kaarten"
+      dynamic: "Dynamische kaart"
+      places: "Plaatsen kaart"
+      maps: "Kaarten"
+      code: "Naam"
+      datetime: "Wanneer?"

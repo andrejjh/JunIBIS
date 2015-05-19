@@ -1,0 +1,12 @@
+<h3><%= t('map.maps')%></h3>
+<table class="table table-striped"><tr>
+  <th><%= t('map.code')%></th>
+	<th><%= t('map.datetime')%></th>
+</tr>
+<% @maps.each do |m| %>
+  <tr>
+    <td><%= link_to m.code, m, :target => "_blank" %></td>
+		<td><%= m.datetime%></td>
+</tr>
+<%end%>
+</table>

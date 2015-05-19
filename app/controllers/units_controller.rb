@@ -7,6 +7,10 @@ class UnitsController < ApplicationController
 
   def index
     @armies= Unit.armies.order('code').all
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json  { render json: @units }
+    end
   end
 
 # GET /Unit/1
@@ -15,12 +19,15 @@ class UnitsController < ApplicationController
     @unit = Unit.find(params[:id])
     respond_to do |format|
       format.html # show.html.erb
-      format.xml  { render :xml => @unit }
+      format.json  { render json: @unit }
     end
   end
 
   def resolve
     @unit = Unit.find_by code: (params[:id])
-    render :action => 'show'
+    respond_to do |format|
+      format.html {render :action => 'show'}
+      format.json  { render :json => @unit }
+    end
   end
 end

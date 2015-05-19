@@ -10,14 +10,14 @@ class SourcesController < ApplicationController
 		@source = Source.find(params[:id])
 		respond_to do |format|
 			format.html # show.html.erb
-			format.xml  { render :xml => @source }
+			format.json  { render json: @source }
 		end
 	end
 	def index
 		@sources = Source.order('id').all
 		respond_to do |format|
 			format.html # index.html.erb
-			format.xml  { render :xml => @sources }
+			format.json  { render json: @sources }
 		end
 	end
 

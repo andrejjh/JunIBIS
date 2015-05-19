@@ -5,14 +5,14 @@ class EventsController < ApplicationController
 		@event = Event.find(params[:id])
 		respond_to do |format|
 			format.html # show.html.erb
-			format.xml  { render :xml => @event }
+			format.json  { render json: @event }
 		end
 	end
 	def index
 		@events = Event.order('id').all
 		respond_to do |format|
 			format.html # index.html.erb
-			format.xml  { render :xml => @events }
+			format.json  { render json: @events }
 		end
 	end
 
