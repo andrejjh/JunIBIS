@@ -26,14 +26,14 @@
       function main() {
         var CARTO_BASE = [
           'Map {',
-          '-torque-frame-count: 72;',
-          '-torque-animation-duration: 36;',
+          '-torque-frame-count: 96;',
+          '-torque-animation-duration: 48;',
           '-torque-time-attribute: "datetime";',
           '-torque-aggregation-function: "CDB_Math_Mode(icon)";',
           '-torque-resolution: 2;',
           '-torque-data-aggregation: linear;',
           '}',
-          '#cobMoves17 {',
+          '#cobMoves18 {',
           '  comp-op: source-over;',
           '  marker-fill-opacity: 0.9;',
           '  marker-line-color: #FFF;',
@@ -43,52 +43,52 @@
           '  marker-width: 16;',
           '  marker-fill: #000000;',
           '}',
-          '#cobMoves17',
+          '#cobMoves18',
           '[zoom > 15] { marker-width: 20; }'
           ].join('\n');
 
 var CARTO_F = [
-'#cobMoves17 [value=11] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121854FArt.png);}',
-'#cobMoves17 [value=12] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121910FCav.png);}',
-'#cobMoves17 [value=13] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121917FE-M.png);}',
-// '#cobMoves17 [value=14] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121847FGen.png);}',
-'#cobMoves17 [value=15] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121903FInf.png);}',
-'#cobMoves17 [value=16] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150430143225GArt.png);}',
-'#cobMoves17 [value=17] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150430143241GCav.png);}',
-'#cobMoves17 [value=18] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150430143254GE-M.png);}',
-'#cobMoves17 [value=19] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150430143306GGen.png);}',
-'#cobMoves17 [value=20] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150430143319GInf.png);}'
+'#cobMoves18 [value=11] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121854FArt.png);}',
+'#cobMoves18 [value=12] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121910FCav.png);}',
+'#cobMoves18 [value=13] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121917FE-M.png);}',
+// '#cobMoves18 [value=14] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121847FGen.png);}',
+'#cobMoves18 [value=15] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121903FInf.png);}',
+'#cobMoves18 [value=16] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150430143225GArt.png);}',
+'#cobMoves18 [value=17] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150430143241GCav.png);}',
+'#cobMoves18 [value=18] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150430143254GE-M.png);}',
+'#cobMoves18 [value=19] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150430143306GGen.png);}',
+'#cobMoves18 [value=20] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150430143319GInf.png);}'
 ].join('\n');
 var CARTO_P = [
-'#cobMoves17 [value=26] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121811PArt.png);}',
-'#cobMoves17 [value=27] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121830PCav.png);}',
-'#cobMoves17 [value=28] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121838PE-M.png);}',
-'#cobMoves17 [value=29] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121803PGen.png);}',
-'#cobMoves17 [value=30] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121821PInf.png);}'
+'#cobMoves18 [value=26] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121811PArt.png);}',
+'#cobMoves18 [value=27] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121830PCav.png);}',
+'#cobMoves18 [value=28] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121838PE-M.png);}',
+'#cobMoves18 [value=29] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121803PGen.png);}',
+'#cobMoves18 [value=30] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121821PInf.png);}'
 ].join('\n');
 var CARTO_BH = [
-'#cobMoves17 [value=1] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121624BArt.png);}',
-'#cobMoves17 [value=2] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121638BCav.png);}',
-'#cobMoves17 [value=3] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121705BE-M.png);}',
-'#cobMoves17 [value=4] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121613BGen.png);}',
-'#cobMoves17 [value=5] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121652BInf.png);}',
-'#cobMoves17 [value=21] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121548HArt.png);}',
-'#cobMoves17 [value=22] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121534HCav.png);}',
-'#cobMoves17 [value=23] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121515HE-M.png);}',
-// #cobMoves17 '[value=24] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121601HGen.png);}',
-'#cobMoves17 [value=25] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121525HInf.png);}'
+'#cobMoves18 [value=1] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121624BArt.png);}',
+'#cobMoves18 [value=2] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121638BCav.png);}',
+'#cobMoves18 [value=3] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121705BE-M.png);}',
+'#cobMoves18 [value=4] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121613BGen.png);}',
+'#cobMoves18 [value=5] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121652BInf.png);}',
+'#cobMoves18 [value=21] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121548HArt.png);}',
+'#cobMoves18 [value=22] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121534HCav.png);}',
+'#cobMoves18 [value=23] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121515HE-M.png);}',
+// #cobMoves18 '[value=24] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121601HGen.png);}',
+'#cobMoves18 [value=25] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121525HInf.png);}'
 ].join('\n');
 var CARTO_NR = [
-'#cobMoves17 [value=6] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121746DArt.png);}',
-'#cobMoves17 [value=7] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121727DCav.png);}',
-'#cobMoves17 [value=8] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121717DE-M.png);}',
-'#cobMoves17 [value=9] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121754DGen.png);}',
-'#cobMoves17 [value=10] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121735DInf.png);}',
-'#cobMoves17 [value=31] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121438RArt.png);}',
-'#cobMoves17 [value=32] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121456RCav.png);}',
-'#cobMoves17 [value=33] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121504RE-M.png);}',
-// #cobMoves17 '[value=34] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121427RGen.png);}',
-'#cobMoves17 [value=35] {  marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121448RInf.png);}'
+'#cobMoves18 [value=6] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121746DArt.png);}',
+'#cobMoves18 [value=7] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121727DCav.png);}',
+'#cobMoves18 [value=8] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121717DE-M.png);}',
+'#cobMoves18 [value=9] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121754DGen.png);}',
+'#cobMoves18 [value=10] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121735DInf.png);}',
+'#cobMoves18 [value=31] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121438RArt.png);}',
+'#cobMoves18 [value=32] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121456RCav.png);}',
+'#cobMoves18 [value=33] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121504RE-M.png);}',
+// #cobMoves18 '[value=34] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121427RGen.png);}',
+'#cobMoves18 [value=35] {  marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121448RInf.png);}'
             ].join('\n');
 
         var layer1, layer2, layer3, layer4;
@@ -112,8 +112,8 @@ var CARTO_NR = [
         type: 'torque',
         order: 1, // Optional
          options: {
-           query: "Select * from cobMoves17 where army=2", 	// Required if table_name is not given
-//           table_name: "cobMoves17", 	// Required if query is not given
+           query: "Select * from cobMoves18 where army=2", 	// Required if table_name is not given
+//           table_name: "cobMoves18", 	// Required if query is not given
            user_name: "andrejjh", // Required
            cartocss: CARTO_BASE + "\n" + CARTO_P // Required
          }
@@ -150,8 +150,8 @@ var CARTO_NR = [
         type: 'torque',
         order: 2, // Optional
          options: {
-           query: "Select * from cobMoves17 where army in(3,4)", 	// Required if table_name is not given
-//           table_name: "cobMoves17", 	// Required if query is not given
+           query: "Select * from cobMoves18 where army in(3,4)", 	// Required if table_name is not given
+//           table_name: "cobMoves18", 	// Required if query is not given
            user_name: "andrejjh", // Required
            cartocss: CARTO_BASE + "\n" + CARTO_BH // Required
          }
@@ -164,8 +164,8 @@ var CARTO_NR = [
         type: 'torque',
         order: 3, // Optional
          options: {
-           query: "Select * from cobMoves17 where army in (5,6)", 	// Required if table_name is not given
-//           table_name: "cobMoves17", 	// Required if query is not given
+           query: "Select * from cobMoves18 where army in (5,6)", 	// Required if table_name is not given
+//           table_name: "cobMoves18", 	// Required if query is not given
            user_name: "andrejjh", // Required
            cartocss: CARTO_BASE + "\n" + CARTO_NR // Required
          }
@@ -178,8 +178,8 @@ var CARTO_NR = [
         type: 'torque',
         order: 4, // Optional
          options: {
-           query: "Select * from cobMoves17 where army=1", 	// Required if table_name is not given
-//           table_name: "cobMoves17", 	// Required if query is not given
+           query: "Select * from cobMoves18 where army=1", 	// Required if table_name is not given
+//           table_name: "cobMoves18", 	// Required if query is not given
            user_name: "andrejjh", // Required
            cartocss: CARTO_BASE + "\n" + CARTO_F // Required
          }
