@@ -1,5 +1,13 @@
 class MapsController < ApplicationController
 layout "map"
+before_action :set_menu
+
+def set_menu
+	@menu=3
+end
+
+
+
 	# GET /Map/1
 		# GET /Map/1.xml
 		def show

@@ -22,9 +22,10 @@
         <ul class="nav nav-pills pull-right">
             <li role="presentation"<%if @menu==1 %> class="active"<%end%>><%= link_to t('menu.home'), root_path %></li>
             <li role="presentation"<%if @menu==2 %> class="active"<%end%>><%= link_to t('menu.armies'), units_path %></li>
-            <li role="presentation"<%if @menu==3 %> class="active"<%end%>><%= link_to t('menu.sources'), sources_path %></li>
-            <li role="presentation"<%if @menu==4 %> class="active"<%end%>><%= link_to t('menu.about'), about_path %></li>
-            <li role="presentation"<%if @menu==5 %> class="active"<%end%>><%= link_to t('menu.contact'), contact_path %></li>
+            <li role="presentation"<%if @menu==3 %> class="active"<%end%>><%= link_to t('menu.maps'), maps_path %></li>
+            <li role="presentation"<%if @menu==4 %> class="active"<%end%>><%= link_to t('menu.sources'), sources_path %></li>
+            <li role="presentation"<%if @menu==5 %> class="active"<%end%>><%= link_to t('menu.about'), about_path %></li>
+            <li role="presentation"<%if @menu==6 %> class="active"<%end%>><%= link_to t('menu.contact'), contact_path %></li>
         </ul>
       </nav>
           <h2 class="text-muted">JunIBIS.be</h2>
@@ -55,7 +56,7 @@
 
       <!-- FOOTER -->
       <footer>
-        <p class="pull-right">Data version 19 (27/05/2015) <%= link_to image_tag("CC-BY.png"), 'http://creativecommons.org/licenses/by/4.0/'%> André Heughebaert 2015</p>
+        <p class="pull-right">Data version 20 (27/05/2015) <%= link_to image_tag("CC-BY.png"), 'http://creativecommons.org/licenses/by/4.0/'%> André Heughebaert 2015</p>
       </footer>
 
     <script src="/assets/application-08f11178a48f0f1e04df87f20eb83e8f.js"></script>

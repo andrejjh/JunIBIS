@@ -25,6 +25,7 @@ en:
   menu:
     home: "Home"
     armies: "Armies"
+    maps: "Maps"
     sources: "Sources"
     about: "About"
     contact: "Contact"
@@ -80,4 +81,3 @@ en:
       date: "Date"
       title: "Title"
       content: "Content"
-      
