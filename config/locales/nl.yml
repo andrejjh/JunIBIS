@@ -53,3 +53,8 @@ nl:
       maps: "Kaarten"
       code: "Naam"
       datetime: "Wanneer?"
+  news:
+      news: "Niews"
+      date: "Datum"
+      title: "Titel"
+      content: "Inhoud"

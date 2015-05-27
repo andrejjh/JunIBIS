@@ -74,3 +74,10 @@ en:
       maps: "Maps"
       code: "Name"
       datetime: "When?"
+
+  news:
+      news: "News"
+      date: "Date"
+      title: "Title"
+      content: "Content"
+      

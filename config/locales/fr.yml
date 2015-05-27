@@ -54,3 +54,9 @@ fr:
     maps: "Cartes"
     code: "Nom"
     datetime: "Quand?"
+
+  news:
+      news: "Nouvelles"
+      date: "Date"
+      title: "Titre"
+      content: "Contenu"

@@ -54,3 +54,9 @@ de:
       maps: "Maps"
       code: "Name"
       datetime: "When?"
+
+  news:
+      news: "News"
+      date: "Datum"
+      title: "Titel"
+      content: "Inhalt"

@@ -34,9 +34,6 @@
       </div>
 
   </div>
-  <div class="well">
-  <p> Data are complete for June 15-16-17 but not for June 18th.</p>
-  </div>
   <!-- Left and right controls -->
   <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
     <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
@@ -49,3 +46,17 @@
 </div>
 
 <hr>
+<h3><%= t('news.news')%></h3>
+<table class="table table-striped"><tr>
+  <th><%= t('news.date')%></th>
+  <th><%= t('news.title')%></th>
+	<th><%= t('news.content')%></th>
+</tr>
+<% @news.each do |n| %>
+  <tr>
+    <td><%= n.added.to_formatted_s(:short) %></td>
+    <td><%= n.title%></td>
+		<td><%= n.content%></td>
+</tr>
+<%end%>
+</table>

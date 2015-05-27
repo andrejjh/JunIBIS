@@ -7,6 +7,8 @@ def contact
 end
 def index
 	@menu=1
+	@news = News.order('id desc').all
+	
 end
 def change_locale
 	l = params[:locale].to_s.strip.to_sym

@@ -25,7 +25,7 @@
         }
         #ampm {
             position: absolute;
-            top: 175px;
+            top: 340px;
             right: 80px;
         }
         #hour {
@@ -101,6 +101,7 @@
 				<li data="1815/06/16" data-type="day"<%if @map.datetime.slice(8,2)=='16'%> class="d_selected"<%end%>>16 Jun.</li>
 				<li data="1815/06/17" data-type="day"<%if @map.datetime.slice(8,2)=='17'%> class="d_selected"<%end%>>17 Jun.</li>
         <li data="1815/06/18" data-type="day"<%if @map.datetime.slice(8,2)=='18'%> class="d_selected"<%end%>>18 Jun.</li>
+        <li data="1815/06/19" data-type="day"<%if @map.datetime.slice(8,2)=='19'%> class="d_selected"<%end%>>19 Jun.</li>
 </div>
 <div id="ampm" class="layer_selector">
 		<ul>
@@ -207,7 +208,7 @@ $options.click(function(e) {
 			hour=selected
 			$li.addClass('h_selected');
 		}
-    var sql="SELECT * FROM cobMoves18 where datetime='" + day + " " + hour + " " +ampm +"' order by army desc";
+    var sql="SELECT * FROM cobMoves19 where datetime='" + day + " " + hour + " " +ampm +"' order by army desc";
 		layer.setSQL(sql);
     console.log(sql)
 });
@@ -231,7 +232,7 @@ $options.click(function(e) {
     type: 'cartodb',
 		user_name: "andrejjh", // Required
 		sublayers: [{
-			sql: "SELECT * FROM cobMoves18 where datetime='"+'<%= @map.datetime%>'+"' order by army desc", 	// Required if table_name is not given
+			sql: "SELECT * FROM cobMoves19 where datetime='"+'<%= @map.datetime%>'+"' order by army desc", 	// Required if table_name is not given
 			cartocss: CARTO_BASE,
       interactivity: 'unitid' // optional
 		}]
