@@ -1,0 +1,14 @@
+<h3><%= @legend.name %></h3>
+<p><%= link_to @legend.reference, @legend.url%></p>
+<% @legend.legendgroups.each do |lg| %>
+<div class="row">
+	<% lg.legenditems.each do |li| %>
+	<div class="col-md-2">
+		<a href="#" class="thumbnail">
+		<%= image_tag li.image ,width: "200"%>
+		<p><%=li.name%></p>
+	</a>
+	</div>
+	<%end%>
+</div>
+<%end%>

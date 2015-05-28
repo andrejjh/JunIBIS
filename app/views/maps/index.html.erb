@@ -1,3 +1,10 @@
+<h3><%= t('map.legends')%></h3>
+<ul>
+<% @legends.each do |l| %>
+<li><%= link_to l.name, l%></li>
+<%end%>
+</ul>
+<hr>
 <h3><%= t('map.maps')%></h3>
 <table class="table table-striped"><tr>
   <th></th>

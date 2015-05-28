@@ -19,6 +19,7 @@ end
 		end
 		def index
 			@maps = Map.order('id').all
+			@legends = Legend.order('id').all
 			respond_to do |format|
 				format.html { render :index, :layout => "application"}# index.html.erb
 				format.json  { render json:  @maps }
