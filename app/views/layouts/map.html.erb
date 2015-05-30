@@ -1,1 +1,40 @@
-<%= yield %>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>JunIBIS</title>
+    <meta name="description" content="Campaign of Belgium, June 1815, Napoleonic wars.">
+    <meta name="author" content="Andre Heughebaert">
+    <link rel="icon" href="/favicon.ico">
+    <link href="/assets/application-0de31f4cc0abc353a4c24b9b65078470.css" rel="stylesheet">
+    <%if @menu==3%>
+      <link rel="stylesheet" href="https://cartodb-libs.global.ssl.fastly.net/cartodb.js/v3/3.12/themes/css/cartodb.css" />
+      <style type="text/css">
+          html, body, #map {
+              height: 100%;
+              padding: 0;
+              margin: 0;
+          }
+          #name {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+          }
+          #hour {
+              position: absolute;
+              top: 20px;
+              right: 20px;
+          }
+
+          </style>
+    <%end%>
+</head>
+<body>
+ <%= yield%>
+
+<script src="/assets/application-08f11178a48f0f1e04df87f20eb83e8f.js"></script>
+</body>
+</html>

@@ -59,7 +59,9 @@ update terms set scheme_id=s.id from (select id, code from schemes) as s  where 
 copy sources (code, type, reference, image) from '/Users/aheugheb/ws/1815/csv/sources.csv' with CSV HEADER delimiter ';';
 create table icons (id int primary key, code varchar(16) unique, path text);
 copy icons from '/Users/aheugheb/ws/1815/csv/icons.csv' with CSV HEADER delimiter ';';
-
+create table maps(id serial primary key, code varchar(16), event_id int references events,datetime text, latitude float, longitude float, zoomFactor int, initStep int, firstStep int, lastStep int);
+copy maps (code,datetime, latitude, longitude, zoomFactor) from '/Users/aheugheb/ws/1815/csv/maps.csv' with CSV HEADER delimiter ';';
+	
 # BASE Entities
 drop table events CASCADE;
 create table events (id serial primary key, code varchar(16) unique, kind int references terms, beginDate text, endDate text, source int references sources);
@@ -81,6 +83,16 @@ create table uNames (unit_id int references units, name_de text, name_en text, n
 create table uStrengths (unit_id int references units, officers int, men int, total int, source int references sources);
 create table uLosses (unit_id int references units, officers int, men int, total int, source int references sources);
 	
+# News
+create table news(id serial primary key, title text, content text, added date default now())
+
+# Legends
+create table legends(id int primary key, name text, reference text, url text);
+create table legendGroups(id int primary key, name text, legend_id int references legends);
+create table legendItems(id int primary key, legendgroup_id int references legendGroups, name_de text, name_en text, name_fr text, name_nl text, image text);		
+copy legends from '/Users/aheugheb/ws/1815/csv/legends.csv' with CSV HEADER delimiter ';';
+copy legendGroups from '/Users/aheugheb/ws/1815/csv/legendGroups.csv' with CSV HEADER delimiter ';';
+copy legendItems from '/Users/aheugheb/ws/1815/csv/legendItems.csv' with CSV HEADER delimiter ';';
 	
 # Populate units from JdP source
 insert into units (code, parent, absence, name, ems, officers ,men, bataillons, squadrons, batteries, engineers, category, rank, icon, source) 
@@ -153,6 +165,15 @@ insert into uelinks
 		left join sources s on s.code='CoAMontStJean'
 	where coa.MSJ='yes' order by u.id;
 	
+create table CoA.units(code varchar(16) primary key, parentID varchar(16),name varchar(64),rank varchar(16),eng int,lnInf int,lgInf int,lgCav int,hvCav int,fArt int,hArt int, QB varchar(4),LGN varchar(4),WVR varchar(4),MSJ varchar(4));
+update CoA.units set eng=0 where eng is null;
+update CoA.units set lnInf=0 where lnInf is null;
+update CoA.units set lgInf=0 where lgInf is null;
+update CoA.units set hvCav=0 where hvCav is null;
+update CoA.units set lgCav=0 where lgCav is null;
+update CoA.units set fArt=0 where fArt is null;
+update CoA.units set hArt=0 where hArt is null;
+
 drop table uStrengths;
 create table uStrengths (unit_id int references units, officers int, men int, total int, source int references sources);
 insert into uStrengths (unit_id, total, source) 
@@ -160,12 +181,10 @@ insert into uStrengths (unit_id, total, source)
 	left join units u on u.code=coa.code
 	left join terms cat on cat.id=u.category
 	left join terms rank on rank.id=u.rank
-	left join sources s on s.code='CoAQuatreBras'
-	where  rank.code not in ('AR', 'CPS', 'Br','Div', 'Sub');	
+	left join sources s on s.code='CoAQuatreBras';	
 
 
-create table CoA.units(code varchar(16) primary key, parentID varchar(16),name varchar(64),rank varchar(16),eng int,lnInf int,lgInf int,lgCav int,hvCav int,fArt int,hArt int, QB varchar(4),LGN varchar(4),WVR varchar(4),MSJ varchar(4));
-	
+		
 #insert into uelinks select id, 'Quatre-Bras', 2 from JF.units where Sheet=2;
 #insert into pelinks select id, 'Quatre-Bras', 2 from JF.people where Sheet=2;
 #insert into uelinks select id, 'Ligny', 3 from JF.units where Sheet=3;

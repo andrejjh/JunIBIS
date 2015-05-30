@@ -2,17 +2,25 @@ require "pp"
 require "sqlite3"
 
 class Move
-  attr_reader :place, :longitude, :latitude, :arrival, :departure
+  attr_reader :place, :longitude, :latitude, :arrival, :departure, :meantime
   def initialize(place, longitude, latitude, arrival, departure)
     @place=place
     @longitude=longitude
     @latitude=latitude
     @arrival=arrival
     @departure=departure
+    @meantime= @arrival.nil? ? @departure : @departure.nil? ? @arrival : @arrival + (@departure- @arrival)/2
+ #   pp self
   end
 
   def <=>(other)
-    @arrival <=> other.arrival
+      @meantime <=> other.meantime
+  end
+  def arrives()
+    return arrival.nil? ? @departure : @arrival
+  end
+  def departs()
+     return departure.nil? ? @arrival : @departure
   end
 end
 class Detachment
@@ -27,8 +35,7 @@ class Detachment
     if md=re.match(s)
       return Time.gm(200+md[1].to_f,md[2].to_f, md[3].to_f, md[4].to_f, md[5].to_f, md[6].to_f)
     else
-      return Time.now()
-      pp ("No match for (#{s})!")
+      return nil
     end
 
   end
@@ -37,7 +44,8 @@ class Detachment
     @moves << Move.new(place, longitude.to_f, latitude.to_f, to_time(arrival), to_time(departure))
   end
   def itinerary(froms, tos, increment)
-    oblivion='???'
+    where=""
+    visible=false
     results = Array.new
     if @moves.empty?
       return results
@@ -47,36 +55,34 @@ class Detachment
     @moves=@moves.sort()
     pm=nil
     dt=from
+    step=0
     idx=0
     m=@moves.at(idx)
 
     until dt > to
-      while (!m.nil?) && (dt > m.departure)
+      while (!m.nil?) && (dt > m.departs)
         pm=m
         idx+=1
         m=@moves.at(idx)
+        visible= !m.nil?
       end
-      if m.nil?
-        where = oblivion
-      else
-        if (dt < m.arrival)
+      if !m.nil?
+        if (dt < m.arrives)
         then # on its way to m
-          where= pm.nil? ? oblivion : 'en route between ' + pm.place + ' and ' + m.place
-          x= pm.nil? ? 0 : ((dt-pm.departure) * m.longitude + (m.arrival-dt) * pm.longitude) / (m.arrival-pm.departure)
-          y= pm.nil? ? 0 : ((dt-pm.departure) * m.latitude + (m.arrival-dt) * pm.latitude) / (m.arrival-pm.departure)
-        else 
-          if (m.longitude ==0 && m.latitude == 0)
-          then # oblivion
-            where = oblivion
-          else # precisely at position m
-            where= 'at ' + m.place
+          visible= pm.nil? ? false : !pm.departure.nil?
+#          where= pm.nil? ? 'nowhere yet' : 'en route between ' + pm.place + ' and ' + m.place
+          x= pm.nil? ? 0 : ((dt-pm.departs) * m.longitude + (m.arrives-dt) * pm.longitude) / (m.arrives-pm.departs)
+          y= pm.nil? ? 0 : ((dt-pm.departs) * m.latitude + (m.arrives-dt) * pm.latitude) / (m.arrives-pm.departs)
+        else # precisely at position m
+          visible= !m.departure.nil?
+#         where= 'exactly at ' + m.place
             x= m.longitude
             y= m.latitude
-          end
         end
       end
-#      pp( dt.strftime('18%y/%m/%d %H:%M:%S'), where, m)
-      results << [@id, @part, dt.strftime('18%y/%m/%d %H:%M:%S'), y.to_s, x.to_s ] unless where==oblivion
+#      pp( dt.strftime('18%y/%m/%d %H:%M:%S'), where, visible, m)
+      results << [@id, @part, step ,dt.strftime('18%y/%m/%d %H:%M:%S'), y.to_s, x.to_s ] unless !visible
+      step=step+1
       dt=dt+ increment
       end
     return results
@@ -138,9 +144,9 @@ unitIDs.each do |unitID|
       unit.move(row[0], row[1], row[2], row[3], row[4],row[5])
     end
     # Generate unit itinerary
-    moves= unit.itinerary(battle.start, battle.stop, 1800)
+    moves= unit.itinerary(battle.start, battle.stop, 3600)
     moves.each do |m|
 #  pp m
-     db.execute("INSERT INTO moves (unitID, part, datetime, latitude, longitude) VALUES (?, ?, ?, ?, ?)", m)
+     db.execute("INSERT INTO moves (unitID, part, step, datetime, latitude, longitude) VALUES (?, ?, ?, ?, ?, ?)", m)
     end
 end

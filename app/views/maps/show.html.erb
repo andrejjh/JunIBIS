@@ -1,128 +1,11 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>JunIBIS|CartoDB.js- Static map</title>
-    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
-    <link rel="shortcut icon" href="http://cartodb.com/assets/favicon.ico" />
-    <!--link rel="stylesheet" href="http://libs.cartocdn.com/cartodb.js/v3/3.12/themes/css/cartodb.css" /-->
-    <link rel="stylesheet" href="https://cartodb-libs.global.ssl.fastly.net/cartodb.js/v3/3.12/themes/css/cartodb.css" />
-    <style type="text/css">
-        html, body, #map {
-            height: 100%;
-            padding: 0;
-            margin: 0;
-        }
-        #name {
-          position: absolute;
-          bottom: 20px;
-          right: 20px;
-        }
-        #day {
-            position: absolute;
-            top: 10px;
-            right: 80px;
-        }
-        #ampm {
-            position: absolute;
-            top: 340px;
-            right: 80px;
-        }
-        #hour {
-            position: absolute;
-            top: 10px;
-            right: 20px;
-        }
-
-        .map_name {
-            background: rgba(255,255,255,0.9);
-            border-radius: 5px;
-            padding: 0;
-            border: 1px solid #999;
-            border-bottom: 1px solid #999;
-            width: 120px;
-        }
-        .map_name p {
-          margin-left: auto;
-          margin-right: auto;
-          width: 80%;
-        }
-
-        .layer_selector {
-            background: rgba(255,255,255,0.9);
-            border-radius: 5px;
-            padding: 0;
-            border: 1px solid #999;
-            width: 60px;
-        }
-
-        .layer_selector > p {
-            padding: 15px 30px;
-            border-bottom: 1px solid #999;
-        }
-
-        .layer_selector ul {
-            padding: 0; margin: 0;
-            list-style-type: none;
-        }
-        .layer_selector li {
-            padding: 10px 10px;
-            font-family: Helvetica, Arial;
-            font-size: 10px;
-            color: #3974C4;
-            cursor: pointer;
-        }
-        .layer_selector li:not(:last-child) {
-            border-bottom: 1px solid #999;
-        }
-        .layer_selector li:hover {
-            background-color: #F0F0F0;
-            cursor: pointer;
-        }
-        .layer_selector li.d_selected,
-        .layer_selector li.a_selected,
-        .layer_selector li.h_selected
-         {
-            background-color: #3974C4;
-            color: #FFFFFF;
-        }
-        </style>
-
-	  </head>
-		<body>
-
 <div id="map"></div>
-<div id="name" class="map_name">
-<p><%= @map.code %></p>
+<div id="name">
+  <h3><span class="label label-primary"><%= @map.code %></span></h3>
 </div>
-<div id="day" class="layer_selector">
-		<ul>
-				<li data="1815/06/15" data-type="day"<%if @map.datetime.slice(8,2)=='15'%> class="d_selected"<%end%>>15 Jun.</li>
-				<li data="1815/06/16" data-type="day"<%if @map.datetime.slice(8,2)=='16'%> class="d_selected"<%end%>>16 Jun.</li>
-				<li data="1815/06/17" data-type="day"<%if @map.datetime.slice(8,2)=='17'%> class="d_selected"<%end%>>17 Jun.</li>
-        <li data="1815/06/18" data-type="day"<%if @map.datetime.slice(8,2)=='18'%> class="d_selected"<%end%>>18 Jun.</li>
-        <li data="1815/06/19" data-type="day"<%if @map.datetime.slice(8,2)=='19'%> class="d_selected"<%end%>>19 Jun.</li>
-</div>
-<div id="ampm" class="layer_selector">
-		<ul>
-				<li data="AM" data-type="ampm"<%if @map.datetime.slice(17,2)=='AM' %> class="a_selected"<%end%>>AM</li>
-				<li data="PM" data-type="ampm"<%if @map.datetime.slice(17,2)=='PM' %> class="a_selected"<%end%>>PM</li>
-</div>
-<div id="hour" class="layer_selector">
-		<ul>
-      <li data="00:00" data-type="hour"<%if @map.datetime.slice(11,2)=='00'%> class="h_selected"<%end%>>00:00</li>
-      <li data="01:00" data-type="hour"<%if @map.datetime.slice(11,2)=='01'%> class="h_selected"<%end%>>01:00</li>
-      <li data="02:00" data-type="hour"<%if @map.datetime.slice(11,2)=='02'%> class="h_selected"<%end%>>02:00</li>
-      <li data="03:00" data-type="hour"<%if @map.datetime.slice(11,2)=='03'%> class="h_selected"<%end%>>03:00</li>
-			<li data="04:00" data-type="hour"<%if @map.datetime.slice(11,2)=='04'%> class="h_selected"<%end%>>04:00</li>
-			<li data="05:00" data-type="hour"<%if @map.datetime.slice(11,2)=='05'%> class="h_selected"<%end%>>05:00</li>
-			<li data="06:00" data-type="hour"<%if @map.datetime.slice(11,2)=='06'%> class="h_selected"<%end%>>06:00</li>
-			<li data="07:00" data-type="hour"<%if @map.datetime.slice(11,2)=='07'%> class="h_selected"<%end%>>07:00</li>
-			<li data="08:00" data-type="hour"<%if @map.datetime.slice(11,2)=='08'%> class="h_selected"<%end%>>08:00</li>
-			<li data="09:00" data-type="hour"<%if @map.datetime.slice(11,2)=='09'%> class="h_selected"<%end%>>09:00</li>
-			<li data="10:00" data-type="hour"<%if @map.datetime.slice(11,2)=='10'%> class="h_selected"<%end%>>10:00</li>
-			<li data="11:00" data-type="hour"<%if @map.datetime.slice(11,2)=='11'%> class="h_selected"<%end%>>11:00</li>
-		</ul>
+<div id="hour" class="btn-group-vertical">
+  <button id="hourUp" type="button" class="btn btn-default"><span class="glyphicon glyphicon-chevron-up"></span></button>
+  <button id="display" type="button" class="btn btn-primary"></button>
+  <button id="hourDown" type="button" class="btn btn-default"><span class="glyphicon glyphicon-chevron-down"></span></button>
 </div>
 
 
@@ -183,35 +66,33 @@ function main() {
 ].join('\n');
 
 
+var step=<%=@map.initstep%>
+var dt="???"
+
+function setMapDate(){
+  var hours=['00', '01', '02', '03', '04', '05','06', '07', '08', '09', '10', '11','12', '13', '14', '15', '16', '17','18', '19', '20', '21', '22', '23']
+  var day=14+(12+step)/24
+  var hour=hours[step%24]+':00'
+  dt=day.toFixed(0).toString()+" June 1815 "+hour
+  $("#display").text(dt)
+  $("#hourUp").prop('disabled', (step == <%=@map.laststep%>));
+  $("#hourDown").prop('disabled', (step == <%=@map.firststep%>));
+
+}
 // Create layer selector
 function createSelector(layer) {
-var dt='<%=@map.datetime%>'.split(" ")
-var day=dt[0]
-var hour=dt[1]
-var ampm=dt[2]
+setMapDate()
+$("#hourUp").on('click', function (e){
+    step++
+    setMapDate()
+    layer.setSQL("SELECT * FROM cobMoves20b where step='" + step +"' order by army desc");
+})
 
-var $options = $(".layer_selector").find("li");
-$options.click(function(e) {
-		var $li = $(e.target);
-		var selected = $li.attr('data');
-		var type = $li.data('type');
-		if (type === "day") {
-				$options.removeClass('d_selected');
-				day=selected;
-				$li.addClass('d_selected');
-		} else if (type ==="ampm") {
-        $options.removeClass('a_selected');
-        ampm=selected;
-        $li.addClass('a_selected');
-    } else {
-			$options.removeClass('h_selected');
-			hour=selected
-			$li.addClass('h_selected');
-		}
-    var sql="SELECT * FROM cobMoves20 where datetime='" + day + " " + hour + " " +ampm +"' order by army desc";
-		layer.setSQL(sql);
-    console.log(sql)
-});
+$("#hourDown").on('click', function (e){
+    step--
+    setMapDate()
+    layer.setSQL("SELECT * FROM cobMoves20b where step='" + step +"' order by army desc");
+})
 }
 		var map = new L.Map('map', {
 			zoomControl: true,
@@ -232,7 +113,7 @@ $options.click(function(e) {
     type: 'cartodb',
 		user_name: "andrejjh", // Required
 		sublayers: [{
-			sql: "SELECT * FROM cobMoves20 where datetime='"+'<%= @map.datetime%>'+"' order by army desc", 	// Required if table_name is not given
+			sql: "SELECT * FROM cobMoves20b where datetime='"+'<%= @map.datetime%>'+"' order by army desc", 	// Required if table_name is not given
 			cartocss: CARTO_BASE,
       interactivity: 'unitid' // optional
 		}]
@@ -269,7 +150,4 @@ $options.click(function(e) {
 }
 // you could use $(window).load(main);
 window.onload = main;
-
 </script>
-	</body>
-</html>

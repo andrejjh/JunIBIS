@@ -13,20 +13,39 @@
             padding: 0;
             margin: 0;
         }
+        #name {
+          position: absolute;
+          bottom: 20px;
+          right: 20px;
+        }
         #day {
             position: absolute;
             top: 10px;
-            right: 120px;
+            right: 80px;
         }
         #ampm {
             position: absolute;
-            top: 176px;
-            right: 120px;
+            top: 340px;
+            right: 80px;
         }
         #hour {
             position: absolute;
             top: 10px;
-            right: 40px;
+            right: 20px;
+        }
+
+        .map_name {
+            background: rgba(255,255,255,0.9);
+            border-radius: 5px;
+            padding: 0;
+            border: 1px solid #999;
+            border-bottom: 1px solid #999;
+            width: 120px;
+        }
+        .map_name p {
+          margin-left: auto;
+          margin-right: auto;
+          width: 80%;
         }
 
         .layer_selector {
@@ -34,7 +53,7 @@
             border-radius: 5px;
             padding: 0;
             border: 1px solid #999;
-            width: 80px;
+            width: 60px;
         }
 
         .layer_selector > p {
@@ -50,7 +69,7 @@
             padding: 10px 10px;
             font-family: Helvetica, Arial;
             font-size: 10px;
-            color: #444;
+            color: #3974C4;
             cursor: pointer;
         }
         .layer_selector li:not(:last-child) {
@@ -60,10 +79,12 @@
             background-color: #F0F0F0;
             cursor: pointer;
         }
-        .layer_selector li.day_selected,
-        .layer_selector li.ampm_selected,
-        .layer_selector li.hour_selected {
-            background-color: #A6CEE3;
+        .layer_selector li.d_selected,
+        .layer_selector li.a_selected,
+        .layer_selector li.h_selected
+         {
+            background-color: #3974C4;
+            color: #FFFFFF;
         }
         </style>
 
@@ -71,31 +92,36 @@
 		<body>
 
 <div id="map"></div>
+<div id="name" class="map_name">
+<p>Campaign</p>
+</div>
 <div id="day" class="layer_selector">
 		<ul>
-				<li data="1815/06/15 " data-type="day" class="day_selected">15 June</li>
-				<li data="1815/06/16 " data-type="day">16 June</li>
-				<li data="1815/06/17 " data-type="day">17 June</li>
+				<li data="1815/06/15" data-type="day" class="d_selected">15 Jun.</li>
+				<li data="1815/06/16" data-type="day">16 Jun.</li>
+				<li data="1815/06/17" data-type="day">17 Jun.</li>
+        <li data="1815/06/18" data-type="day">18 Jun.</li>
+        <li data="1815/06/19" data-type="day">19 Jun.</li>
 </div>
 <div id="ampm" class="layer_selector">
 		<ul>
-				<li data="" data-type="ampm" class="ampm_selected">AM</li>
+				<li data="AM" data-type="ampm" class="a_selected">AM</li>
 				<li data="PM" data-type="ampm">PM</li>
 </div>
 <div id="hour" class="layer_selector">
 		<ul>
-      <li data="00:00 " data-type="hour" class="hour_selected">0 h</li>
-      <li data="01:00 " data-type="hour">1 h</li>
-      <li data="02:00 " data-type="hour">2 h</li>
-      <li data="03:00 " data-type="hour">3 h</li>
-				<li data="04:00 " data-type="hour">4 h</li>
-				<li data="05:00 " data-type="hour">5 h</li>
-				<li data="06:00 " data-type="hour">6 h</li>
-				<li data="07:00 " data-type="hour">7 h</li>
-				<li data="08:00 " data-type="hour">8 h</li>
-				<li data="09:00 " data-type="hour">9 h</li>
-				<li data="10:00 " data-type="hour">10 h</li>
-				<li data="11:00 " data-type="hour">11 h</li>
+      <li data="00:00" data-type="hour" class="h_selected">00:00</li>
+      <li data="01:00" data-type="hour">01:00</li>
+      <li data="02:00" data-type="hour">02:00</li>
+      <li data="03:00" data-type="hour">03:00</li>
+			<li data="04:00" data-type="hour">04:00</li>
+			<li data="05:00" data-type="hour">05:00</li>
+			<li data="06:00" data-type="hour">06:00</li>
+			<li data="07:00" data-type="hour">07:00</li>
+			<li data="08:00" data-type="hour">08:00</li>
+			<li data="09:00" data-type="hour">09:00</li>
+			<li data="10:00" data-type="hour">10:00</li>
+			<li data="11:00" data-type="hour">11:00</li>
 		</ul>
 </div>
 
@@ -159,9 +185,10 @@ function main() {
 
 // Create layer selector
 function createSelector(layer) {
-var day="1815/06/15 "
-var hour="00:00 "
-var ampm=""
+var dt='1815/06/15 00:00 AM'.split(" ")
+var day=dt[0]
+var hour=dt[1]
+var ampm=dt[2]
 
 var $options = $(".layer_selector").find("li");
 $options.click(function(e) {
@@ -169,26 +196,28 @@ $options.click(function(e) {
 		var selected = $li.attr('data');
 		var type = $li.data('type');
 		if (type === "day") {
-				$options.removeClass('day_selected');
+				$options.removeClass('d_selected');
 				day=selected;
-				$li.addClass('day_selected');
+				$li.addClass('d_selected');
 		} else if (type ==="ampm") {
-        $options.removeClass('ampm_selected');
+        $options.removeClass('a_selected');
         ampm=selected;
-        $li.addClass('ampm_selected');
+        $li.addClass('a_selected');
     } else {
-			$options.removeClass('hour_selected');
+			$options.removeClass('h_selected');
 			hour=selected
-			$li.addClass('hour_selected');
+			$li.addClass('h_selected');
 		}
-		layer.setSQL("SELECT * FROM cobMoves17 where datetime='" + day + hour + ampm +"' order by army desc");
+    var sql="SELECT * FROM cobMoves20b where datetime='" + day + " " + hour + " " +ampm +"' order by army desc";
+		layer.setSQL(sql);
+    console.log(sql)
 });
 }
 		var map = new L.Map('map', {
 			zoomControl: true,
 			fullScreen: true,
 //			layerSelector: true,
-			center: [50.3 , 4.6],
+			center: [50.4 , 4.6],
 			zoom: 10
 		});
 
@@ -203,7 +232,7 @@ $options.click(function(e) {
     type: 'cartodb',
 		user_name: "andrejjh", // Required
 		sublayers: [{
-			sql: "SELECT * FROM cobMoves17 where datetime='1815/06/15 00:00:00' order by army desc", 	// Required if table_name is not given
+			sql: "SELECT * FROM cobMoves20b where datetime='1815/06/15 00:00' order by army desc", 	// Required if table_name is not given
 			cartocss: CARTO_BASE,
       interactivity: 'unitid' // optional
 		}]
@@ -219,7 +248,7 @@ $options.click(function(e) {
     subLayer.on('featureClick', function(e, latlng, pos, data, subLayerIndex) {
 //      console.log("click ", data.unitid.split("-",1));
 //      var uID=data.unitid.split("-",1)
-      window.location.assign("../units/"+ data.unitid.split("-",1)+"/resolve")
+      window.location.assign("../../units/"+ data.unitid.split("-",1)+"/resolve")
 
     });
     subLayer.on('featureOver', function(e, latlng, pos, data, subLayerIndex) {
