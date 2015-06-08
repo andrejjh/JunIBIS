@@ -85,13 +85,13 @@ setMapDate()
 $("#hourUp").on('click', function (e){
     step++
     setMapDate()
-    layer.setSQL("SELECT * FROM cobMoves20b where step='" + step +"' order by army desc");
+    layer.setSQL("SELECT * FROM cobMoves21 where step='" + step +"' order by army desc");
 })
 
 $("#hourDown").on('click', function (e){
     step--
     setMapDate()
-    layer.setSQL("SELECT * FROM cobMoves20b where step='" + step +"' order by army desc");
+    layer.setSQL("SELECT * FROM cobMoves21 where step='" + step +"' order by army desc");
 })
 }
 		var map = new L.Map('map', {
@@ -113,7 +113,7 @@ $("#hourDown").on('click', function (e){
     type: 'cartodb',
 		user_name: "andrejjh", // Required
 		sublayers: [{
-			sql: "SELECT * FROM cobMoves20b where datetime='"+'<%= @map.datetime%>'+"' order by army desc", 	// Required if table_name is not given
+			sql: "SELECT * FROM cobMoves21 where datetime='"+'<%= @map.datetime%>'+"' order by army desc", 	// Required if table_name is not given
 			cartocss: CARTO_BASE,
       interactivity: 'unitid' // optional
 		}]

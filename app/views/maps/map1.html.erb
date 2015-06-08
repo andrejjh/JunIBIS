@@ -98,10 +98,12 @@
 <div id="day" class="layer_selector">
 		<ul>
 				<li data="1815/06/15" data-type="day" class="d_selected">15 Jun.</li>
-				<li data="1815/06/16" data-type="day">16 Jun.</li>
-				<li data="1815/06/17" data-type="day">17 Jun.</li>
-        <li data="1815/06/18" data-type="day">18 Jun.</li>
-        <li data="1815/06/19" data-type="day">19 Jun.</li>
+				<li data="1815/06/16" data-type="day">16 June</li>
+				<li data="1815/06/17" data-type="day">17 June</li>
+        <li data="1815/06/18" data-type="day">18 June</li>
+        <li data="1815/06/19" data-type="day">19 June</li>
+        <li data="1815/06/20" data-type="day">20 June</li>
+        <li data="1815/06/21" data-type="day">21 June</li>
 </div>
 <div id="ampm" class="layer_selector">
 		<ul>
@@ -208,7 +210,7 @@ $options.click(function(e) {
 			hour=selected
 			$li.addClass('h_selected');
 		}
-    var sql="SELECT * FROM cobMoves20b where datetime='" + day + " " + hour + " " +ampm +"' order by army desc";
+    var sql="SELECT * FROM cobMoves21 where datetime='" + day + " " + hour + " " +ampm +"' order by army desc";
 		layer.setSQL(sql);
     console.log(sql)
 });
@@ -232,7 +234,7 @@ $options.click(function(e) {
     type: 'cartodb',
 		user_name: "andrejjh", // Required
 		sublayers: [{
-			sql: "SELECT * FROM cobMoves20b where datetime='1815/06/15 00:00' order by army desc", 	// Required if table_name is not given
+			sql: "SELECT * FROM cobMoves21 where datetime='1815/06/15 00:00' order by army desc", 	// Required if table_name is not given
 			cartocss: CARTO_BASE,
       interactivity: 'unitid' // optional
 		}]
