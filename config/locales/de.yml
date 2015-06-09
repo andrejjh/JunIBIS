@@ -34,9 +34,9 @@ de:
     batteries: "Batterieen"
 
   source:
-        source: "de:Source"
-        image: "de:Image"
-        reference: "de:Reference"
+        source: "Quelle"
+        image: "Foto"
+        reference: "Referenz"
         units: "de:#Units"
         people: "de:#People"
         uplinks: "de:#Unit-Person links"
@@ -44,17 +44,17 @@ de:
 
   event:
       event: "de:Event"
-      name: "de:Name"
-      begin: "de:Begin"
-      end: "de:End"
+      name: "Name"
+      begin: "Beginnen"
+      end: "Enden"
 
   map:
       static: "Statische kaarten"
       dynamic: "Dynamische kaart"
       places: "Plaatsen kaart"
-      maps: "Maps"
+      maps: "Kaarten"
       code: "Name"
-      datetime: "When?"
+      datetime: "Datum"
 
   news:
       news: "News"

@@ -14,10 +14,10 @@ class SourcesController < ApplicationController
 		end
 	end
 	def index
-		@sources = Source.order('id').all
+		@sourcegroups = Sourcegroup.order('id').all
 		respond_to do |format|
 			format.html # index.html.erb
-			format.json  { render json: @sources }
+			format.json  { render json: @sourcegroups }
 		end
 	end
 
