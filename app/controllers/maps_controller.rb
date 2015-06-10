@@ -35,5 +35,7 @@ def map2
 end
 def map3
 end
+def map4
+end
 
 end

@@ -52,6 +52,7 @@ fr:
     static: "Cartes statiques"
     dynamic: "Carte dynamique"
     places: "Carte des lieux"
+    manoeuvers: "Carte des manoeuvres"
     maps: "Cartes"
     code: "Nom"
     datetime: "Quand?"

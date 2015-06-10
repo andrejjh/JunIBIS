@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get 'map1' => 'maps#map1'
   get 'map2' => 'maps#map2'
   get 'map3' => 'maps#map3'
+  get 'map4' => 'maps#map4'
   get '/change_locale/:locale', to: 'welcome#change_locale', as: :change_locale
 
   resources :people do

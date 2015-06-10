@@ -51,6 +51,8 @@ nl:
       static: "Statische kaarten"
       dynamic: "Dynamische kaart"
       places: "Plaatsen kaart"
+      manoeuvers: "Manoeuvres Kaart"
+
       maps: "Kaarten"
       code: "Naam"
       datetime: "Wanneer?"
