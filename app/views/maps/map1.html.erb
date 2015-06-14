@@ -211,7 +211,7 @@ $options.click(function(e) {
 			hour=selected
 			$li.addClass('h_selected');
 		}
-    var sql="SELECT * FROM cobMoves21 where datetime='" + day + " " + hour + " " +ampm +"' order by army desc";
+    var sql="SELECT * FROM cobmoves22 where datetime='" + day + " " + hour + " " +ampm +"' order by army desc";
 		layer.setSQL(sql);
     console.log(sql)
 });
@@ -227,7 +227,7 @@ $options.click(function(e) {
 
 	var baseLayer= new L.tileLayer.wms('http://webgisdgo4.spw.wallonie.be/ArcGIS/services/DGO4/FERRARIS/MapServer/WMSServer/', {
 		layers: '1',
-    attribution: 'JunIBIS, Ferraris'
+    attribution: '<a href="http://www.junibis.be">JunIBIS</a>(Heughebaert/Iven), Ferraris'
 }).addTo(map);
 
 	// add cartodb layer with one sublayer
@@ -235,7 +235,7 @@ $options.click(function(e) {
     type: 'cartodb',
 		user_name: "andrejjh", // Required
 		sublayers: [{
-			sql: "SELECT * FROM cobMoves21 where datetime='1815/06/15 00:00' order by army desc", 	// Required if table_name is not given
+			sql: "SELECT * FROM cobmoves22 where datetime='1815/06/15 00:00' order by army desc", 	// Required if table_name is not given
 			cartocss: CARTO_BASE,
       interactivity: 'unitid' // optional
 		}]
