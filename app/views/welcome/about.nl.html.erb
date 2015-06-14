@@ -9,8 +9,25 @@ door naamsvermelding - De gebruiker dient de maker van het werk te <b>vermelden<
 De interactieve kaarten resultaat van een zorgvuldige werk van analyse en compilatie uit vele <%= link_to "bronnen", sources_path %>.
 Voor meer informatie, bezoek onze <%= link_to 'project blog', 'http: //scriptogr.am/andrejjh'%> in het Frans.
 </div>
+<hr>
 <dl class="dl-horizontal">
 <dt><%= t('about.concept')%></dt><dd>André Heughebaert</dd>
 <dt><%= t('about.content')%></dt><dd>Eric Iven</dd>
 <dt><%= t('about.maps')%></dt><dd>Géoportail de la Région Wallonne</dd>
 </dl>
+<hr>
+<h4><%= t('about.links') %></h4>
+<table class="table table-striped">
+<tr>
+<td><%= link_to image_tag("links/BelleAlliance.jpg" ,height: "60"), "http://belle-alliance.be/", :target => "_blank" %></td>
+<td><%= link_to "Les Editions de la Belle-Alliance, Jean-Philippe Tondeur","http://belle-alliance.be/", :target => "_blank" %></td>
+</tr>
+<tr>
+<td><%= link_to image_tag("links/FondationNapoleon.jpg" ,height: "60"), "http://www.napoleon.org/", :target => "_blank" %></td>
+<td><%= link_to "Fondation Napoléon", "http://www.napoleon.org/", :target => "_blank" %></td>
+</tr>
+<tr>
+<td><%= link_to image_tag("links/RouteGrouchy.png" ,height: "60"), "http://www.napoleon-grouchy-1815.com/", :target => "_blank" %></td>
+<td><%= link_to "Route Armée Grouchy", "http://www.napoleon-grouchy-1815.com/", :target => "_blank" %></td>
+</tr>
+</table>

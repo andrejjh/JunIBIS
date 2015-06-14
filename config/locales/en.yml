@@ -34,6 +34,7 @@ en:
     concept: "Concept"
     content: "Content"
     maps: "Ferraris layer"
+    links: "Links"
 
   person:
     firstName: "FirstName"

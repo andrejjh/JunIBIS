@@ -8,8 +8,25 @@ Nos cartes sont d'ailleurs accessibles sous licence <%= link_to 'CC-BY', 'https:
 <p>Les cartes interactives sont le résutlat d'un travail minutieux d'analyse et de compilation de nombreuses <%= link_to "sources", sources_path %>.</p>
 <p>Si vous voulez en savoir plus, visitez le <%= link_to 'blog du projet', 'http://scriptogr.am/andrejjh'%> en français.</p>
 </div>
+<hr>
 <dl class="dl-horizontal">
 <dt><%= t('about.concept')%></dt><dd>André Heughebaert</dd>
 <dt><%= t('about.content')%></dt><dd>Eric Iven</dd>
 <dt><%= t('about.maps')%></dt><dd>Géoportail de la Région Wallonne</dd>
 </dl>
+<hr>
+<h4><%= t('about.links') %></h4>
+<table class="table table-striped">
+<tr>
+<td><%= link_to image_tag("links/BelleAlliance.jpg" ,height: "60"), "http://belle-alliance.be/", :target => "_blank" %></td>
+<td><%= link_to "Les Editions de la Belle-Alliance, Jean-Philippe Tondeur","http://belle-alliance.be/", :target => "_blank" %></td>
+</tr>
+<tr>
+<td><%= link_to image_tag("links/FondationNapoleon.jpg" ,height: "60"), "http://www.napoleon.org/", :target => "_blank" %></td>
+<td><%= link_to "Fondation Napoléon", "http://www.napoleon.org/", :target => "_blank" %></td>
+</tr>
+<tr>
+<td><%= link_to image_tag("links/RouteGrouchy.png" ,height: "60"), "http://www.napoleon-grouchy-1815.com/", :target => "_blank" %></td>
+<td><%= link_to "Route Armée Grouchy", "http://www.napoleon-grouchy-1815.com/", :target => "_blank" %></td>
+</tr>
+</table>
