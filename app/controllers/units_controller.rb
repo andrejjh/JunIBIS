@@ -25,9 +25,13 @@ class UnitsController < ApplicationController
 
   def resolve
     @unit = Unit.find_by code: (params[:id])
+    if (@unit.nil?)
+      then render :text => "This is not a unit!"
+    else
     respond_to do |format|
       format.html {render :action => 'show'}
       format.json  { render :json => @unit }
+    end
     end
   end
 end

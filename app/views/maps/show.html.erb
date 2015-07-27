@@ -28,6 +28,7 @@ function main() {
 			'}',
 			'#layer::labels [zoom > 10] {text-name: [unitid];text-face-name: "DejaVu Sans Book";text-size: 10;text-label-position-tolerance: 10;text-fill: #000000;text-halo-fill: #FFF;text-halo-radius: 2;text-dy: 0;text-allow-overlap: true;text-placement: point;text-placement-type: simple;}',
 			'#layer ',
+      '[icon=36] { marker-width: 200;marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150726151043FMob.png);}',
 			'[icon=1] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121624BArt.png);}',
 			'[icon=2] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121638BCav.png);}',
 			'[icon=3] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121705BE-M.png);}',
@@ -62,7 +63,7 @@ function main() {
 			'[icon=32] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121456RCav.png);}',
 			'[icon=33] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121504RE-M.png);}',
 			'[icon=34] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121427RGen.png);}',
-			'[icon=35] {  marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121448RInf.png);}'
+			'[icon=35] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121448RInf.png);}'
 ].join('\n');
 
 
@@ -85,13 +86,13 @@ setMapDate()
 $("#hourUp").on('click', function (e){
     step++
     setMapDate()
-    layer.setSQL("SELECT * FROM cobMoves24 where step='" + step +"' order by army desc");
+    layer.setSQL("SELECT * FROM CoBMoves25 where step='" + step +"' order by army desc");
 })
 
 $("#hourDown").on('click', function (e){
     step--
     setMapDate()
-    layer.setSQL("SELECT * FROM cobMoves24 where step='" + step +"' order by army desc");
+    layer.setSQL("SELECT * FROM CoBMoves25 where step='" + step +"' order by army desc");
 })
 }
 		var map = new L.Map('map', {
@@ -113,7 +114,7 @@ $("#hourDown").on('click', function (e){
     type: 'cartodb',
 		user_name: "andrejjh", // Required
 		sublayers: [{
-			sql: "SELECT * FROM cobMoves24 where datetime='"+'<%= @map.datetime%>'+"' order by army desc", 	// Required if table_name is not given
+			sql: "SELECT * FROM CoBMoves25 where datetime='"+'<%= @map.datetime%>'+"' order by army desc", 	// Required if table_name is not given
 			cartocss: CARTO_BASE,
       interactivity: 'unitid' // optional
 		}]

@@ -148,6 +148,7 @@ function main() {
 			'}',
 			'#layer::labels [zoom > 10] {text-name: [unitid];text-face-name: "DejaVu Sans Book";text-size: 10;text-label-position-tolerance: 10;text-fill: #000000;text-halo-fill: #FFF;text-halo-radius: 2;text-dy: 0;text-allow-overlap: true;text-placement: point;text-placement-type: simple;}',
 			'#layer ',
+      '[icon=36] { marker-width: 200;marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150726151043FMob.png);}',
 			'[icon=1] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121624BArt.png);}',
 			'[icon=2] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121638BCav.png);}',
 			'[icon=3] { marker-file: url(https://s3.amazonaws.com/com.cartodb.users-assets.production/production/andrejjh/assets/20150417121705BE-M.png);}',
@@ -211,7 +212,7 @@ $options.click(function(e) {
 			hour=selected
 			$li.addClass('h_selected');
 		}
-    var sql="SELECT * FROM cobMoves24 where datetime='" + day + " " + hour + " " +ampm +"' order by army desc";
+    var sql="SELECT * FROM CoBMoves25 where datetime='" + day + " " + hour + " " +ampm +"' order by army desc";
 		layer.setSQL(sql);
     console.log(sql)
 });
@@ -235,7 +236,7 @@ $options.click(function(e) {
     type: 'cartodb',
 		user_name: "andrejjh", // Required
 		sublayers: [{
-			sql: "SELECT * FROM cobMoves24 where datetime='1815/06/15 00:00' order by army desc", 	// Required if table_name is not given
+			sql: "SELECT * FROM CoBMoves25 where datetime='1815/06/15 00:00' order by army desc", 	// Required if table_name is not given
 			cartocss: CARTO_BASE,
       interactivity: 'unitid' // optional
 		}]
