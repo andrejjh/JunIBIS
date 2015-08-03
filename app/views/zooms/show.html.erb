@@ -1,0 +1,15 @@
+<style type="text/css"> #myContainer { width:900px; height:500px; margin:auto; border:1px; border-style:solid; border-color:#696969;} </style>
+<script type="text/javascript">
+
+var zoomURL= "<%=image_url( @zoom.url)%>"
+var zoomSkin= "<%= asset_path 'Zoomify/Skins/Default' %>"
+	Z.showImage("myContainer",zoomURL ,"zSkinPath="+zoomSkin+"&zLogoVisible=0");
+//	console.log(zoomSkin);
+</script>
+
+<h3><%= @zoom.name %></h3>
+<br>
+<div id="myContainer"></div>
+<br>
+<p><%= @zoom.description %></p>
+<br>

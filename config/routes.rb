@@ -43,6 +43,11 @@ Rails.application.routes.draw do
       get 'show'
     end
   end
+  resources :zooms do
+    member do
+      get 'show'
+    end
+  end
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

@@ -28,7 +28,6 @@ end
 		end
 
 
-
 def map1
 end
 def map2

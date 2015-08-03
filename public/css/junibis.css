@@ -1,3 +1,4 @@
 .carousel-caption{
     background: rgba(0,0,0,0.25);
 }
+#zoomContainer { width:900px; height:500px; margin:auto; border:1px; border-style:solid; border-color:#696969;}
