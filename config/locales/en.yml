@@ -75,6 +75,7 @@ en:
       places: "Places map"
       manoeuvers: "Manoeuvers map"
       maps: "Maps"
+      zooms: "Source maps"
       code: "Name"
       datetime: "When?"
 

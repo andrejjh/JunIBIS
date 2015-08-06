@@ -53,8 +53,8 @@ nl:
       dynamic: "Dynamische kaart"
       places: "Plaatsen kaart"
       manoeuvers: "Manoeuvres Kaart"
-
       maps: "Kaarten"
+      zooms: "Bron Kaarten"
       code: "Naam"
       datetime: "Wanneer?"
   news:

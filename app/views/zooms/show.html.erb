@@ -1,15 +1,19 @@
-<style type="text/css"> #myContainer { width:900px; height:500px; margin:auto; border:1px; border-style:solid; border-color:#696969;} </style>
+
+<div id="photo"></div>
+<div id="name">
+  <h3><span class="label label-primary"><%= @zoom.name %></span></h3>
+</div>
 <script type="text/javascript">
 
-var zoomURL= "<%=image_url( @zoom.url)%>"
-var zoomSkin= "<%= asset_path 'Zoomify/Skins/Default' %>"
-	Z.showImage("myContainer",zoomURL ,"zSkinPath="+zoomSkin+"&zLogoVisible=0");
-//	console.log(zoomSkin);
-</script>
+		var map = L.map('photo').setView(new L.LatLng(0,0), 0);
+		var imageurl='<%=asset_url (@zoom.url)%>';
+		console.log (imageurl);
 
-<h3><%= @zoom.name %></h3>
-<br>
-<div id="myContainer"></div>
-<br>
-<p><%= @zoom.description %></p>
-<br>
+		L.tileLayer.zoomify(imageurl, {
+				width: <%= @zoom.width %>,
+				height: <%= @zoom.height %>,
+				tolerance: 0.8,
+				attribution: '<a href="http://www.junibis.be">JunIBIS</a>(Heughebaert/Iven), W.B. Craan'
+		}).addTo(map);
+
+</script>

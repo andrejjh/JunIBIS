@@ -14,5 +14,4 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require bootstrap
-//= require ZoomifyImageViewerExpress-min
 //= require_tree .

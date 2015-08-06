@@ -11,58 +11,37 @@
     <meta name="author" content="Andre Heughebaert">
     <link rel="icon" href="/favicon.ico">
     <%= stylesheet_link_tag "application", media: "all" %>
-
-
-
+    <link href="/css/leaflet.css" media="screen" rel="stylesheet">
+  <!---
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.5.1/leaflet.css" />
+    <!--[if lte IE 8]>
+        <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.5.1/leaflet.ie.css" />
+    <![endif]-->
+    <style type="text/css">
+        html, body, #photo {
+            width: 100%;
+            height: 100%;
+            padding: 0;
+            margin: 0;
+        }
+        #name {
+          position: absolute;
+          bottom: 20px;
+          right: 20px;
+        }
+    </style>
 </head>
-<!-- NAVBAR
-================================================== -->
   <body>
-   <div class="container">
-         <div class="header clearfix">
-      <nav>
-        <ul class="nav nav-pills pull-right">
-            <li role="presentation"<%if @menu==1 %> class="active"<%end%>><%= link_to t('menu.home'), root_path %></li>
-            <li role="presentation"<%if @menu==2 %> class="active"<%end%>><%= link_to t('menu.armies'), units_path %></li>
-            <li role="presentation"<%if @menu==3 %> class="active"<%end%>><%= link_to t('menu.maps'), maps_path %></li>
-            <li role="presentation"<%if @menu==4 %> class="active"<%end%>><%= link_to t('menu.sources'), sources_path %></li>
-            <li role="presentation"<%if @menu==5 %> class="active"<%end%>><%= link_to t('menu.about'), about_path %></li>
-            <li role="presentation"<%if @menu==6 %> class="active"<%end%>><%= link_to t('menu.contact'), contact_path %></li>
-        </ul>
-      </nav>
-          <h2 class="text-muted">JunIBIS.be</h2>
-          <%if I18n.locale==:de%>
-          <%= link_to "DE", change_locale_path(:de), class: "btn btn-default btn-xs active", role: "button"%>
-          <%else%>
-          <%= link_to "DE", change_locale_path(:de), class: "btn btn-default btn-xs", role: "button"%>
-          <%end%>
-          <%if I18n.locale==:en%>
-          <%= link_to "EN", change_locale_path(:en), class: "btn btn-default btn-xs active", role: "button"%>
-          <%else%>
-          <%= link_to "EN", change_locale_path(:en), class: "btn btn-default btn-xs", role: "button"%>
-          <%end%>
-          <%if I18n.locale==:fr%>
-          <%= link_to "FR", change_locale_path(:fr), class: "btn btn-default btn-xs active", role: "button"%>
-          <%else%>
-          <%= link_to "FR", change_locale_path(:fr), class: "btn btn-default btn-xs", role: "button"%>
-          <%end%>
-          <%if I18n.locale==:nl%>
-          <%= link_to "NL", change_locale_path(:nl), class: "btn btn-default btn-xs active", role: "button"%>
-          <%else%>
-          <%= link_to "NL", change_locale_path(:nl), class: "btn btn-default btn-xs", role: "button"%>
-          <%end%>
-        </div> <!-- /header -->
-    </div> <!-- /container -->
-    <hr>
-    <script src="/assets/ga.js"></script>
-    <%= javascript_include_tag "application" %>
+  <script src="/assets/ga.js"></script>
+  <script src="/javascripts/leaflet.js"></script>
+ <!---
+ <script src="https://cdn.leafletjs.com/leaflet-0.5.1/leaflet.js"></script>
+  --->
+  <script src="/javascripts/L.TileLayer.Zoomify.js"></script>
+  <%= javascript_include_tag "application" %>
 
  <%= yield%>
 
-      <!-- FOOTER -->
-      <footer>
-        <p class="pull-right"><%= link_to image_tag("CC-BY.png"), 'http://creativecommons.org/licenses/by/4.0/'%> André Heughebaert-Eric Iven v25(27/07/2015)</p>
-      </footer>
 
   </body>
 

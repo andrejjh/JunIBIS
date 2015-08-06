@@ -55,6 +55,7 @@ fr:
     places: "Carte des lieux"
     manoeuvers: "Carte des manoeuvres"
     maps: "Cartes"
+    zooms: "Cartes sources"
     code: "Nom"
     datetime: "Quand?"
 
