@@ -9,7 +9,7 @@
     <title>JunIBIS</title>
     <meta name="description" content="Campaign of Belgium, June 1815, Napoleonic wars.">
     <meta name="author" content="Andre Heughebaert">
-    <link rel="icon" href="/favicon.ico">
+    <link rel="shortcut icon" href="/favicon.png">
   <%= stylesheet_link_tag "application", media: "all" %>
 
 </head>
@@ -28,7 +28,7 @@
             <li role="presentation"<%if @menu==6 %> class="active"<%end%>><%= link_to t('menu.contact'), contact_path %></li>
         </ul>
       </nav>
-          <h2 class="text-muted">JunIBIS.be</h2>
+          <h2 class="text-muted"><%= link_to image_tag("favicon.png"), root_path%> JunIBIS.be</h2>
           <%if I18n.locale==:de%>
           <%= link_to "DE", change_locale_path(:de), class: "btn btn-default btn-xs active", role: "button"%>
           <%else%>
