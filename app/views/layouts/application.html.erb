@@ -29,6 +29,7 @@
         </ul>
       </nav>
           <h2 class="text-muted"><%= link_to image_tag("favicon.png"), root_path%> JunIBIS.be</h2>
+          <p><%= t('hello')%></p>
           <%if I18n.locale==:de%>
           <%= link_to "DE", change_locale_path(:de), class: "btn btn-default btn-xs active", role: "button"%>
           <%else%>

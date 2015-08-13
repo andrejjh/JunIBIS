@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>JunIBIS|CartoDB.js- Manoeuver map</title>
+    <title>JunIBIS|W.B.Craan notes</title>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
     <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
     <link rel="shortcut icon" href="/favicon.png">
@@ -25,28 +25,39 @@
     <script src="https://cartodb-libs.global.ssl.fastly.net/cartodb.js/v3/3.12/cartodb.js"></script>
     <script>
 function main() {
-   var map = new L.Map('map', {
-     zoomControl: true,
-     fullScreen: true,
-     layerSelector: true,
-     center: [50.5 , 4.5],
-     zoom: 9
-   });
+   var map;
 
-	var baseLayer, layer1;
+	var baseLayer, layer1, layer2;
+	map = new L.Map('map', {
+	 zoomControl: true,
+	 fullScreen: true,
+	 center: [50.675 , 4.41],
+	 zoom: 13
+ });
 
-	baseLayer = new L.tileLayer('http://tile.stamen.com/toner-lite/{z}/{x}/{y}.png', {
+	baseLayer = new L.tileLayer('http://tile.stamen.com/watercolor/{z}/{x}/{y}.png', {
 		layers: '1',
-			attribution: '<a href="http://www.junibis.be">JunIBIS</a>(Heughebaert/Iven), Stamen'
+			attribution: '<a href="http://www.junibis.be">JunIBIS</a>(Heughebaert/Iven), Craan'
 		});
 	baseLayer.addTo(map);
 
+//	imageurl ='zooms/Craan_Raster.tif';
+//	imageurl ='zooms/Craan1816map/';
+//	imageBounds =[[50.64744,4.35360],[50.70933,4.47070]];
+//	layer2 = new L.ImageOverlay(imageurl, imageBounds,
+//		{ opacity: 0.6}	);
+
+//	layer2 = L.tileLayer.zoomify(imageurl, {
+//				width: 4521,
+//				height: 3752,
+//				tolerance: 0.8,
+//				bounds: imageBounds,
+//				attribution: '<a href="http://www.junibis.be">JunIBIS</a>(Heughebaert/Iven), W.B. Craan'
+//		});
+
   layer1=cartodb.createLayer(map,
-//22		'https://andrejjh.cartodb.com/api/v2_1/viz/1551c9ce-0f56-11e5-ba84-0e9d821ea90d/viz.json',
-//21  'https://andrejjh.cartodb.com/api/v2_1/viz/6df9292a-141d-11e5-a097-0e4fddd5de28/viz.json',
-  'https://andrejjh.cartodb.com/api/v2/viz/9baa5ca6-345f-11e5-9532-0e0c41326911/viz.json',
-          { https: true});
-  layer1.addTo(map);
+	'https://andrejjh.cartodb.com/api/v2/viz/bd0b5552-3604-11e5-a4e2-0e9d821ea90d/viz.json',
+          { https: true}).addTo(map);
 
 
  }

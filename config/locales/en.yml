@@ -20,7 +20,7 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  hello: "a website is dedicated to mapping the Campaign of Belgium in June 1815"
 
   menu:
     home: "Home"
