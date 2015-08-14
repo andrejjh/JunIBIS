@@ -54,6 +54,7 @@ fr:
     dynamic: "Carte dynamique"
     places: "Carte des lieux"
     manoeuvers: "Carte des manoeuvres"
+    craannotes: "Carte des notes de W.B. Craan"
     maps: "Cartes"
     zooms: "Cartes sources"
     code: "Nom"

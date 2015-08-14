@@ -74,6 +74,7 @@ en:
       dynamic: "Dynamic map"
       places: "Places map"
       manoeuvers: "Manoeuvers map"
+      craannotes: "W.B. Craan Notes map"
       maps: "Maps"
       zooms: "Source maps"
       code: "Name"

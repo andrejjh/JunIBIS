@@ -5,6 +5,7 @@
     <li data-target="#myCarousel" data-slide-to="1"></li>
     <li data-target="#myCarousel" data-slide-to="2"></li>
     <li data-target="#myCarousel" data-slide-to="3"></li>
+    <li data-target="#myCarousel" data-slide-to="4"></li>
   </ol>
 
   <!-- Wrapper for slides -->
@@ -38,6 +39,14 @@
         <div class="container">
           <div class="carousel-caption">
             <h1><%= t('map.manoeuvers')%></h1>
+          </div>
+        </div>
+      </div>
+      <div class="item">
+        <%= link_to image_tag("maps/CraanNotes.png"), map5_path,  :target => "_blank" %>
+        <div class="container">
+          <div class="carousel-caption">
+            <h1><%= t('map.craannotes')%></h1>
           </div>
         </div>
       </div>
