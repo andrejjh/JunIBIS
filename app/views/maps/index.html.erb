@@ -19,10 +19,3 @@
 </tr>
 <%end%>
 </table>
-<h3><%= t('map.zooms')%></h3>
-<ul>
-<% @zooms.each do |z| %>
-  <li><%= link_to z.name, z, :target =>"_blank" %>: <%= z.description %></li>
-<%end%>
-</ul>
-<hr>
