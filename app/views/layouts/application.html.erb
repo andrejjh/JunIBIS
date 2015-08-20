@@ -32,7 +32,7 @@
           <li <%if @menu==2 %> class="active"<%end%>><%= link_to t('menu.armies'), units_path %></li>
           <li <%if @menu==3 %> class="active"<%end%>><%= link_to t('menu.maps'), maps_path %></li>
           <li class="dropdown">
-            <a class="dropdown-toggle" data-toggle="dropdown" href="#"><%=t('menu.sources')%><span class="caret"></span></a>
+            <%= link_to sources_path, class: "dropdown-toggle", data: {toggle: "dropdown"} do %><%= t('menu.sources')%><span class="caret"></span><%end%>
             <ul class="dropdown-menu">
               <li><%= link_to t('source.books'), books_sources_path %></li>
               <li><%= link_to t('source.games'), games_sources_path %></li>
