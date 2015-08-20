@@ -29,15 +29,15 @@ end
 		end
 
 
-def map1
+def static
 end
-def map2
+def dynamic
 end
-def map3
+def places
 end
-def map4
+def paths
 end
-def map5
+def notes
 end
 
 end

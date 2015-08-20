@@ -1,0 +1,16 @@
+<h3><%= t('source.papers')%></h3>
+<table class="table table-striped"><tr>
+  <th><%= t('action.action')%></th>
+	<th><%= t('source.reference')%></th>
+	<th><%= t('source.group')%></th>
+</tr>
+<% @sources.each do |s| %>
+  <tr>
+    <td><%if !s.url.nil?%>
+			<%= link_to asset_path(s.url), :class => "btn btn-default"  do %><%= t('action.download')%><span class="glyphicon glyphicon-download"></span><%end%>
+		<%end%></td>
+		<td><%= s.reference %></td>
+		<td><%= s.sourcegroup.name %></td>
+</tr>
+<%end%>
+</table>

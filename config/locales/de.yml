@@ -1,6 +1,6 @@
 de:
 
-  hello: "ein website widmet sich der Kampagne von Belgien in Juni 1815 Abbildung"
+  hello: "website widmet sich der Kampagne von Belgien in Juni 1815 Abbildung"
 
   menu:
     home: "Startseite"
@@ -8,6 +8,7 @@ de:
     maps: "Kaarten"
     sources: "Quellen"
     about: "Über uns"
+    project: "Projekt"
     contact: "Kontakt"
 
   about:
@@ -38,10 +39,18 @@ de:
         source: "Quelle"
         image: "Foto"
         reference: "Referenz"
-        units: "de:#Units"
-        people: "de:#People"
-        uplinks: "de:#Unit-Person links"
-        uelinks: "de:#Unit-Event links"
+        group: "Gruppe"
+        all: "Alle"
+        books: "Bücher"
+        games: "Spielen"
+        papers: "Articles"
+        maps: "Karten"
+        zines: "Zines"
+
+  action:
+      action: "Aktion"
+      download: "Download"
+      explore: "Geöffnet"
 
   event:
       event: "de:Event"

@@ -3,7 +3,7 @@ def about
 	@menu=5
 end
 def contact
-	@menu=6
+	@menu=5
 end
 def index
 	@menu=1

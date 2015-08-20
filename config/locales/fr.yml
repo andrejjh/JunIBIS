@@ -1,5 +1,5 @@
 fr:
-  hello: "un site dédié à la cartographie de la Campagne de Belgique en Juin 1815"
+  hello: "site dédié à la cartographie de la Campagne de Belgique en Juin 1815"
 
   menu:
     home: "Accueil"
@@ -7,6 +7,7 @@ fr:
     maps: "Cartes"
     sources: "Sources"
     about: "A propos"
+    project: "Projet"
     contact: "Contact"
 
 
@@ -38,10 +39,19 @@ fr:
         source: "Source"
         image: "Image"
         reference: "Réference"
-        units: "#Unités"
-        people: "#Personnages"
-        uplinks: "#Liens U-P"
-        uelinks: "#Liens U-E"
+        group: "Groupe"
+        all: "Toutes"
+        books: "Livres"
+        games: "Jeux"
+        papers: "Articles"
+        maps: "Cartes"
+        zines: "Magazines"
+
+  action:
+      action: "Action"
+      download: "Télécharger"
+      explore: "Explorer"
+
 
   event:
         event: "Event"

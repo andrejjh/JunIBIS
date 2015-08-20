@@ -11,7 +11,7 @@
   <!-- Wrapper for slides -->
   <div class="carousel-inner" role="listbox">
       <div class="item active">
-        <%= link_to image_tag("maps/Static.png"), map1_path, :target => "_blank"%>
+        <%= link_to image_tag("maps/Static.png"), static_maps_path, :target => "_blank"%>
         <div class="container">
           <div class="carousel-caption">
             <h1><%= t('map.static')%></h1>
@@ -19,7 +19,7 @@
         </div>
       </div>
       <div class="item">
-        <%= link_to image_tag("maps/Dynamic.png"), map2_path, :target => "_blank" %>
+        <%= link_to image_tag("maps/Dynamic.png"), dynamic_maps_path, :target => "_blank" %>
         <div class="container">
           <div class="carousel-caption">
             <h1><%= t('map.dynamic')%></h1>
@@ -27,7 +27,7 @@
         </div>
       </div>
       <div class="item">
-        <%= link_to image_tag("maps/Places.png"), map3_path,  :target => "_blank" %>
+        <%= link_to image_tag("maps/Places.png"), places_maps_path,  :target => "_blank" %>
         <div class="container">
           <div class="carousel-caption">
             <h1><%= t('map.places')%></h1>
@@ -35,7 +35,7 @@
         </div>
       </div>
       <div class="item">
-        <%= link_to image_tag("maps/Manoeuvers.png"), map4_path,  :target => "_blank" %>
+        <%= link_to image_tag("maps/Manoeuvers.png"), paths_maps_path,  :target => "_blank" %>
         <div class="container">
           <div class="carousel-caption">
             <h1><%= t('map.manoeuvers')%></h1>
@@ -43,7 +43,7 @@
         </div>
       </div>
       <div class="item">
-        <%= link_to image_tag("maps/CraanNotes.png"), map5_path,  :target => "_blank" %>
+        <%= link_to image_tag("maps/CraanNotes.png"), notes_maps_path,  :target => "_blank" %>
         <div class="container">
           <div class="carousel-caption">
             <h1><%= t('map.craannotes')%></h1>
@@ -62,19 +62,3 @@
     <span class="sr-only">Next</span>
   </a>
 </div>
-
-<hr>
-<h3><%= t('news.news')%></h3>
-<table class="table table-striped"><tr>
-  <th><%= t('news.date')%></th>
-  <th><%= t('news.title')%></th>
-	<th><%= t('news.content')%></th>
-</tr>
-<% @news.each do |n| %>
-  <tr>
-    <td><%= n.added.to_formatted_s(:short) %></td>
-    <td><%= n.title%></td>
-		<td><%= n.content%></td>
-</tr>
-<%end%>
-</table>

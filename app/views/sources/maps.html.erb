@@ -1,0 +1,16 @@
+<h3><%= t('source.maps')%></h3>
+<table class="table table-striped"><tr>
+  <th><%= t('action.action')%></th>
+	<th><%= t('source.reference')%></th>
+	<th><%= t('source.image')%></th>
+</tr>
+<% @sources.each do |s| %>
+  <tr>
+    <td>
+      <%if !s.url.nil?%><%= link_to s.url, :class => "btn btn-default"  do %><%= t('action.explore')%><span class="glyphicon glyphicon-eye-open"></span><%end%><%end%>
+    </td>
+		<td><%= s.reference %></td>
+    <td><%if !s.image.nil?%><%= image_tag("refs/" + s.image ,width: "120")%><%end%></td>
+</tr>
+<%end%>
+</table>

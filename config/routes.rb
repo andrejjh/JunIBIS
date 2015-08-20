@@ -6,49 +6,27 @@ Rails.application.routes.draw do
   root 'welcome#index'
   get 'about' => 'welcome#about'
   get 'contact' => 'welcome#contact'
-  get 'map1' => 'maps#map1'
-  get 'map2' => 'maps#map2'
-  get 'map3' => 'maps#map3'
-  get 'map4' => 'maps#map4'
-  get 'map5' => 'maps#map5'
   get '/change_locale/:locale', to: 'welcome#change_locale', as: :change_locale
 
-  resources :people do
+  resources :people, only: [:index, :show]
+  resources :units, only: [:index, :show] do
     member do
-      get 'show'
-    end
-  end
-  resources :units do
-    member do
-      get 'show'
       get 'resolve'
     end
   end
-  resources :sources do
-    member do
-      get 'show'
+  resources :sources, only: [:index, :show] do
+    collection do
+      get 'books', 'games', 'papers', 'maps', 'zines'
     end
   end
-  resources :events do
-    member do
-      get 'show'
+  resources :events , only: [:index, :show]
+  resources :maps, only: [:index, :show] do
+    collection do
+      get 'static', 'dynamic', 'places', 'paths', 'notes'
     end
   end
-  resources :maps do
-    member do
-      get 'show'
-    end
-  end
-  resources :legends do
-    member do
-      get 'show'
-    end
-  end
-  resources :zooms do
-    member do
-      get 'show'
-    end
-  end
+  resources :legends, only: [:index, :show]
+  resources :zooms, only: [:index, :show]
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

@@ -20,7 +20,7 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "a website is dedicated to mapping the Campaign of Belgium in June 1815"
+  hello: "website is dedicated to mapping the Campaign of Belgium in June 1815"
 
   menu:
     home: "Home"
@@ -28,6 +28,7 @@ en:
     maps: "Maps"
     sources: "Sources"
     about: "About"
+    project: "Project"
     contact: "Contact"
 
   about:
@@ -58,10 +59,18 @@ en:
         source: "Source"
         image: "Image"
         reference: "Reference"
-        units: "#Units"
-        people: "#People"
-        uplinks: "#Unit-Person links"
-        uelinks: "#Unit-Event links"
+        group: "Group"
+        all: "All"
+        books: "Books"
+        games: "Games"
+        papers: "Papers"
+        maps: "Maps"
+        zines: "Zines"
+
+  action:
+      action: "Action"
+      download: "Download"
+      explore: "Explore"
 
   event:
       event: "Event"

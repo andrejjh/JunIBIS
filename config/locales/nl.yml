@@ -1,5 +1,5 @@
 nl:
-  hello: "een website om de Campagne van België in juni 1815 in kaart te brengen"
+  hello: "website om de Campagne van België in juni 1815 in kaart te brengen"
 
   menu:
     home: "Welkom"
@@ -7,6 +7,7 @@ nl:
     maps: "Kaarten"
     sources: "Bronnen"
     about: "Over"
+    project: "Project"
     contact: "Contact"
 
 
@@ -37,10 +38,18 @@ nl:
         source: "Bron"
         image: "Beeld"
         reference: "Verwijzing"
-        units: "#Eenheiden"
-        people: "#Mensen"
-        uplinks: "#E-M links"
-        uelinks: "#E-E links"
+        group: "Groep"
+        all: "Alle"
+        books: "Boeken"
+        games: "Spellen"
+        papers: "Artikels"
+        maps: "Kaarten"
+        zines: "Zines"
+
+  action:
+      action: "Actie"
+      download: "Download"
+      explore: "Zien"
 
   event:
       event: "Event"
@@ -53,7 +62,7 @@ nl:
       dynamic: "Dynamische kaart"
       places: "Plaatsen kaart"
       manoeuvers: "Manoeuvres kaart"
-      craannotes: "W.B. Craan aantekeningen"      
+      craannotes: "W.B. Craan aantekeningen"
       maps: "Kaarten"
       zooms: "Bron Kaarten"
       code: "Naam"

@@ -1,0 +1,13 @@
+<table class="table table-striped"><tr>
+  <th><%= t('source.image')%></th>
+	<th><%= t('source.reference')%></th>
+	<th><%= t('source.group')%></th>
+</tr>
+<% @sources.each do |s| %>
+  <tr>
+    <td><%if !s.image.nil?%><%= link_to image_tag("refs/" + s.image ,width: "60"), s %><%end%></td>
+		<td><%= s.reference %></td>
+		<td><%= s.sourcegroup.name %></td>
+</tr>
+<%end%>
+</table>
