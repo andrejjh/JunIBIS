@@ -28,7 +28,6 @@
       </div>
       <div class="collapse navbar-collapse" id="myNavbar">
         <ul class="nav navbar-nav pull-right">
-          <li <%if @menu==1 %> class="active"<%end%>><%= link_to t('menu.home'), root_path %></li>
           <li <%if @menu==2 %> class="active"<%end%>><%= link_to t('menu.armies'), units_path %></li>
           <li <%if @menu==3 %> class="active"<%end%>><%= link_to t('menu.maps'), maps_path %></li>
           <li class="dropdown">
@@ -55,12 +54,14 @@
     </div>
     <div class="row">
       <div class="col-sm-4">
+        <%= link_to image_tag("Google_plus.png", width: "20"),'https://www.google.com/+JunibisBe'%>
         <%= link_to "DE", change_locale_path(:de), :class => (if I18n.locale==:de then 'btn btn-default btn-xs active' else 'btn btn-default btn-xs' end), :role => 'button'%>
         <%= link_to "EN", change_locale_path(:en), :class => (if I18n.locale==:en then 'btn btn-default btn-xs active' else 'btn btn-default btn-xs' end), :role => 'button'%>
         <%= link_to "FR", change_locale_path(:fr), :class => (if I18n.locale==:fr then 'btn btn-default btn-xs active' else 'btn btn-default btn-xs' end), :role => 'button'%>
         <%= link_to "NL", change_locale_path(:nl), :class => (if I18n.locale==:nl then 'btn btn-default btn-xs active' else 'btn btn-default btn-xs' end), :role => 'button'%>
       </div>
       <div class="col-sm-8">
+        <span class="label label-info"><%= t('hello')%></span>
       </div>
     </div>
   </nav>
