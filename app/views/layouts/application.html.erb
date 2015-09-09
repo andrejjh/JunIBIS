@@ -50,8 +50,10 @@
       <div class="col-sm-3">
         <%= link_to "DE", change_locale_path(:de), :class => (if I18n.locale==:de then 'btn btn-default btn-xs active' else 'btn btn-default btn-xs' end), :role => 'button'%>
         <%= link_to "EN", change_locale_path(:en), :class => (if I18n.locale==:en then 'btn btn-default btn-xs active' else 'btn btn-default btn-xs' end), :role => 'button'%>
+        <%= link_to "ES", change_locale_path(:es), :class => (if I18n.locale==:es then 'btn btn-default btn-xs active' else 'btn btn-default btn-xs' end), :role => 'button'%>
         <%= link_to "FR", change_locale_path(:fr), :class => (if I18n.locale==:fr then 'btn btn-default btn-xs active' else 'btn btn-default btn-xs' end), :role => 'button'%>
         <%= link_to "NL", change_locale_path(:nl), :class => (if I18n.locale==:nl then 'btn btn-default btn-xs active' else 'btn btn-default btn-xs' end), :role => 'button'%>
+        <%= link_to "IT", change_locale_path(:it), :class => (if I18n.locale==:it then 'btn btn-default btn-xs active' else 'btn btn-default btn-xs' end), :role => 'button'%>
       </div>
       <div class="col-sm-6">
         <span class="label label-info"><%= t('hello')%></span>

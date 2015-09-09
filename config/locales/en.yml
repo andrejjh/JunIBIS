@@ -22,75 +22,76 @@
 en:
   hello: "website is dedicated to mapping the Campaign of Belgium in June 1815"
 
-  menu:
-    home: "Home"
-    armies: "Armies"
-    maps: "Maps"
-    sources: "Sources"
-    about: "About"
-    project: "Project"
-    contact: "Contact"
+menu:
+  home: "Home"
+  armies: "Armies"
+  maps: "Maps"
+  sources: "Sources"
+  about: "About"
+  project: "Project"
+  contact: "Contact"
 
-  about:
-    concept: "Concept"
-    content: "Content"
-    maps: "Ferraris layer"
-    links: "Links"
+about:
+  concept: "Concept"
+  content: "Content"
+  maps: "Ferraris layer"
+  links: "Links"
+  translations: "ES-IT translations"
 
-  person:
-    firstName: "FirstName"
-    lastName: "LastName"
-    rank: "Rank"
-    title: "Title"
-    nation: "Nation"
+person:
+  firstName: "FirstName"
+  lastName: "LastName"
+  rank: "Rank"
+  title: "Title"
+  nation: "Nation"
 
-  unit:
-    code: "Code"
-    name: "Name"
-    staff: "Staff"
-    officers: "Officers"
-    rank: "Rank & File"
-    total: "Total"
-    bataillons: "Bataillons"
-    squadrons: "Squadrons"
-    batteries: "Batteries"
+unit:
+  code: "Code"
+  name: "Name"
+  staff: "Staff"
+  officers: "Officers"
+  rank: "Rank & File"
+  total: "Total"
+  bataillons: "Bataillons"
+  squadrons: "Squadrons"
+  batteries: "Batteries"
 
-  source:
-        source: "Source"
-        image: "Image"
-        reference: "Reference"
-        group: "Group"
-        all: "All"
-        books: "Books"
-        games: "Games"
-        papers: "Papers"
-        maps: "Maps"
-        zines: "Zines"
+source:
+  source: "Source"
+  image: "Image"
+  reference: "Reference"
+  group: "Group"
+  all: "All"
+  books: "Books"
+  games: "Games"
+  papers: "Papers"
+  maps: "Maps"
+  zines: "Zines"
 
-  action:
-      action: "Action"
-      download: "Download"
-      explore: "Explore"
+action:
+  action: "Action"
+  download: "Download"
+  explore: "Explore"
 
-  event:
-      event: "Event"
-      name: "Name"
-      begin: "Begin"
-      end: "End"
+event:
+  event: "Event"
+  name: "Name"
+  begin: "Begin"
+  end: "End"
 
-  map:
-      static: "Static maps"
-      dynamic: "Dynamic map"
-      places: "Places map"
-      manoeuvers: "Manoeuvers map"
-      craannotes: "W.B. Craan Notes map"
-      maps: "Maps"
-      zooms: "Source maps"
-      code: "Name"
-      datetime: "When?"
+map:
+  static: "Static maps"
+  dynamic: "Dynamic map"
+  places: "Places map"
+  manoeuvers: "Manoeuvers map"
+  craannotes: "W.B. Craan Notes map"
+  maps: "Maps"
+  zooms: "Source maps"
+  code: "Name"
+  datetime: "When?"
 
-  news:
-      news: "News"
-      date: "Date"
-      title: "Title"
-      content: "Content"
+news:
+  news: "News"
+  date: "Date"
+  title: "Title"
+  content: "Content"

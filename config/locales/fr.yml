@@ -16,6 +16,8 @@ fr:
     content: "Géo-référencement"
     maps: "Carte de Ferraris"
     links: "Liens"
+    translations: "Traductions ES/IT"
+
 
   person:
     firstName: "Prénom"

@@ -16,6 +16,8 @@ nl:
     content: "Content"
     maps: "Ferraris layer"
     links: "Links"
+    translations: "ES/IT vertaalwerk"
+
 
   person:
     firstName: "Voornaam"

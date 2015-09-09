@@ -1,0 +1,76 @@
+es:
+  hello: "sitio dedicado a la cartografía de la Campaña de Bélgica en Junio 1815"
+
+  menu:
+    home: "Página de inicio"
+    armies: "Armadas"
+    maps: "Mapas"
+    sources: "Fuentes"
+    about: "A propósito"
+    project: "Proyetto"
+    contact: "Contactos"
+
+  about:
+    concept: "Concepción"
+    content: "Referencias geográficas"
+    maps: "Mapas de Ferraris"
+    links: "Enlaces"
+    translations: "Traducciones ES/IT"
+
+  person:
+    firstName: "Nombre"
+    lastName: "Apellido"
+    rank: "Grado"
+    title: "Titulo"
+    nation: "Nazión"
+
+  unit:
+    code: "Código"
+    name: "Nombre"
+    staff: "Estado Mayor"
+    officers: "Oficiales"
+    rank: "Soldados"
+    total: "Total"
+    bataillons: "Batallones"
+    squadrons: "Escuadrones"
+    batteries: "Baterías"
+
+  source:
+    source: "Fuente"
+    image: "Imagen"
+    reference: "Referencias"
+    group: "Grupo"
+    all: "Todos"
+    books: "Libros"
+    games: "Juegos"
+    papers: "Artículos"
+    maps: "Mapas"
+    zines: "Revistas"
+
+  action:
+    action: "Acción"
+    download: "Descargar"
+    explore: "Explorar"
+
+  event:
+    event: "Evento"
+    name: "Nombre"
+    begin: "Inico"
+    end: "Fin"
+
+  map:
+    static: "Mapas estadísticos"
+    dynamic: "Mapa dinámicos"
+    places: "Mapas de los lugares"
+    manoeuvers: "Mapa de las maniobras"
+    craannotes: "Mapa de las notas de W.B. Craan"
+    maps: "Mapas"
+    zooms: "Fuentes mapas"
+    code: "Código"
+    datetime: "Cuando?"
+
+  news:
+    news: "Novedades"
+    date: "Fecha"
+    title: "Título"
+    content: "Contenido"

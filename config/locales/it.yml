@@ -1,0 +1,76 @@
+it:
+  hello: "sito dedicato alla cartografia della Campagna del Belgio nel Giugno 1815"
+
+  menu:
+    home: "Accoglienza"
+    armies: "Armate"
+    maps: "Cartine"
+    sources: "Fonti"
+    about: "A proposito"
+    project: "Progetto"
+    contact: "Contatti"
+
+  about:
+    concept: "Concepimento"
+    content: "Riferimenti geografici"
+    maps: "Cartine di Ferraris"
+    links: "Collegamenti"
+    translations: "Traduzioni ES/IT"
+
+  person:
+    firstName: "Nome"
+    lastName: "Cognome"
+    rank: "Grado"
+    title: "Titolo"
+    nation: "Nazione"
+
+  unit:
+    code: "Codice"
+    name: "Nome"
+    staff: "Stato Maggiore"
+    officers: "Ufficiali"
+    rank: "Soldati"
+    total: "Totale"
+    bataillons: "Battaglioni"
+    squadrons: "Squadroni"
+    batteries: "Batterie"
+
+  source:
+    source: "Fonte"
+    image: "Imagine"
+    reference: "Referenze"
+    group: "Gruppo"
+    all: "Tutti"
+    books: "Libri"
+    games: "Giochi"
+    papers: "Articoli"
+    maps: "Mappe"
+    zines: "Riviste"
+
+  action:
+    action: "Azione"
+    download: "Scaricare"
+    explore: "Esplorare"
+
+  event:
+    event: "Evento"
+    name: "Nome"
+    begin: "Inizio"
+    end: "Fine"
+
+  map:
+    static: "Cartine statistiche"
+    dynamic: "Cartine dinamiche"
+    places: "Cartine dei luoghi"
+    manoeuvers: "Cartine delle manovre"
+    craannotes: "Cartine delle note di W.B. Craan"
+    maps: "Cartine"
+    zooms: "Fonti cartine"
+    code: "Codice"
+    datetime: "Datazione"
+
+  news:
+    news: "Novità"
+    date: "Data"
+    title: "Titolo"
+    content: "Contenuto"

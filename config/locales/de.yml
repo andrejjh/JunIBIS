@@ -16,6 +16,7 @@ de:
     content: "Content"
     maps: "Ferraris layer"
     links: "Links"
+    translations: "ES/IT Übersetzungen"
 
   person:
     firstName: "Vorname"

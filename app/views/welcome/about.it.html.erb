@@ -1,0 +1,33 @@
+<h3><%= t('menu.about')%></h3>
+<div class="well">
+<p><b>JunIBIS</b> è un sito dedicato alla cartografia della Campagna del Belgio nel Giugno 1815.</p>
+<p>Innamorato della storia Napoleonica, più particolarmente appassionato delle battaglie dell’Impero, e versato nel campo della cartografia numerica, ho avuto voglia di creare delle mappe interattive tracciando la Campagna del Belgio nel 1815. Per aiutarmi in questo compito, ho ricevuto subito l’aiuto di un vecchio amico le cui conoscenze libresche completano giudiziosamente le mie competenze informatiche. L’abbondante letteratura sul soggetto ci ha permesso di compilare gli spostamenti truppe durante i primi giorni della campagna.</p>
+<p>I tre principi fondatori del nostro progetto sono: l’<b>apertura dei dati</b>, la <b>gratuità</b> e il <b>riferimento delle sorgenti</b>.
+Le nostre carte sono d’altronde accessibili sotto licenza <%= link_to 'CC-BY', 'https://creativecommons.org/licenses/by/3.0/it/'%> che autorizza a chi voglia «di copiare, distribuire e comunicare il materiale con tutti i mezzi e sotto tutti i formati, a mixare, trasformare e creare a partire dal materiale» mediante l’attribuzione ovvero di accreditare gli autori e indicare gli eventuali cambiamenti.</p>
+<p>Le carte interattive sono il risultato di un minuzioso lavoro d’analisi e di compilazione di numerose <%= link_to "fonti", sources_path %>.</p>
+<p>Se avete dei commenti o delle domande su questo sito...appena mi mandi una
+ <%= link_to 'mail', 'mailto:andrejjh+junibis@gmail.com' %> o unirsi a noi su <%= link_to image_tag("g+icon_grey.png", width: "24"),'https://www.google.com/+JunibisBe'%></p>
+</div>
+<hr>
+<dl class="dl-horizontal">
+<dt><%= t('about.concept')%></dt><dd>André Heughebaert</dd>
+<dt><%= t('about.content')%></dt><dd>Eric Iven</dd>
+<dt><%= t('about.maps')%></dt><dd>Géoportail de la Région Wallonne</dd>
+<dt><%= t('about.translations')%></dt><dd>Carla Messina</dd>
+</dl>
+<hr>
+<h4><%= t('about.links') %></h4>
+<table class="table table-striped">
+<tr>
+<td><%= link_to image_tag("links/BelleAlliance.jpg" ,height: "60"), "http://belle-alliance.be/", :target => "_blank" %></td>
+<td><%= link_to "Les Editions de la Belle-Alliance, Jean-Philippe Tondeur","http://belle-alliance.be/", :target => "_blank" %></td>
+</tr>
+<tr>
+<td><%= link_to image_tag("links/FondationNapoleon.jpg" ,height: "60"), "http://www.napoleon.org/", :target => "_blank" %></td>
+<td><%= link_to "Fondation Napoléon", "http://www.napoleon.org/", :target => "_blank" %></td>
+</tr>
+<tr>
+<td><%= link_to image_tag("links/RouteGrouchy.png" ,height: "60"), "http://www.napoleon-grouchy-1815.com/", :target => "_blank" %></td>
+<td><%= link_to "Route Armée Grouchy", "http://www.napoleon-grouchy-1815.com/", :target => "_blank" %></td>
+</tr>
+</table>
