@@ -55,12 +55,6 @@ fr:
       explore: "Explorer"
 
 
-  event:
-        event: "Event"
-        name: "Name"
-        begin: "Begin"
-        end: "End"
-
   map:
     static: "Cartes statiques"
     dynamic: "Carte dynamique"
@@ -71,9 +65,3 @@ fr:
     zooms: "Cartes sources"
     code: "Nom"
     datetime: "Quand?"
-
-  news:
-      news: "Nouvelles"
-      date: "Date"
-      title: "Titre"
-      content: "Contenu"

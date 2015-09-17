@@ -52,11 +52,6 @@ es:
     download: "Descargar"
     explore: "Explorar"
 
-  event:
-    event: "Evento"
-    name: "Nombre"
-    begin: "Inico"
-    end: "Fin"
 
   map:
     static: "Mapas estadísticos"
@@ -68,9 +63,3 @@ es:
     zooms: "Fuentes mapas"
     code: "Código"
     datetime: "Cuando?"
-
-  news:
-    news: "Novedades"
-    date: "Fecha"
-    title: "Título"
-    content: "Contenido"

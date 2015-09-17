@@ -52,11 +52,6 @@ it:
     download: "Scaricare"
     explore: "Esplorare"
 
-  event:
-    event: "Evento"
-    name: "Nome"
-    begin: "Inizio"
-    end: "Fine"
 
   map:
     static: "Cartine statistiche"
@@ -68,9 +63,3 @@ it:
     zooms: "Fonti cartine"
     code: "Codice"
     datetime: "Datazione"
-
-  news:
-    news: "Novità"
-    date: "Data"
-    title: "Titolo"
-    content: "Contenuto"

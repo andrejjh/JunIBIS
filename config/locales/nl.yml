@@ -18,7 +18,6 @@ nl:
     links: "Links"
     translations: "ES/IT vertaalwerk"
 
-
   person:
     firstName: "Voornaam"
     lastName: "Achternaam"
@@ -36,6 +35,7 @@ nl:
     bataillons: "Batailjons"
     squadrons: "Escadrons"
     batteries: "Batterijen"
+
   source:
         source: "Bron"
         image: "Beeld"
@@ -53,12 +53,6 @@ nl:
       download: "Download"
       explore: "Zien"
 
-  event:
-      event: "Event"
-      name: "Naam"
-      begin: "Beginnen"
-      end: "Einde"
-
   map:
       static: "Statische kaarten"
       dynamic: "Dynamische kaart"
@@ -69,8 +63,3 @@ nl:
       zooms: "Bron Kaarten"
       code: "Naam"
       datetime: "Wanneer?"
-  news:
-      news: "Niews"
-      date: "Datum"
-      title: "Titel"
-      content: "Inhoud"

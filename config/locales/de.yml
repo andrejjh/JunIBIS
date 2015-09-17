@@ -53,11 +53,6 @@ de:
       download: "Download"
       explore: "Geöffnet"
 
-  event:
-      event: "de:Event"
-      name: "Name"
-      begin: "Beginnen"
-      end: "Enden"
 
   map:
       static: "Statische karten"
@@ -69,9 +64,3 @@ de:
       zooms: "Quelle Kaarten"
       code: "Name"
       datetime: "Datum"
-
-  news:
-      news: "News"
-      date: "Datum"
-      title: "Titel"
-      content: "Inhalt"
