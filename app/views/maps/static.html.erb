@@ -213,7 +213,7 @@ $options.click(function(e) {
 			hour=selected
 			$li.addClass('h_selected');
 		}
-    var sql="SELECT * FROM CoBMoves26 where datetime='" + day + " " + hour + " " +ampm +"' order by army desc";
+    var sql="SELECT * FROM cobmoves28 where datetime='" + day + " " + hour + " " +ampm +"' order by army desc";
 		layer.setSQL(sql);
     console.log(sql)
 });
@@ -237,7 +237,7 @@ $options.click(function(e) {
     type: 'cartodb',
 		user_name: "andrejjh", // Required
 		sublayers: [{
-			sql: "SELECT * FROM CoBMoves26 where datetime='1815/06/15 00:00' order by army desc", 	// Required if table_name is not given
+			sql: "SELECT * FROM cobmoves28 where datetime='1815/06/15 00:00' order by army desc", 	// Required if table_name is not given
 			cartocss: CARTO_BASE,
       interactivity: 'unitid' // optional
 		}]
