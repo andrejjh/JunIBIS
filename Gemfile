@@ -9,8 +9,6 @@ gem 'rails', '4.2.11.3'
 # Use PostgreSQL as the database for Active Record
 gem 'pg', '0.18.0'
 
-gem 'nokogiri', '~> 1.11.4'
-
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
