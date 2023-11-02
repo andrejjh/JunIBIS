@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" />  
     <title>JunIBIS|W.B.Craan notes</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
@@ -24,18 +23,19 @@
     <!-- include cartodb.js library -->
     <!-- script src="http://libs.cartocdn.com/cartodb.js/v3/3.12/cartodb.js"></script -->
     <script src="https://cartodb-libs.global.ssl.fastly.net/cartodb.js/v3/3.12/cartodb.js"></script>
+
     <script>
-
 function main() {
-   var map;
 
+  var map = L.map('map').setView([50.675 , 4.41], 13);
+// var map = new L.Map('map', {
+//	 zoomControl: true,
+//	 fullScreen: true,
+//	 center: [50.675 , 4.41],
+//	 zoom: 13
+// 	});
 	var baseLayer, layer1, layer2;
-	map = new L.Map('map', {
-	 zoomControl: true,
-	 fullScreen: true,
-	 center: [50.675 , 4.41],
-	 zoom: 13
- 	});
+
     // Style URL format in XYZ PNG format; see our documentation for more options
     baseLayer = new L.tileLayer('https://tiles.stadiamaps.com/tiles/stamen_watercolor/{z}/{x}/{y}{r}.png', {
         maxZoom: 20,
