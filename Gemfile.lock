@@ -94,7 +94,7 @@ GEM
     nokogiri (1.13.10)
       mini_portile2 (~> 2.8.0)
       racc (~> 1.4)
-    pg (1.5.4)
+    pg (0.18.0)
     puma (6.4.0)
       nio4r (~> 2.0)
     racc (1.7.2)
@@ -181,7 +181,7 @@ DEPENDENCIES
   coffee-rails (~> 4.1.0)
   jbuilder (~> 2.0)
   jquery-rails
-  pg (= 1.5.4)
+  pg (= 0.18.0)
   puma
   rails (= 4.2.11.3)
   rails_12factor
