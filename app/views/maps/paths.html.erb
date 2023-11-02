@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
     <link rel="shortcut icon" href="/favicon.png">
-    <style>
+    <style type="text/css">
       html, body, #map {
  		width: 100%;
  		height: 100%;
@@ -24,25 +24,23 @@
     <!-- include cartodb.js library -->
     <!-- script src="http://libs.cartocdn.com/cartodb.js/v3/3.12/cartodb.js"></script -->
     <script src="https://cartodb-libs.global.ssl.fastly.net/cartodb.js/v3/3.12/cartodb.js"></script>
+
     <script>
+
 function main() {
   var map = L.map('map').setView([50.5 , 4.5], 9);
 
 	var baseLayer, layer1;
 
-	baseLayer = new L.tileLayer('https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}{r}.png', {
+	baseLayer = new L.tileLayer('https://tiles-eu.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}{r}.png', {
 		layers: '1',
 			attribution: '<a href="http://www.junibis.be">JunIBIS</a>(Heughebaert/Iven), <a href="https://stadiamaps.com/" target="_blank">Stadia Maps</a>, &copy; <a href="https://openmaptiles.org/" target="_blank">OpenMapTiles</a> &copy; <a href="https://www.openstreetmap.org/about" target="_blank">OpenStreetMap</a> contributors',
 		});
 	baseLayer.addTo(map);
 
   layer1=cartodb.createLayer(map,
-//22		'https://andrejjh.cartodb.com/api/v2_1/viz/1551c9ce-0f56-11e5-ba84-0e9d821ea90d/viz.json',
-//21  'https://andrejjh.cartodb.com/api/v2_1/viz/6df9292a-141d-11e5-a097-0e4fddd5de28/viz.json',
-//24  'https://andrejjh.cartodb.com/api/v2/viz/9baa5ca6-345f-11e5-9532-0e0c41326911/viz.json',
   'https://andrejjh.cartodb.com/api/v2/viz/f0c05d64-517c-11e5-bc36-0e853d047bba/viz.json',
-          { https: true});
-  layer1.addTo(map);
+          { https: true}).addTo(map);
 
 
  }
