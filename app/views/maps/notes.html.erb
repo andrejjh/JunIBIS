@@ -31,8 +31,8 @@
     <script>
 function main() {
 
-  var map = L.map('map').setView([53 , 12], 5);
-//  var map = L.map('map').setView([50.675 , 4.41], 13);
+//  var map = L.map('map').setView([53 , 12], 5);
+  var map = L.map('map').setView([50.675 , 4.41], 13);
 // var map = new L.Map('map', {
 //	 zoomControl: true,
 //	 fullScreen: true,
@@ -42,12 +42,12 @@ function main() {
 	var baseLayer, layer1, layer2;
 
     // Style URL format in XYZ PNG format; see our documentation for more options
-    baseLayer = new L.tileLayer('https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}{r}.png', {
-        maxZoom: 20,
+    baseLayer = new L.tileLayer('https://tiles.stadiamaps.com/tiles/stamen_watercolor/{z}/{x}/{y}{r}.png', {
+        maxZoom: 16,
 		layers: '1',
-		attribution: '<a href="http://www.junibis.be" target="_blank">JunIBIS</a>(Heughebaert/Iven), Craan'
+		attribution: '<a href="http://www.junibis.be" target="_blank">JunIBIS</a>Craan, (Heughebaert/Iven)'
     })
-//    baseLayer.addTo(map);
+    baseLayer.addTo(map);
 
 
 //	baseLayer = new L.tileLayer('https://stamen-tiles.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.png', {
