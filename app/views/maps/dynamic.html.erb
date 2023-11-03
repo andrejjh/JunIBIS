@@ -2,11 +2,12 @@
 <html>
   <head>
     <title>JunIBIS|CartoDB.js- Dynamic map</title>
-    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
     <link rel="shortcut icon" href="/favicon.png">
-    <style>
+    <style  type="text/css">
       html, body, #map {
+ 		width: 100%;
         height: 100%;
         padding: 0;
         margin: 0;
@@ -105,11 +106,13 @@ var CARTO_R = [
           zoom: 10
         });
 
-      var baseLayer = new L.tileLayer('https://stamen-tiles.a.ssl.fastly.net/toner-lite/{z}/{x}/{y}.png', {
-        layers: '1',
-          attribution: '<a href="http://www.junibis.be">JunIBIS</a>(Heughebaert/Iven), Stamen'
+	var baseLayer = new L.tileLayer('https://tiles-eu.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}.png', {
+        maxZoom: 16,
+		layers: '1',
+			attribution: '<a href="http://www.junibis.be">JunIBIS</a>(Heughebaert/Iven), <a href="https://stadiamaps.com/" target="_blank">Stadia Maps</a>, &copy; <a href="https://openmaptiles.org/" target="_blank">OpenMapTiles</a> &copy; <a href="https://www.openstreetmap.org/about" target="_blank">OpenStreetMap</a> contributors',
         });
       baseLayer.addTo(map);
+
 
       cartodb.createLayer(map,{
         type: 'torque',
